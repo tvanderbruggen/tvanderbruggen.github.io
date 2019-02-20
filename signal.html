@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>signal &#8212; SciCpp 0 documentation</title>
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="polynomial" href="polynomial.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          SciCpp</a>
+        <span class="navbar-text navbar-version pull-left"><b>0</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Modules <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="core.html">core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linalg.html">linalg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polynomial.html">polynomial</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">signal</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">signal</a><ul>
+<li><a class="reference internal" href="#convolution">Convolution</a></li>
+<li><a class="reference internal" href="#fast-fourier-transforms-ffts">Fast Fourier Transforms (FFTs)</a></li>
+<li><a class="reference internal" href="#fft-helper-functions">FFT Helper Functions</a></li>
+<li><a class="reference internal" href="#window-functions">Window Functions</a></li>
+<li><a class="reference internal" href="#waveforms">Waveforms</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="polynomial.html" title="Previous Chapter: polynomial"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; polynomial</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="_sources/signal.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="signal">
+<h1>signal<a class="headerlink" href="#signal" title="Permalink to this headline">¶</a></h1>
+<p>Signal processing module.</p>
+<div class="section" id="convolution">
+<h2>Convolution<a class="headerlink" href="#convolution" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt><a class="reference internal" href="signal.convolve.html#signal-convolve"><span class="std std-ref">convolve</span></a></dt>
+<dd>Convolve two arrays.</dd>
+<dt><a class="reference internal" href="signal.fftconvolve.html#signal-fftconvolve"><span class="std std-ref">fftconvolve</span></a></dt>
+<dd>Convolve two arrays using FFT.</dd>
+<dt><a class="reference internal" href="signal.correlate.html#signal-correlate"><span class="std std-ref">correlate</span></a></dt>
+<dd>Correlate two arrays.</dd>
+</dl>
+</div>
+<div class="section" id="fast-fourier-transforms-ffts">
+<h2>Fast Fourier Transforms (FFTs)<a class="headerlink" href="#fast-fourier-transforms-ffts" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt><a class="reference internal" href="signal.fft.html#signal-fft"><span class="std std-ref">fft</span></a></dt>
+<dd>Discrete Fourier transform of real or complex sequence.</dd>
+<dt><a class="reference internal" href="signal.ifft.html#signal-ifft"><span class="std std-ref">ifft</span></a></dt>
+<dd>Inverse discrete Fourier transform of real or complex sequence.</dd>
+<dt><a class="reference internal" href="signal.rfft.html#signal-rfft"><span class="std std-ref">rfft</span></a></dt>
+<dd>Discrete Fourier transform of a real sequence.</dd>
+<dt><a class="reference internal" href="signal.irfft.html#signal-irfft"><span class="std std-ref">irfft</span></a></dt>
+<dd>Inverse of the discrete Fourier transform for real input.</dd>
+</dl>
+</div>
+<div class="section" id="fft-helper-functions">
+<h2>FFT Helper Functions<a class="headerlink" href="#fft-helper-functions" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt><a class="reference internal" href="signal.fftfreq.html#signal-fftfreq"><span class="std std-ref">fftfreq</span></a></dt>
+<dd>Return the Discrete Fourier Transform sample frequencies.</dd>
+<dt><a class="reference internal" href="signal.fftshift.html#signal-fftshift"><span class="std std-ref">fftshift</span></a></dt>
+<dd>Shift the zero-frequency component to the center of the spectrum.</dd>
+<dt><a class="reference internal" href="signal.ifftshift.html#signal-ifftshift"><span class="std std-ref">ifftshift</span></a></dt>
+<dd>The inverse of fftshift.</dd>
+<dt><a class="reference internal" href="signal.next_fast_len.html#signal-next-fast-len"><span class="std std-ref">next_fast_len</span></a></dt>
+<dd>Find the next fast size of input data to FFT.</dd>
+<dt><a class="reference internal" href="signal.zero_padding.html#signal-zero-padding"><span class="std std-ref">zero_padding</span></a></dt>
+<dd>Performs zero padding of an array.</dd>
+</dl>
+</div>
+<div class="section" id="window-functions">
+<h2>Window Functions<a class="headerlink" href="#window-functions" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt><a class="reference internal" href="signal.windows.get_window.html#signal-windows-get-window"><span class="std std-ref">windows::get_window</span></a></dt>
+<dd>Return a window.</dd>
+<dt><a class="reference internal" href="signal.windows.boxcar.html#signal-windows-boxcar"><span class="std std-ref">windows::boxcar</span></a></dt>
+<dd>Return a boxcar or rectangular window.</dd>
+<dt><a class="reference internal" href="signal.windows.bartlett.html#signal-windows-bartlett"><span class="std std-ref">windows::bartlett</span></a></dt>
+<dd>Return a Bartlett window.</dd>
+<dt><a class="reference internal" href="signal.windows.cosine.html#signal-windows-cosine"><span class="std std-ref">windows::cosine</span></a></dt>
+<dd>Return a window with a cosine shape.</dd>
+<dt><a class="reference internal" href="signal.windows.general_cosine.html#signal-windows-general-cosine"><span class="std std-ref">windows::general_cosine</span></a></dt>
+<dd>Generic weighted sum of cosine terms window.</dd>
+<dt><a class="reference internal" href="signal.windows.general_hamming.html#signal-windows-general-hamming"><span class="std std-ref">windows::general_hamming</span></a></dt>
+<dd>Return a generalized Hamming window.</dd>
+<dt><a class="reference internal" href="signal.windows.hann.html#signal-windows-hann"><span class="std std-ref">windows::hann</span></a></dt>
+<dd>Return a Hann window.</dd>
+<dt><a class="reference internal" href="signal.windows.hamming.html#signal-windows-hamming"><span class="std std-ref">windows::hamming</span></a></dt>
+<dd>Return a Hamming window.</dd>
+<dt><a class="reference internal" href="signal.windows.blackman.html#signal-windows-blackman"><span class="std std-ref">windows::blackman</span></a></dt>
+<dd>Return a Blackman window.</dd>
+<dt><a class="reference internal" href="signal.windows.nutall.html#signal-windows-nuttall"><span class="std std-ref">windows::nutall</span></a></dt>
+<dd>Return a Nutall window.</dd>
+<dt><a class="reference internal" href="signal.windows.blackmanharris.html#signal-windows-blackmanharris"><span class="std std-ref">windows::blackmanharris</span></a></dt>
+<dd>Return a minimum 4-term Blackman-Harris window.</dd>
+<dt><a class="reference internal" href="signal.windows.flattop.html#signal-windows-flattop"><span class="std std-ref">windows::flattop</span></a></dt>
+<dd>Return a flat top window.</dd>
+<dt><a class="reference internal" href="signal.windows.gaussian.html#signal-windows-gaussian"><span class="std std-ref">windows::gaussian</span></a></dt>
+<dd>Return a Gaussian window.</dd>
+</dl>
+</div>
+<div class="section" id="waveforms">
+<h2>Waveforms<a class="headerlink" href="#waveforms" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt><a class="reference internal" href="signal.unit_impulse.html#signal-unit-impulse"><span class="std std-ref">unit_impulse</span></a></dt>
+<dd>Unit impulse signal (discrete delta function) or unit basis vector.</dd>
+<dt><a class="reference internal" href="signal.sawtooth.html#signal-sawtooth"><span class="std std-ref">sawtooth</span></a></dt>
+<dd>Return a periodic sawtooth or triangle waveform.</dd>
+<dt><a class="reference internal" href="signal.sweep_poly.html#signal-sweep-poly"><span class="std std-ref">sweep_poly</span></a></dt>
+<dd>Frequency-swept cosine generator, with a time-dependent frequency.</dd>
+</dl>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2018, T. Vanderbruggen.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

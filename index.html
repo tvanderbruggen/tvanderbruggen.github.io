@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>SciCpp’s documentation &#8212; SciCpp 0 documentation</title>
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="core" href="core.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">
+          SciCpp</a>
+        <span class="navbar-text navbar-version pull-left"><b>0</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Modules <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="core.html">core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linalg.html">linalg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polynomial.html">polynomial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="signal.html">signal</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">SciCpp’s documentation</a><ul>
+<li><a class="reference internal" href="#modules">Modules:</a></li>
+<li><a class="reference internal" href="#introduction">Introduction</a><ul>
+<li><a class="reference internal" href="#array-generation">Array generation</a></li>
+<li><a class="reference internal" href="#using-arrays">Using arrays</a></li>
+<li><a class="reference internal" href="#shoudl-i-use-a-fixed-size-or-a-dynamic-array">Shoudl I use a fixed size or a dynamic array ?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="core.html" title="Next Chapter: core"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">core &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="_sources/index.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="scicpp-s-documentation">
+<h1>SciCpp’s documentation<a class="headerlink" href="#scicpp-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>SciCpp has for objective to provide an implementation of the <a class="reference external" href="https://scipy.org/">SciPy</a>
+functions for C++ 1D array types: <code class="docutils literal notranslate"><span class="pre">std::array</span></code> and <code class="docutils literal notranslate"><span class="pre">std::vector</span></code>.</p>
+<p>SciCpp is a lightweight header only library.
+Its only dependence is the <a class="reference external" href="http://eigen.tuxfamily.org/index.php?title=Main_Page">Eigen</a>
+linear algebra library, which is also header only.</p>
+<p>SciCpp uses the C++-17 standard.
+It is tested with the GCC and Clang compilers under Linux.</p>
+<p>SciCpp is released under the MIT licence.</p>
+<div class="section" id="modules">
+<h2>Modules:<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="core.html">core</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="core.html#mathematical-functions">Mathematical functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core.html#arithmetic-operators">Arithmetic operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core.html#ranges">Ranges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core.html#sums-products-differences">Sums, products, differences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core.html#comparisons">Comparisons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core.html#random">Random</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core.html#statistics">Statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core.html#functional-programming">Functional programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core.html#printing">Printing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="linalg.html">linalg</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="linalg.html#solvers">Solvers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linalg.html#eigen-vectors-conversions">Eigen Vectors Conversions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="polynomial.html">polynomial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="polynomial.html#polynomial-class">Polynomial Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="polynomial.html#basics">Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="polynomial.html#fitting">Fitting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="polynomial.html#calculus">Calculus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="polynomial.html#algebra">Algebra</a></li>
+<li class="toctree-l2"><a class="reference internal" href="polynomial.html#miscellaneous">Miscellaneous</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="signal.html">signal</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="signal.html#convolution">Convolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="signal.html#fast-fourier-transforms-ffts">Fast Fourier Transforms (FFTs)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="signal.html#fft-helper-functions">FFT Helper Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="signal.html#window-functions">Window Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="signal.html#waveforms">Waveforms</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>SciPy is an amazing library that facilitates developments.
+Often SciPy is used for prototyping but algorithms must be re-implemented
+in a system language for production.
+This is especially the case for embedded systems, where the CPU and/or
+memory resources may be too limited for the Python runtime.</p>
+<p>SciCpp ambitions to facilitate the transition from
+SciPy to C++ implementation. Therefore, SciCpp goal is
+to follow SciPy in terms of functions naming and behavior,
+to avoid surprises in the transition process.</p>
+<div class="section" id="array-generation">
+<h3>Array generation<a class="headerlink" href="#array-generation" title="Permalink to this headline">¶</a></h3>
+<p>Size related parameters are template parameters for <code class="docutils literal notranslate"><span class="pre">std::array</span></code>
+and function parameters for <code class="docutils literal notranslate"><span class="pre">std::vector</span></code>.
+For example:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Generate fixed size arrays (std::array):</span>
+<span class="c1">//     The fixed array size (5) is specified as the template parameter</span>
+<span class="k">auto</span> <span class="n">a</span> <span class="o">=</span> <span class="n">scicpp</span><span class="o">::</span><span class="n">linspace</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span> <span class="mi">5</span><span class="o">&gt;</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">10.</span><span class="p">);</span>
+<span class="k">auto</span> <span class="n">a</span> <span class="o">=</span> <span class="n">scicpp</span><span class="o">::</span><span class="n">rand</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span> <span class="mi">5</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="k">auto</span> <span class="n">a</span> <span class="o">=</span> <span class="n">scicpp</span><span class="o">::</span><span class="n">signal</span><span class="o">::</span><span class="n">hann</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span> <span class="mi">5</span><span class="o">&gt;</span><span class="p">();</span>
+
+<span class="c1">// Generate dynamic size arrays (std::vector):</span>
+<span class="c1">//     The dynamic array size (5) is specified as the function parameter</span>
+<span class="k">auto</span> <span class="n">v</span> <span class="o">=</span> <span class="n">scicpp</span><span class="o">::</span><span class="n">linspace</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">10.</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+<span class="k">auto</span> <span class="n">v</span> <span class="o">=</span> <span class="n">scicpp</span><span class="o">::</span><span class="n">rand</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<span class="k">auto</span> <span class="n">v</span> <span class="o">=</span> <span class="n">scicpp</span><span class="o">::</span><span class="n">signal</span><span class="o">::</span><span class="n">hann</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-arrays">
+<h3>Using arrays<a class="headerlink" href="#using-arrays" title="Permalink to this headline">¶</a></h3>
+<p>Most functions accept both fixed sized (<code class="docutils literal notranslate"><span class="pre">std::array</span></code>)
+and dynamic size (<code class="docutils literal notranslate"><span class="pre">std::vector</span></code>) arrays:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span> <span class="n">a</span> <span class="o">=</span> <span class="n">scicpp</span><span class="o">::</span><span class="n">rand</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span> <span class="mi">5</span><span class="o">&gt;</span><span class="p">();</span> <span class="c1">// std::array</span>
+<span class="k">auto</span> <span class="n">v</span> <span class="o">=</span> <span class="n">scicpp</span><span class="o">::</span><span class="n">rand</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>   <span class="c1">// std::vector</span>
+
+<span class="c1">// No size related parameter: same call</span>
+<span class="kt">double</span> <span class="n">m</span> <span class="o">=</span> <span class="n">scicpp</span><span class="o">::</span><span class="n">mean</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+<span class="kt">double</span> <span class="n">m</span> <span class="o">=</span> <span class="n">scicpp</span><span class="o">::</span><span class="n">mean</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+
+<span class="k">auto</span> <span class="n">c</span> <span class="o">=</span> <span class="n">scicpp</span><span class="o">::</span><span class="n">cumsum</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+<span class="k">auto</span> <span class="n">c</span> <span class="o">=</span> <span class="n">scicpp</span><span class="o">::</span><span class="n">cumsum</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+
+<span class="c1">// A size related parameter:</span>
+<span class="c1">//     Here, the returned array size depends on the number of differentiations</span>
+<span class="k">auto</span> <span class="n">d</span> <span class="o">=</span> <span class="n">scicpp</span><span class="o">::</span><span class="n">diff</span><span class="o">&lt;</span><span class="mi">2</span><span class="o">&gt;</span><span class="p">(</span><span class="n">a</span><span class="p">);</span> <span class="c1">// Fixed template parameter</span>
+<span class="k">auto</span> <span class="n">d</span> <span class="o">=</span> <span class="n">scicpp</span><span class="o">::</span><span class="n">diff</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// Dynamic function parameter</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="shoudl-i-use-a-fixed-size-or-a-dynamic-array">
+<h3>Shoudl I use a fixed size or a dynamic array ?<a class="headerlink" href="#shoudl-i-use-a-fixed-size-or-a-dynamic-array" title="Permalink to this headline">¶</a></h3>
+<p>Well, basicaly if you know the size at compile time use a <code class="docutils literal notranslate"><span class="pre">std::array</span></code> else use a <code class="docutils literal notranslate"><span class="pre">std::vector</span></code>.</p>
+<p>Sometimes the size is known at compile but it is large (the exact size depends on your system and on
+your workload but let’s say a few 1000s), then you might want to prefer to use a <code class="docutils literal notranslate"><span class="pre">`std::vector`</span></code>.</p>
+<p>Finally, <code class="docutils literal notranslate"><span class="pre">`std::vector`</span></code> is a resizable array, so it is well suited for algorithms requiring dynamical
+resizing of the data container (ex. <span class="xref std std-ref">filter</span>).</p>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2018, T. Vanderbruggen.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
