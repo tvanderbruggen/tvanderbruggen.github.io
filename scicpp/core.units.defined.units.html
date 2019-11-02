@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Defined units &#8212; SciCpp 0 documentation</title>
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          SciCpp</a>
+        <span class="navbar-text navbar-version pull-left"><b>0</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Modules <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="core.html">core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linalg.html">linalg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polynomial.html">polynomial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="signal.html">signal</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Defined units</a><ul>
+<li><a class="reference internal" href="#base-units">Base units</a><ul>
+<li><a class="reference internal" href="#length">Length</a><ul>
+<li><a class="reference internal" href="#si-units">SI units</a></li>
+<li><a class="reference internal" href="#non-si-units">Non-SI units</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#time">Time</a><ul>
+<li><a class="reference internal" href="#id1">SI units</a></li>
+<li><a class="reference internal" href="#id2">Non-SI units</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#mass">Mass</a><ul>
+<li><a class="reference internal" href="#id3">SI units</a></li>
+<li><a class="reference internal" href="#id4">Non-SI units</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#electric-current">Electric current</a><ul>
+<li><a class="reference internal" href="#id5">SI units</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#temperature">Temperature</a><ul>
+<li><a class="reference internal" href="#id6">SI units</a></li>
+<li><a class="reference internal" href="#id7">Non-SI units</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#amount-of-substance">Amount of substance</a><ul>
+<li><a class="reference internal" href="#id8">SI units</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#luminous-intensity">Luminous intensity</a><ul>
+<li><a class="reference internal" href="#id9">SI units</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#planar-angle">Planar angle</a><ul>
+<li><a class="reference internal" href="#id10">SI units</a></li>
+<li><a class="reference internal" href="#id11">Non-SI units</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#solid-angle">Solid angle</a><ul>
+<li><a class="reference internal" href="#id12">SI units</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#data-information-quantity">Data/Information quantity</a><ul>
+<li><a class="reference internal" href="#id13">SI units</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#derived-units">Derived units</a><ul>
+<li><a class="reference internal" href="#speed">Speed</a><ul>
+<li><a class="reference internal" href="#id14">SI units</a></li>
+<li><a class="reference internal" href="#id15">Non-SI units</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#acceleration">Acceleration</a><ul>
+<li><a class="reference internal" href="#id16">SI units</a></li>
+<li><a class="reference internal" href="#id17">Non-SI units</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#area">Area</a><ul>
+<li><a class="reference internal" href="#id18">SI units</a></li>
+<li><a class="reference internal" href="#id19">Non-SI units</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#volume">Volume</a><ul>
+<li><a class="reference internal" href="#id20">SI units</a></li>
+<li><a class="reference internal" href="#id21">Non-SI units</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#force">Force</a><ul>
+<li><a class="reference internal" href="#id22">SI units</a></li>
+<li><a class="reference internal" href="#id23">Non-SI units</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#power">Power</a><ul>
+<li><a class="reference internal" href="#id24">SI units</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#energy-work-heat">Energy, Work, Heat</a><ul>
+<li><a class="reference internal" href="#id25">SI units</a></li>
+<li><a class="reference internal" href="#id26">Non-SI units</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pressure">Pressure</a><ul>
+<li><a class="reference internal" href="#id27">SI units</a></li>
+<li><a class="reference internal" href="#id28">Non-SI units</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#frequency">Frequency</a><ul>
+<li><a class="reference internal" href="#id29">SI units</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#data-rate">Data rate</a></li>
+<li><a class="reference internal" href="#electric-potential">Electric potential</a><ul>
+<li><a class="reference internal" href="#id30">SI units</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#electric-charge">Electric charge</a><ul>
+<li><a class="reference internal" href="#id31">SI units</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#electrical-resistance">Electrical resistance</a><ul>
+<li><a class="reference internal" href="#id32">SI units</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#electrical-conductivity">Electrical conductivity</a><ul>
+<li><a class="reference internal" href="#id33">SI units</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#capacitance">Capacitance</a><ul>
+<li><a class="reference internal" href="#id34">SI units</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#inductance">Inductance</a><ul>
+<li><a class="reference internal" href="#id35">SI units</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#magnetic-flux-density">Magnetic flux density</a><ul>
+<li><a class="reference internal" href="#id36">SI units</a></li>
+<li><a class="reference internal" href="#id37">Non-SI units</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#magnetic-flux">Magnetic flux</a><ul>
+<li><a class="reference internal" href="#id38">SI units</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#current-noise-density">Current noise density</a><ul>
+<li><a class="reference internal" href="#id39">SI units</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#voltage-noise-density">Voltage noise density</a><ul>
+<li><a class="reference internal" href="#id40">SI units</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#catalytic-activity">Catalytic activity</a><ul>
+<li><a class="reference internal" href="#id41">SI units</a></li>
+<li><a class="reference internal" href="#id42">Non-SI units</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#luminous-flux">Luminous flux</a><ul>
+<li><a class="reference internal" href="#id43">SI units</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#illuminance">Illuminance</a><ul>
+<li><a class="reference internal" href="#id44">SI units</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="_sources/core.units.defined.units.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="defined-units">
+<span id="core-units-defined-units"></span><h1>Defined units<a class="headerlink" href="#defined-units" title="Permalink to this headline">¶</a></h1>
+<p>Defined in header &lt;scicpp/core.hpp&gt;</p>
+<hr class="docutils" />
+<p>Here <code class="code docutils literal notranslate"><span class="pre">T</span></code> is the representation type (<code class="code docutils literal notranslate"><span class="pre">double</span></code> by default).</p>
+<p>The statement <code class="code docutils literal notranslate"><span class="pre">using</span> <span class="pre">namespace</span> <span class="pre">scicpp::units::literals</span></code> must be included in the scope where
+unit literals are used.</p>
+<div class="section" id="base-units">
+<h2>Base units<a class="headerlink" href="#base-units" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<div class="section" id="length">
+<h3>Length<a class="headerlink" href="#length" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="si-units">
+<h4>SI units<a class="headerlink" href="#si-units" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">attometer&lt;T&gt;,</span> <span class="pre">femtometer&lt;T&gt;,</span> <span class="pre">picometer&lt;T&gt;,</span> <span class="pre">nanometer&lt;T&gt;,</span> <span class="pre">micrometer&lt;T&gt;,</span> <span class="pre">millimeter&lt;T&gt;,</span> <span class="pre">centimeter&lt;T&gt;,</span> <span class="pre">decimeter&lt;T&gt;,</span> <span class="pre">meter&lt;T&gt;,</span> <span class="pre">decameter&lt;T&gt;,</span> <span class="pre">hectometer&lt;T&gt;,</span> <span class="pre">kilometer&lt;T&gt;,</span> <span class="pre">megameter&lt;T&gt;,</span> <span class="pre">gigameter&lt;T&gt;,</span> <span class="pre">terameter&lt;T&gt;,</span> <span class="pre">petameter&lt;T&gt;,</span> <span class="pre">exameter&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_am,</span> <span class="pre">_fm,</span> <span class="pre">_pm,</span> <span class="pre">_nm,</span> <span class="pre">_um,</span> <span class="pre">_mm,</span> <span class="pre">_cm,</span> <span class="pre">_m,</span> <span class="pre">_km,</span> <span class="pre">_Mm,</span> <span class="pre">_Gm,</span> <span class="pre">_Tm,</span> <span class="pre">_Pm,</span> <span class="pre">_Em</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="non-si-units">
+<h4>Non-SI units<a class="headerlink" href="#non-si-units" title="Permalink to this headline">¶</a></h4>
+<p>Imperial</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">inch&lt;T&gt;,</span> <span class="pre">foot&lt;T&gt;,</span> <span class="pre">yard&lt;T&gt;,</span> <span class="pre">mile&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_in,</span> <span class="pre">_ft,</span> <span class="pre">_yd,</span> <span class="pre">_mi</span></code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Marine</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">nautical_mile&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_nmi</span></code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Astronomy</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">astronomical_unit&lt;T&gt;,</span> <span class="pre">light_year&lt;T&gt;,</span> <span class="pre">parsec&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_au,</span> <span class="pre">_ly,</span> <span class="pre">_pc</span></code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Miscellaneous</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">angstrom&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_angstrom</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="time">
+<h3>Time<a class="headerlink" href="#time" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id1">
+<h4>SI units<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">attosecond&lt;T&gt;,</span> <span class="pre">femtosecond&lt;T&gt;,</span> <span class="pre">picosecond&lt;T&gt;,</span> <span class="pre">nanosecond&lt;T&gt;,</span> <span class="pre">microsecond&lt;T&gt;,</span> <span class="pre">millisecond&lt;T&gt;,</span> <span class="pre">centisecond&lt;T&gt;,</span> <span class="pre">decisecond&lt;T&gt;,</span> <span class="pre">second&lt;T&gt;,</span> <span class="pre">decasecond&lt;T&gt;,</span> <span class="pre">hectosecond&lt;T&gt;,</span> <span class="pre">kilosecond&lt;T&gt;,</span> <span class="pre">megasecond&lt;T&gt;,</span> <span class="pre">gigasecond&lt;T&gt;,</span> <span class="pre">terasecond&lt;T&gt;,</span> <span class="pre">petasecond&lt;T&gt;,</span> <span class="pre">exasecond&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_as,</span> <span class="pre">_fs,</span> <span class="pre">_ps,</span> <span class="pre">_ns,</span> <span class="pre">_us,</span> <span class="pre">_ms,</span> <span class="pre">_s,</span> <span class="pre">_ks,</span> <span class="pre">_Ms,</span> <span class="pre">_Gs,</span> <span class="pre">_Ts,</span> <span class="pre">_Ps,</span> <span class="pre">_Es</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id2">
+<h4>Non-SI units<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">minute&lt;T&gt;,</span> <span class="pre">hour&lt;T&gt;,</span> <span class="pre">day&lt;T&gt;,</span> <span class="pre">week&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_min,</span> <span class="pre">_h,</span> <span class="pre">_day,</span> <span class="pre">_week</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="mass">
+<h3>Mass<a class="headerlink" href="#mass" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h4>SI units<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">femtogram&lt;T&gt;,</span> <span class="pre">picogram&lt;T&gt;,</span> <span class="pre">nanogram&lt;T&gt;,</span> <span class="pre">microgram&lt;T&gt;,</span> <span class="pre">milligram&lt;T&gt;,</span> <span class="pre">gram&lt;T&gt;,</span> <span class="pre">kilogram&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_fg,</span> <span class="pre">_pg,</span> <span class="pre">_ng,</span> <span class="pre">_ug,</span> <span class="pre">_mg,</span> <span class="pre">_g,</span> <span class="pre">_kg</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id4">
+<h4>Non-SI units<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">tonne&lt;T&gt;,</span> <span class="pre">kilotonne&lt;T&gt;,</span> <span class="pre">megatonne&lt;T&gt;,</span> <span class="pre">gigatonne&lt;T&gt;,</span> <span class="pre">teratonne&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_t,</span> <span class="pre">_kt,</span> <span class="pre">_Mt,</span> <span class="pre">_Gt,</span> <span class="pre">_Tt</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="electric-current">
+<h3>Electric current<a class="headerlink" href="#electric-current" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h4>SI units<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">attoampere&lt;T&gt;,</span> <span class="pre">femtoampere&lt;T&gt;,</span> <span class="pre">picoampere&lt;T&gt;,</span> <span class="pre">nanoampere&lt;T&gt;,</span> <span class="pre">microampere&lt;T&gt;,</span> <span class="pre">milliampere&lt;T&gt;,</span> <span class="pre">centiampere&lt;T&gt;,</span> <span class="pre">deciampere&lt;T&gt;,</span> <span class="pre">ampere&lt;T&gt;,</span> <span class="pre">decaampere&lt;T&gt;,</span> <span class="pre">hectoampere&lt;T&gt;,</span> <span class="pre">kiloampere&lt;T&gt;,</span> <span class="pre">megaampere&lt;T&gt;,</span> <span class="pre">gigaampere&lt;T&gt;,</span> <span class="pre">teraampere&lt;T&gt;,</span> <span class="pre">petaampere&lt;T&gt;,</span> <span class="pre">exaampere&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_aA,</span> <span class="pre">_fA,</span> <span class="pre">_pA,</span> <span class="pre">_nA,</span> <span class="pre">_uA,</span> <span class="pre">_mA,</span> <span class="pre">_A,</span> <span class="pre">_kA,</span> <span class="pre">_MA,</span> <span class="pre">_GA,</span> <span class="pre">_TA,</span> <span class="pre">_PA,</span> <span class="pre">_EA</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="temperature">
+<h3>Temperature<a class="headerlink" href="#temperature" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h4>SI units<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">attokelvin&lt;T&gt;,</span> <span class="pre">femtokelvin&lt;T&gt;,</span> <span class="pre">picokelvin&lt;T&gt;,</span> <span class="pre">nanokelvin&lt;T&gt;,</span> <span class="pre">microkelvin&lt;T&gt;,</span> <span class="pre">millikelvin&lt;T&gt;,</span> <span class="pre">centikelvin&lt;T&gt;,</span> <span class="pre">decikelvin&lt;T&gt;,</span> <span class="pre">kelvin&lt;T&gt;,</span> <span class="pre">decakelvin&lt;T&gt;,</span> <span class="pre">hectokelvin&lt;T&gt;,</span> <span class="pre">kilokelvin&lt;T&gt;,</span> <span class="pre">megakelvin&lt;T&gt;,</span> <span class="pre">gigakelvin&lt;T&gt;,</span> <span class="pre">terakelvin&lt;T&gt;,</span> <span class="pre">petakelvin&lt;T&gt;,</span> <span class="pre">exakelvin&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_aK,</span> <span class="pre">_fK,</span> <span class="pre">_pK,</span> <span class="pre">_nK,</span> <span class="pre">_uK,</span> <span class="pre">_mK,</span> <span class="pre">_K,</span> <span class="pre">_kK,</span> <span class="pre">_MK,</span> <span class="pre">_GK,</span> <span class="pre">_TK,</span> <span class="pre">_PK,</span> <span class="pre">_EK</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id7">
+<h4>Non-SI units<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">celsius&lt;T&gt;,</span> <span class="pre">fahrhenheit&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_degC,</span> <span class="pre">_degF</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="amount-of-substance">
+<h3>Amount of substance<a class="headerlink" href="#amount-of-substance" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h4>SI units<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">attomole&lt;T&gt;,</span> <span class="pre">femtomole&lt;T&gt;,</span> <span class="pre">picomole&lt;T&gt;,</span> <span class="pre">nanomole&lt;T&gt;,</span> <span class="pre">micromole&lt;T&gt;,</span> <span class="pre">millimole&lt;T&gt;,</span> <span class="pre">centimole&lt;T&gt;,</span> <span class="pre">decimole&lt;T&gt;,</span> <span class="pre">mole&lt;T&gt;,</span> <span class="pre">decamole&lt;T&gt;,</span> <span class="pre">hectomole&lt;T&gt;,</span> <span class="pre">kilomole&lt;T&gt;,</span> <span class="pre">megamole&lt;T&gt;,</span> <span class="pre">gigamole&lt;T&gt;,</span> <span class="pre">teramole&lt;T&gt;,</span> <span class="pre">petamole&lt;T&gt;,</span> <span class="pre">examole&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_amol,</span> <span class="pre">_fmol,</span> <span class="pre">_pmol,</span> <span class="pre">_nmol,</span> <span class="pre">_umol,</span> <span class="pre">_mmol,</span> <span class="pre">_mol,</span> <span class="pre">_kmol,</span> <span class="pre">_Mmol,</span> <span class="pre">_Gmol,</span> <span class="pre">_Tmol,</span> <span class="pre">_Pmol,</span> <span class="pre">_Emol</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="luminous-intensity">
+<h3>Luminous intensity<a class="headerlink" href="#luminous-intensity" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id9">
+<h4>SI units<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">attocandela&lt;T&gt;,</span> <span class="pre">femtocandela&lt;T&gt;,</span> <span class="pre">picocandela&lt;T&gt;,</span> <span class="pre">nanocandela&lt;T&gt;,</span> <span class="pre">microcandela&lt;T&gt;,</span> <span class="pre">millicandela&lt;T&gt;,</span> <span class="pre">centicandela&lt;T&gt;,</span> <span class="pre">decicandela&lt;T&gt;,</span> <span class="pre">candela&lt;T&gt;,</span> <span class="pre">decacandela&lt;T&gt;,</span> <span class="pre">hectocandela&lt;T&gt;,</span> <span class="pre">kilocandela&lt;T&gt;,</span> <span class="pre">megacandela&lt;T&gt;,</span> <span class="pre">gigacandela&lt;T&gt;,</span> <span class="pre">teracandela&lt;T&gt;,</span> <span class="pre">petacandela&lt;T&gt;,</span> <span class="pre">exacandela&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_aCd,</span> <span class="pre">_fCd,</span> <span class="pre">_pCd,</span> <span class="pre">_nCd,</span> <span class="pre">_uCd,</span> <span class="pre">_mCd,</span> <span class="pre">_Cd,</span> <span class="pre">_kCd,</span> <span class="pre">_MCd,</span> <span class="pre">_GCd,</span> <span class="pre">_TCd,</span> <span class="pre">_PCd,</span> <span class="pre">_ECd</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="planar-angle">
+<h3>Planar angle<a class="headerlink" href="#planar-angle" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id10">
+<h4>SI units<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">attoradian&lt;T&gt;,</span> <span class="pre">femtoradian&lt;T&gt;,</span> <span class="pre">picoradian&lt;T&gt;,</span> <span class="pre">nanoradian&lt;T&gt;,</span> <span class="pre">microradian&lt;T&gt;,</span> <span class="pre">milliradian&lt;T&gt;,</span> <span class="pre">centiradian&lt;T&gt;,</span> <span class="pre">deciradian&lt;T&gt;,</span> <span class="pre">radian&lt;T&gt;,</span> <span class="pre">decaradian&lt;T&gt;,</span> <span class="pre">hectoradian&lt;T&gt;,</span> <span class="pre">kiloradian&lt;T&gt;,</span> <span class="pre">megaradian&lt;T&gt;,</span> <span class="pre">gigaradian&lt;T&gt;,</span> <span class="pre">teraradian&lt;T&gt;,</span> <span class="pre">petaradian&lt;T&gt;,</span> <span class="pre">exaradian&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_arad,</span> <span class="pre">_frad,</span> <span class="pre">_prad,</span> <span class="pre">_nrad,</span> <span class="pre">_urad,</span> <span class="pre">_mrad,</span> <span class="pre">_rad,</span> <span class="pre">_krad,</span> <span class="pre">_Mrad,</span> <span class="pre">_Grad,</span> <span class="pre">_Trad,</span> <span class="pre">_Prad,</span> <span class="pre">_Erad</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id11">
+<h4>Non-SI units<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">degree&lt;T&gt;,</span> <span class="pre">turn&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_deg,</span> <span class="pre">_turn</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="solid-angle">
+<h3>Solid angle<a class="headerlink" href="#solid-angle" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id12">
+<h4>SI units<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">attosteradian&lt;T&gt;,</span> <span class="pre">femtosteradian&lt;T&gt;,</span> <span class="pre">picosteradian&lt;T&gt;,</span> <span class="pre">nanosteradian&lt;T&gt;,</span> <span class="pre">microsteradian&lt;T&gt;,</span> <span class="pre">millisteradian&lt;T&gt;,</span> <span class="pre">centisteradian&lt;T&gt;,</span> <span class="pre">decisteradian&lt;T&gt;,</span> <span class="pre">steradian&lt;T&gt;,</span> <span class="pre">decasteradian&lt;T&gt;,</span> <span class="pre">hectosteradian&lt;T&gt;,</span> <span class="pre">kilosteradian&lt;T&gt;,</span> <span class="pre">megasteradian&lt;T&gt;,</span> <span class="pre">gigasteradian&lt;T&gt;,</span> <span class="pre">terasteradian&lt;T&gt;,</span> <span class="pre">petasteradian&lt;T&gt;,</span> <span class="pre">exastearadian&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_asr,</span> <span class="pre">_fsr,</span> <span class="pre">_psr,</span> <span class="pre">_nsr,</span> <span class="pre">_usr,</span> <span class="pre">_msr,</span> <span class="pre">_sr,</span> <span class="pre">_ksr,</span> <span class="pre">_Msr,</span> <span class="pre">_Gsr,</span> <span class="pre">_Tsr,</span> <span class="pre">_Psr,</span> <span class="pre">_Esr</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="data-information-quantity">
+<h3>Data/Information quantity<a class="headerlink" href="#data-information-quantity" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id13">
+<h4>SI units<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">shannon&lt;T&gt;,</span> <span class="pre">bit&lt;T&gt;,</span> <span class="pre">nibble&lt;T&gt;,</span> <span class="pre">byte&lt;T&gt;,</span> <span class="pre">kibibyte&lt;T&gt;,</span> <span class="pre">mebibyte&lt;T&gt;,</span> <span class="pre">gibibyte&lt;T&gt;,</span> <span class="pre">tebibyte&lt;T&gt;,</span> <span class="pre">pebibyte&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_Sh,</span> <span class="pre">_b,</span> <span class="pre">_B,</span> <span class="pre">_kiB,</span> <span class="pre">_MiB,</span> <span class="pre">_GiB,</span> <span class="pre">_TiB,</span> <span class="pre">_PiB</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="section" id="derived-units">
+<h2>Derived units<a class="headerlink" href="#derived-units" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<div class="section" id="speed">
+<h3>Speed<a class="headerlink" href="#speed" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id14">
+<h4>SI units<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">attometer_per_second&lt;T&gt;,</span> <span class="pre">femtometer_per_second&lt;T&gt;,</span> <span class="pre">picometer_per_second&lt;T&gt;,</span> <span class="pre">nanometer_per_second&lt;T&gt;,</span> <span class="pre">micrometer_per_second&lt;T&gt;,</span> <span class="pre">millimeter_per_second&lt;T&gt;,</span> <span class="pre">centimeter_per_second&lt;T&gt;,</span> <span class="pre">decimeter_per_second&lt;T&gt;,</span> <span class="pre">meter_per_second&lt;T&gt;,</span> <span class="pre">decameter_per_second&lt;T&gt;,</span> <span class="pre">hectometer_per_second&lt;T&gt;,</span> <span class="pre">kilometer_per_second&lt;T&gt;,</span> <span class="pre">megameter_per_second&lt;T&gt;,</span> <span class="pre">gigameter_per_second&lt;T&gt;,</span> <span class="pre">terameter_per_second&lt;T&gt;,</span> <span class="pre">petameter_per_second&lt;T&gt;,</span> <span class="pre">exameter_per_second&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_am_per_s,</span> <span class="pre">_fm_per_s,</span> <span class="pre">_pm_per_s,</span> <span class="pre">_nm_per_s,</span> <span class="pre">_um_per_s,</span> <span class="pre">_mm_per_s,</span> <span class="pre">_m_per_s,</span> <span class="pre">_km_per_s,</span> <span class="pre">_Mm_per_s,</span> <span class="pre">_Gm_per_s,</span> <span class="pre">_Tm_per_s,</span> <span class="pre">_Pm_per_s,</span> <span class="pre">_Em_per_s</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id15">
+<h4>Non-SI units<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">kilometer_per_hour&lt;T&gt;,</span> <span class="pre">knot&lt;T&gt;,</span> <span class="pre">mile_per_hour&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_km_per_h,</span> <span class="pre">_kn,</span> <span class="pre">_mph</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="acceleration">
+<h3>Acceleration<a class="headerlink" href="#acceleration" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id16">
+<h4>SI units<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">attometer_per_second_squared&lt;T&gt;,</span> <span class="pre">femtometer_per_second_squared&lt;T&gt;,</span> <span class="pre">picometer_per_second_squared&lt;T&gt;,</span> <span class="pre">nanometer_per_second_squared&lt;T&gt;,</span> <span class="pre">micrometer_per_second_squared&lt;T&gt;,</span> <span class="pre">millimeter_per_second_squared&lt;T&gt;,</span> <span class="pre">centimeter_per_second_squared&lt;T&gt;,</span> <span class="pre">decimeter_per_second_squared&lt;T&gt;,</span> <span class="pre">meter_per_second_squared&lt;T&gt;,</span> <span class="pre">decameter_per_second_squared&lt;T&gt;,</span> <span class="pre">hectometer_per_second_squared&lt;T&gt;,</span> <span class="pre">kilometer_per_second_squared&lt;T&gt;,</span> <span class="pre">megameter_per_second_squared&lt;T&gt;,</span> <span class="pre">gigameter_per_second_squared&lt;T&gt;,</span> <span class="pre">terameter_per_second_squared&lt;T&gt;,</span> <span class="pre">petameter_per_second_squared&lt;T&gt;,</span> <span class="pre">exameter_per_second_squared&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_am_per_s2,</span> <span class="pre">_fm_per_s2,</span> <span class="pre">_pm_per_s2,</span> <span class="pre">_nm_per_s2,</span> <span class="pre">_um_per_s2,</span> <span class="pre">_mm_per_s2,</span> <span class="pre">_m_per_s2,</span> <span class="pre">_km_per_s2,</span> <span class="pre">_Mm_per_s2,</span> <span class="pre">_Gm_per_s2,</span> <span class="pre">_Tm_per_s2,</span> <span class="pre">_Pm_per_s2,</span> <span class="pre">_Em_per_s2</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id17">
+<h4>Non-SI units<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">nanogalileo&lt;T&gt;,</span> <span class="pre">microgalileo&lt;T&gt;,</span> <span class="pre">milligalileo&lt;T&gt;,</span> <span class="pre">galileo&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_nGal,</span> <span class="pre">_uGal,</span> <span class="pre">_mGal,</span> <span class="pre">_Gal</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="area">
+<h3>Area<a class="headerlink" href="#area" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id18">
+<h4>SI units<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">square_micrometer&lt;T&gt;,</span> <span class="pre">square_millimeter&lt;T&gt;,</span> <span class="pre">square_centimeter&lt;T&gt;,</span> <span class="pre">square_meter&lt;T&gt;,</span> <span class="pre">square_kilometer&lt;T&gt;,</span> <span class="pre">square_megameter&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_um2,</span> <span class="pre">_mm2,</span> <span class="pre">_cm2,</span> <span class="pre">_m2,</span> <span class="pre">_km2,</span> <span class="pre">_Mm2</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id19">
+<h4>Non-SI units<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h4>
+<p>Imperial</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">square_inch&lt;T&gt;,</span> <span class="pre">square_foot&lt;T&gt;,</span> <span class="pre">square_yard&lt;T&gt;,</span> <span class="pre">square_mile&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_in2,</span> <span class="pre">_ft2,</span> <span class="pre">_yd2,</span> <span class="pre">_mi2</span></code>.</td>
+</tr>
+</tbody>
+</table>
+<p>metric</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">are&lt;T&gt;,</span> <span class="pre">hectare&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_a,</span> <span class="pre">_ha</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="volume">
+<h3>Volume<a class="headerlink" href="#volume" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id20">
+<h4>SI units<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">cubic_millimeter&lt;T&gt;,</span> <span class="pre">cubic_centimeter&lt;T&gt;,</span> <span class="pre">cubic_meter&lt;T&gt;,</span> <span class="pre">cubic_kilometer&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_mm3,</span> <span class="pre">_cm3,</span> <span class="pre">_m3,</span> <span class="pre">_km3</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id21">
+<h4>Non-SI units<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h4>
+<p>Imperial</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">cubic_inch&lt;T&gt;,</span> <span class="pre">cubic_foot&lt;T&gt;,</span> <span class="pre">cubic_yard&lt;T&gt;,</span> <span class="pre">cubic_mile&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_in3,</span> <span class="pre">_ft3,</span> <span class="pre">_yd3,</span> <span class="pre">_mi3</span></code>.</td>
+</tr>
+</tbody>
+</table>
+<p>metric</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">microliter&lt;T&gt;,</span> <span class="pre">milliliter&lt;T&gt;,</span> <span class="pre">liter&lt;T&gt;,</span> <span class="pre">hectoliter&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_uL,</span> <span class="pre">_mL,</span> <span class="pre">_L,</span> <span class="pre">_hL</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="force">
+<h3>Force<a class="headerlink" href="#force" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id22">
+<h4>SI units<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">attonewton&lt;T&gt;,</span> <span class="pre">femtonewton&lt;T&gt;,</span> <span class="pre">piconewton&lt;T&gt;,</span> <span class="pre">nanonewton&lt;T&gt;,</span> <span class="pre">micronewton&lt;T&gt;,</span> <span class="pre">millinewton&lt;T&gt;,</span> <span class="pre">centinewton&lt;T&gt;,</span> <span class="pre">decinewton&lt;T&gt;,</span> <span class="pre">newton&lt;T&gt;,</span> <span class="pre">decanewton&lt;T&gt;,</span> <span class="pre">hectonewton&lt;T&gt;,</span> <span class="pre">kilonewton&lt;T&gt;,</span> <span class="pre">meganewton&lt;T&gt;,</span> <span class="pre">giganewton&lt;T&gt;,</span> <span class="pre">teranewton&lt;T&gt;,</span> <span class="pre">petanewton&lt;T&gt;,</span> <span class="pre">exanewton&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_aN,</span> <span class="pre">_fN,</span> <span class="pre">_pN,</span> <span class="pre">_nN,</span> <span class="pre">_uN,</span> <span class="pre">_mN,</span> <span class="pre">_N,</span> <span class="pre">_kN,</span> <span class="pre">_MN,</span> <span class="pre">_GN,</span> <span class="pre">_TN,</span> <span class="pre">_PN,</span> <span class="pre">_EN</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id23">
+<h4>Non-SI units<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">pound_force&lt;T&gt;,</span> <span class="pre">poundal&lt;T&gt;,</span> <span class="pre">kilogram_force&lt;T&gt;,</span> <span class="pre">dyne&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_lbf,</span> <span class="pre">_pdl,</span> <span class="pre">_kgf,</span> <span class="pre">_dyn</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="power">
+<h3>Power<a class="headerlink" href="#power" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id24">
+<h4>SI units<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">attowatt&lt;T&gt;,</span> <span class="pre">femtowatt&lt;T&gt;,</span> <span class="pre">picowatt&lt;T&gt;,</span> <span class="pre">nanowatt&lt;T&gt;,</span> <span class="pre">microwatt&lt;T&gt;,</span> <span class="pre">milliwatt&lt;T&gt;,</span> <span class="pre">centiwatt&lt;T&gt;,</span> <span class="pre">deciwatt&lt;T&gt;,</span> <span class="pre">watt&lt;T&gt;,</span> <span class="pre">decawatt&lt;T&gt;,</span> <span class="pre">hectowatt&lt;T&gt;,</span> <span class="pre">kilowatt&lt;T&gt;,</span> <span class="pre">megawatt&lt;T&gt;,</span> <span class="pre">gigawatt&lt;T&gt;,</span> <span class="pre">terawatt&lt;T&gt;,</span> <span class="pre">petawatt&lt;T&gt;,</span> <span class="pre">exawatt&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_aW,</span> <span class="pre">_fW,</span> <span class="pre">_pW,</span> <span class="pre">_nW,</span> <span class="pre">_uW,</span> <span class="pre">_mW,</span> <span class="pre">_W,</span> <span class="pre">_kW,</span> <span class="pre">_MW,</span> <span class="pre">_GW,</span> <span class="pre">_TW,</span> <span class="pre">_PW,</span> <span class="pre">_EW</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="energy-work-heat">
+<h3>Energy, Work, Heat<a class="headerlink" href="#energy-work-heat" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id25">
+<h4>SI units<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">attojoule&lt;T&gt;,</span> <span class="pre">femtojoule&lt;T&gt;,</span> <span class="pre">picojoule&lt;T&gt;,</span> <span class="pre">nanojoule&lt;T&gt;,</span> <span class="pre">microjoule&lt;T&gt;,</span> <span class="pre">millijoule&lt;T&gt;,</span> <span class="pre">centijoule&lt;T&gt;,</span> <span class="pre">decijoule&lt;T&gt;,</span> <span class="pre">joule&lt;T&gt;,</span> <span class="pre">decajoule&lt;T&gt;,</span> <span class="pre">hectojoule&lt;T&gt;,</span> <span class="pre">kilojoule&lt;T&gt;,</span> <span class="pre">megajoule&lt;T&gt;,</span> <span class="pre">gigajoule&lt;T&gt;,</span> <span class="pre">terajoule&lt;T&gt;,</span> <span class="pre">petajoule&lt;T&gt;,</span> <span class="pre">exajoule&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_aJ,</span> <span class="pre">_fJ,</span> <span class="pre">_pJ,</span> <span class="pre">_nJ,</span> <span class="pre">_uJ,</span> <span class="pre">_mJ,</span> <span class="pre">_J,</span> <span class="pre">_kJ,</span> <span class="pre">_MJ,</span> <span class="pre">_GJ,</span> <span class="pre">_TJ,</span> <span class="pre">_PJ,</span> <span class="pre">_EJ</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id26">
+<h4>Non-SI units<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">watt_hour&lt;T&gt;,</span> <span class="pre">kilowatt_hour&lt;T&gt;,</span> <span class="pre">megawatt_hour&lt;T&gt;,</span> <span class="pre">gigawatt_hour&lt;T&gt;,</span> <span class="pre">terawatt_hour&lt;T&gt;,</span> <span class="pre">petawatt_hour&lt;T&gt;,</span> <span class="pre">calorie&lt;T&gt;,</span> <span class="pre">kilocalorie&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_Wh,</span> <span class="pre">_kWh,</span> <span class="pre">_MWh,</span> <span class="pre">_GWh,</span> <span class="pre">_TWh,</span> <span class="pre">PWh,</span> <span class="pre">_cal,</span> <span class="pre">_kcal</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="pressure">
+<h3>Pressure<a class="headerlink" href="#pressure" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id27">
+<h4>SI units<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">attopascal&lt;T&gt;,</span> <span class="pre">femtopascal&lt;T&gt;,</span> <span class="pre">picopascal&lt;T&gt;,</span> <span class="pre">nanopascal&lt;T&gt;,</span> <span class="pre">micropascal&lt;T&gt;,</span> <span class="pre">millipascal&lt;T&gt;,</span> <span class="pre">centipascal&lt;T&gt;,</span> <span class="pre">decipascal&lt;T&gt;,</span> <span class="pre">pascal&lt;T&gt;,</span> <span class="pre">decapascal&lt;T&gt;,</span> <span class="pre">hectopascal&lt;T&gt;,</span> <span class="pre">kilopascal&lt;T&gt;,</span> <span class="pre">megapascal&lt;T&gt;,</span> <span class="pre">gigapascal&lt;T&gt;,</span> <span class="pre">terapascal&lt;T&gt;,</span> <span class="pre">petapascal&lt;T&gt;,</span> <span class="pre">exapascal&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_aPa,</span> <span class="pre">_fPa,</span> <span class="pre">_pPa,</span> <span class="pre">_nPa,</span> <span class="pre">_uPa,</span> <span class="pre">_mPa,</span> <span class="pre">_Pa,</span> <span class="pre">_hPa,</span> <span class="pre">_kPa,</span> <span class="pre">_MPa,</span> <span class="pre">_GPa,</span> <span class="pre">_TPa,</span> <span class="pre">_PPa,</span> <span class="pre">_EPa</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id28">
+<h4>Non-SI units<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">millibar&lt;T&gt;,</span> <span class="pre">bar&lt;T&gt;,</span> <span class="pre">kilobar&lt;T&gt;,</span> <span class="pre">mmHg&lt;T&gt;,</span> <span class="pre">torr&lt;T&gt;,</span> <span class="pre">psi&lt;T&gt;,</span> <span class="pre">atm&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_mbar,</span> <span class="pre">_bar,</span> <span class="pre">_kbar,</span> <span class="pre">_mmHg,</span> <span class="pre">_torr,</span> <span class="pre">_psi,</span> <span class="pre">_atm</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="frequency">
+<h3>Frequency<a class="headerlink" href="#frequency" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id29">
+<h4>SI units<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">attohertz&lt;T&gt;,</span> <span class="pre">femtohertz&lt;T&gt;,</span> <span class="pre">picohertz&lt;T&gt;,</span> <span class="pre">nanohertz&lt;T&gt;,</span> <span class="pre">microhertz&lt;T&gt;,</span> <span class="pre">millihertz&lt;T&gt;,</span> <span class="pre">centihertz&lt;T&gt;,</span> <span class="pre">decihertz&lt;T&gt;,</span> <span class="pre">hertz&lt;T&gt;,</span> <span class="pre">decahertz&lt;T&gt;,</span> <span class="pre">hectohertz&lt;T&gt;,</span> <span class="pre">kilohertz&lt;T&gt;,</span> <span class="pre">megahertz&lt;T&gt;,</span> <span class="pre">gigahertz&lt;T&gt;,</span> <span class="pre">terahertz&lt;T&gt;,</span> <span class="pre">petahertz&lt;T&gt;,</span> <span class="pre">exahertz&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_aHz,</span> <span class="pre">_fHz,</span> <span class="pre">_pHz,</span> <span class="pre">_nHz,</span> <span class="pre">_uHz,</span> <span class="pre">_mHz,</span> <span class="pre">_Hz,</span> <span class="pre">_kHz,</span> <span class="pre">_MHz,</span> <span class="pre">_GHz,</span> <span class="pre">_THz,</span> <span class="pre">_PHz,</span> <span class="pre">_EHz</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="data-rate">
+<h3>Data rate<a class="headerlink" href="#data-rate" title="Permalink to this headline">¶</a></h3>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">bit_per_second&lt;T&gt;,</span> <span class="pre">kilobit_per_second&lt;T&gt;,</span> <span class="pre">megabit_per_second&lt;T&gt;,</span> <span class="pre">gigabit_per_second&lt;T&gt;,</span> <span class="pre">terabit_per_second&lt;T&gt;,</span> <span class="pre">petabit_per_second&lt;T&gt;,</span> <span class="pre">exabit_per_second&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_bps,</span> <span class="pre">_kbps,</span> <span class="pre">_Mbps,</span> <span class="pre">_Gbps,</span> <span class="pre">_Tbps,</span> <span class="pre">_Pbps,</span> <span class="pre">_Ebps</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr class="docutils" />
+<div class="section" id="electric-potential">
+<h3>Electric potential<a class="headerlink" href="#electric-potential" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id30">
+<h4>SI units<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">attovolt&lt;T&gt;,</span> <span class="pre">femtovolt&lt;T&gt;,</span> <span class="pre">picovolt&lt;T&gt;,</span> <span class="pre">nanovolt&lt;T&gt;,</span> <span class="pre">microvolt&lt;T&gt;,</span> <span class="pre">millivolt&lt;T&gt;,</span> <span class="pre">centivolt&lt;T&gt;,</span> <span class="pre">decivolt&lt;T&gt;,</span> <span class="pre">volt&lt;T&gt;,</span> <span class="pre">decavolt&lt;T&gt;,</span> <span class="pre">hectovolt&lt;T&gt;,</span> <span class="pre">kilovolt&lt;T&gt;,</span> <span class="pre">megavolt&lt;T&gt;,</span> <span class="pre">gigavolt&lt;T&gt;,</span> <span class="pre">teravolt&lt;T&gt;,</span> <span class="pre">petavolt&lt;T&gt;,</span> <span class="pre">exavolt&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_aV,</span> <span class="pre">_fV,</span> <span class="pre">_pV,</span> <span class="pre">_nV,</span> <span class="pre">_uV,</span> <span class="pre">_mV,</span> <span class="pre">_V,</span> <span class="pre">_kV,</span> <span class="pre">_MV,</span> <span class="pre">_GV,</span> <span class="pre">_TV,</span> <span class="pre">_PV,</span> <span class="pre">_EV</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="electric-charge">
+<h3>Electric charge<a class="headerlink" href="#electric-charge" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id31">
+<h4>SI units<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">attocoulomb&lt;T&gt;,</span> <span class="pre">femtocoulomb&lt;T&gt;,</span> <span class="pre">picocoulomb&lt;T&gt;,</span> <span class="pre">nanocoulomb&lt;T&gt;,</span> <span class="pre">microcoulomb&lt;T&gt;,</span> <span class="pre">millicoulomb&lt;T&gt;,</span> <span class="pre">centicoulomb&lt;T&gt;,</span> <span class="pre">decicoulomb&lt;T&gt;,</span> <span class="pre">coulomb&lt;T&gt;,</span> <span class="pre">decacoulomb&lt;T&gt;,</span> <span class="pre">hectocoulomb&lt;T&gt;,</span> <span class="pre">kilocoulomb&lt;T&gt;,</span> <span class="pre">megacoulomb&lt;T&gt;,</span> <span class="pre">gigacoulomb&lt;T&gt;,</span> <span class="pre">teracoulomb&lt;T&gt;,</span> <span class="pre">petacoulomb&lt;T&gt;,</span> <span class="pre">exacoulomb&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_aC,</span> <span class="pre">_fC,</span> <span class="pre">_pC,</span> <span class="pre">_nC,</span> <span class="pre">_uC,</span> <span class="pre">_mC,</span> <span class="pre">_C,</span> <span class="pre">_kC,</span> <span class="pre">_MC,</span> <span class="pre">_GC,</span> <span class="pre">_TC,</span> <span class="pre">_PC,</span> <span class="pre">_EC</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="electrical-resistance">
+<h3>Electrical resistance<a class="headerlink" href="#electrical-resistance" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id32">
+<h4>SI units<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">attoohm&lt;T&gt;,</span> <span class="pre">femtoohm&lt;T&gt;,</span> <span class="pre">picoohm&lt;T&gt;,</span> <span class="pre">nanoohm&lt;T&gt;,</span> <span class="pre">microohm&lt;T&gt;,</span> <span class="pre">milliohm&lt;T&gt;,</span> <span class="pre">centiohm&lt;T&gt;,</span> <span class="pre">deciohm&lt;T&gt;,</span> <span class="pre">ohm&lt;T&gt;,</span> <span class="pre">decaohm&lt;T&gt;,</span> <span class="pre">hectoohm&lt;T&gt;,</span> <span class="pre">kiloohm&lt;T&gt;,</span> <span class="pre">megaohm&lt;T&gt;,</span> <span class="pre">gigaohm&lt;T&gt;,</span> <span class="pre">teraohm&lt;T&gt;,</span> <span class="pre">petaohm&lt;T&gt;,</span> <span class="pre">exaohm&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_aOhm,</span> <span class="pre">_fOhm,</span> <span class="pre">_pOhm,</span> <span class="pre">_nOhm,</span> <span class="pre">_uOhm,</span> <span class="pre">_mOhm,</span> <span class="pre">_Ohm,</span> <span class="pre">_kOhm,</span> <span class="pre">_MOhm,</span> <span class="pre">_GOhm,</span> <span class="pre">_TOhm,</span> <span class="pre">_POhm,</span> <span class="pre">_EOhm</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="electrical-conductivity">
+<h3>Electrical conductivity<a class="headerlink" href="#electrical-conductivity" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id33">
+<h4>SI units<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">attosiemens&lt;T&gt;,</span> <span class="pre">femtosiemens&lt;T&gt;,</span> <span class="pre">picosiemens&lt;T&gt;,</span> <span class="pre">nanosiemens&lt;T&gt;,</span> <span class="pre">microsiemens&lt;T&gt;,</span> <span class="pre">millisiemens&lt;T&gt;,</span> <span class="pre">centisiemens&lt;T&gt;,</span> <span class="pre">decisiemens&lt;T&gt;,</span> <span class="pre">siemens&lt;T&gt;,</span> <span class="pre">decasiemens&lt;T&gt;,</span> <span class="pre">hectosiemens&lt;T&gt;,</span> <span class="pre">kilosiemens&lt;T&gt;,</span> <span class="pre">megasiemens&lt;T&gt;,</span> <span class="pre">gigasiemens&lt;T&gt;,</span> <span class="pre">terasiemens&lt;T&gt;,</span> <span class="pre">petasiemens&lt;T&gt;,</span> <span class="pre">exasiemens&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_aS,</span> <span class="pre">_fS,</span> <span class="pre">_pS,</span> <span class="pre">_nS,</span> <span class="pre">_uS,</span> <span class="pre">_mS,</span> <span class="pre">_S,</span> <span class="pre">_kS,</span> <span class="pre">_MS,</span> <span class="pre">_GS,</span> <span class="pre">_TS,</span> <span class="pre">_PS,</span> <span class="pre">_ES</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="capacitance">
+<h3>Capacitance<a class="headerlink" href="#capacitance" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id34">
+<h4>SI units<a class="headerlink" href="#id34" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">attofarad&lt;T&gt;,</span> <span class="pre">femtofarad&lt;T&gt;,</span> <span class="pre">picofarad&lt;T&gt;,</span> <span class="pre">nanofarad&lt;T&gt;,</span> <span class="pre">microfarad&lt;T&gt;,</span> <span class="pre">millifarad&lt;T&gt;,</span> <span class="pre">centifarad&lt;T&gt;,</span> <span class="pre">decifarad&lt;T&gt;,</span> <span class="pre">farad&lt;T&gt;,</span> <span class="pre">decafarad&lt;T&gt;,</span> <span class="pre">hectofarad&lt;T&gt;,</span> <span class="pre">kilofarad&lt;T&gt;,</span> <span class="pre">megafarad&lt;T&gt;,</span> <span class="pre">gigafarad&lt;T&gt;,</span> <span class="pre">terafarad&lt;T&gt;,</span> <span class="pre">petafarad&lt;T&gt;,</span> <span class="pre">exafarad&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_aF,</span> <span class="pre">_fF,</span> <span class="pre">_pF,</span> <span class="pre">_nF,</span> <span class="pre">_uF,</span> <span class="pre">_mF,</span> <span class="pre">_F,</span> <span class="pre">_kF,</span> <span class="pre">_MF,</span> <span class="pre">_GF,</span> <span class="pre">_TF,</span> <span class="pre">_PF,</span> <span class="pre">_EF</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="inductance">
+<h3>Inductance<a class="headerlink" href="#inductance" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id35">
+<h4>SI units<a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">attohenry&lt;T&gt;,</span> <span class="pre">femtohenry&lt;T&gt;,</span> <span class="pre">picohenry&lt;T&gt;,</span> <span class="pre">nanohenry&lt;T&gt;,</span> <span class="pre">microhenry&lt;T&gt;,</span> <span class="pre">millihenry&lt;T&gt;,</span> <span class="pre">centihenry&lt;T&gt;,</span> <span class="pre">decihenry&lt;T&gt;,</span> <span class="pre">henry&lt;T&gt;,</span> <span class="pre">decahenry&lt;T&gt;,</span> <span class="pre">hectohenry&lt;T&gt;,</span> <span class="pre">kilohenry&lt;T&gt;,</span> <span class="pre">megahenry&lt;T&gt;,</span> <span class="pre">gigahenry&lt;T&gt;,</span> <span class="pre">terahenry&lt;T&gt;,</span> <span class="pre">petahenry&lt;T&gt;,</span> <span class="pre">exahenry&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_aH,</span> <span class="pre">_fH,</span> <span class="pre">_pH,</span> <span class="pre">_nH,</span> <span class="pre">_uH,</span> <span class="pre">_mH,</span> <span class="pre">_H,</span> <span class="pre">_kH,</span> <span class="pre">_MH,</span> <span class="pre">_GH,</span> <span class="pre">_TH,</span> <span class="pre">_PH,</span> <span class="pre">_EH</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="magnetic-flux-density">
+<h3>Magnetic flux density<a class="headerlink" href="#magnetic-flux-density" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id36">
+<h4>SI units<a class="headerlink" href="#id36" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">attotesla&lt;T&gt;,</span> <span class="pre">femtotesla&lt;T&gt;,</span> <span class="pre">picotesla&lt;T&gt;,</span> <span class="pre">nanotesla&lt;T&gt;,</span> <span class="pre">microtesla&lt;T&gt;,</span> <span class="pre">millitesla&lt;T&gt;,</span> <span class="pre">centitesla&lt;T&gt;,</span> <span class="pre">decitesla&lt;T&gt;,</span> <span class="pre">tesla&lt;T&gt;,</span> <span class="pre">decatesla&lt;T&gt;,</span> <span class="pre">hectotesla&lt;T&gt;,</span> <span class="pre">kilotesla&lt;T&gt;,</span> <span class="pre">megatesla&lt;T&gt;,</span> <span class="pre">gigatesla&lt;T&gt;,</span> <span class="pre">teratesla&lt;T&gt;,</span> <span class="pre">petatesla&lt;T&gt;,</span> <span class="pre">exatesla&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_aT,</span> <span class="pre">_fT,</span> <span class="pre">_pT,</span> <span class="pre">_nT,</span> <span class="pre">_uT,</span> <span class="pre">_mT,</span> <span class="pre">_T,</span> <span class="pre">_kT,</span> <span class="pre">_MT,</span> <span class="pre">_GT,</span> <span class="pre">_TT,</span> <span class="pre">_PT,</span> <span class="pre">_ET</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id37">
+<h4>Non-SI units<a class="headerlink" href="#id37" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">gauss&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_G</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="magnetic-flux">
+<h3>Magnetic flux<a class="headerlink" href="#magnetic-flux" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id38">
+<h4>SI units<a class="headerlink" href="#id38" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">attoweber&lt;T&gt;,</span> <span class="pre">femtoweber&lt;T&gt;,</span> <span class="pre">picoweber&lt;T&gt;,</span> <span class="pre">nanoweber&lt;T&gt;,</span> <span class="pre">microweber&lt;T&gt;,</span> <span class="pre">milliweber&lt;T&gt;,</span> <span class="pre">centiweber&lt;T&gt;,</span> <span class="pre">deciweber&lt;T&gt;,</span> <span class="pre">weber&lt;T&gt;,</span> <span class="pre">decaweber&lt;T&gt;,</span> <span class="pre">hectoweber&lt;T&gt;,</span> <span class="pre">kiloweber&lt;T&gt;,</span> <span class="pre">megaweber&lt;T&gt;,</span> <span class="pre">gigaweber&lt;T&gt;,</span> <span class="pre">teraweber&lt;T&gt;,</span> <span class="pre">petaweber&lt;T&gt;,</span> <span class="pre">exaweber&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_aWb,</span> <span class="pre">_fWb,</span> <span class="pre">_pWb,</span> <span class="pre">_nWb,</span> <span class="pre">_uWb,</span> <span class="pre">_mWb,</span> <span class="pre">_Wb,</span> <span class="pre">_kWb,</span> <span class="pre">_MWb,</span> <span class="pre">_GWb,</span> <span class="pre">_TWb,</span> <span class="pre">_PWb,</span> <span class="pre">_EWb</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="current-noise-density">
+<h3>Current noise density<a class="headerlink" href="#current-noise-density" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id39">
+<h4>SI units<a class="headerlink" href="#id39" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">attoampere_per_root_hertz&lt;T&gt;,</span> <span class="pre">femtoampere_per_root_hertz&lt;T&gt;,</span> <span class="pre">picoampere_per_root_hertz&lt;T&gt;,</span> <span class="pre">nanoampere_per_root_hertz&lt;T&gt;,</span> <span class="pre">microampere_per_root_hertz&lt;T&gt;,</span> <span class="pre">milliampere_per_root_hertz&lt;T&gt;,</span> <span class="pre">centiampere_per_root_hertz&lt;T&gt;,</span> <span class="pre">deciampere_per_root_hertz&lt;T&gt;,</span> <span class="pre">ampere_per_root_hertz&lt;T&gt;,</span> <span class="pre">decaampere_per_root_hertz&lt;T&gt;,</span> <span class="pre">hectoampere_per_root_hertz&lt;T&gt;,</span> <span class="pre">kiloampere_per_root_hertz&lt;T&gt;,</span> <span class="pre">megaampere_per_root_hertz&lt;T&gt;,</span> <span class="pre">gigaampere_per_root_hertz&lt;T&gt;,</span> <span class="pre">teraampere_per_root_hertz&lt;T&gt;,</span> <span class="pre">petaampere_per_root_hertz&lt;T&gt;,</span> <span class="pre">exaampere_per_root_hertz&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_aA_per_rtHz,</span> <span class="pre">_fA_per_rtHz,</span> <span class="pre">_pA_per_rtHz,</span> <span class="pre">_nA_per_rtHz,</span> <span class="pre">_uA_per_rtHz,</span> <span class="pre">_mA_per_rtHz,</span> <span class="pre">_A_per_rtHz,</span> <span class="pre">_kA_per_rtHz,</span> <span class="pre">_MA_per_rtHz,</span> <span class="pre">_GA_per_rtHz,</span> <span class="pre">_TA_per_rtHz,</span> <span class="pre">_PA_per_rtHz,</span> <span class="pre">_EA_per_rtHz</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="voltage-noise-density">
+<h3>Voltage noise density<a class="headerlink" href="#voltage-noise-density" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id40">
+<h4>SI units<a class="headerlink" href="#id40" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">attovolt_per_root_hertz&lt;T&gt;,</span> <span class="pre">femtovolt_per_root_hertz&lt;T&gt;,</span> <span class="pre">picovolt_per_root_hertz&lt;T&gt;,</span> <span class="pre">nanovolt_per_root_hertz&lt;T&gt;,</span> <span class="pre">microvolt_per_root_hertz&lt;T&gt;,</span> <span class="pre">millivolt_per_root_hertz&lt;T&gt;,</span> <span class="pre">centivolt_per_root_hertz&lt;T&gt;,</span> <span class="pre">decivolt_per_root_hertz&lt;T&gt;,</span> <span class="pre">volt_per_root_hertz&lt;T&gt;,</span> <span class="pre">decavolt_per_root_hertz&lt;T&gt;,</span> <span class="pre">hectovolt_per_root_hertz&lt;T&gt;,</span> <span class="pre">kilovolt_per_root_hertz&lt;T&gt;,</span> <span class="pre">megavolt_per_root_hertz&lt;T&gt;,</span> <span class="pre">gigavolt_per_root_hertz&lt;T&gt;,</span> <span class="pre">teravolt_per_root_hertz&lt;T&gt;,</span> <span class="pre">petavolt_per_root_hertz&lt;T&gt;,</span> <span class="pre">exavolt_per_root_hertz&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_aV_per_rtHz,</span> <span class="pre">_fV_per_rtHz,</span> <span class="pre">_pV_per_rtHz,</span> <span class="pre">_nV_per_rtHz,</span> <span class="pre">_uV_per_rtHz,</span> <span class="pre">_mV_per_rtHz,</span> <span class="pre">_V_per_rtHz,</span> <span class="pre">_kV_per_rtHz,</span> <span class="pre">_MV_per_rtHz,</span> <span class="pre">_GV_per_rtHz,</span> <span class="pre">_TV_per_rtHz,</span> <span class="pre">_PV_per_rtHz,</span> <span class="pre">_EV_per_rtHz</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="catalytic-activity">
+<h3>Catalytic activity<a class="headerlink" href="#catalytic-activity" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id41">
+<h4>SI units<a class="headerlink" href="#id41" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">attokatal&lt;T&gt;,</span> <span class="pre">femtokatal&lt;T&gt;,</span> <span class="pre">picokatal&lt;T&gt;,</span> <span class="pre">nanokatal&lt;T&gt;,</span> <span class="pre">microkatal&lt;T&gt;,</span> <span class="pre">millikatal&lt;T&gt;,</span> <span class="pre">centikatal&lt;T&gt;,</span> <span class="pre">decikatal&lt;T&gt;,</span> <span class="pre">katal&lt;T&gt;,</span> <span class="pre">decakatal&lt;T&gt;,</span> <span class="pre">hectokatal&lt;T&gt;,</span> <span class="pre">kilokatal&lt;T&gt;,</span> <span class="pre">megakatal&lt;T&gt;,</span> <span class="pre">gigakatal&lt;T&gt;,</span> <span class="pre">terakatal&lt;T&gt;,</span> <span class="pre">petakatal&lt;T&gt;,</span> <span class="pre">exakatal&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_akat,</span> <span class="pre">_fkat,</span> <span class="pre">_pkat,</span> <span class="pre">_nkat,</span> <span class="pre">_ukat,</span> <span class="pre">_mkat,</span> <span class="pre">_kat,</span> <span class="pre">_kkat,</span> <span class="pre">_Mkat,</span> <span class="pre">_Gkat,</span> <span class="pre">_Tkat,</span> <span class="pre">_Pkat,</span> <span class="pre">_Ekat</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id42">
+<h4>Non-SI units<a class="headerlink" href="#id42" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">enzyme_unit&lt;T&gt;</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="luminous-flux">
+<h3>Luminous flux<a class="headerlink" href="#luminous-flux" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id43">
+<h4>SI units<a class="headerlink" href="#id43" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">attolumen&lt;T&gt;,</span> <span class="pre">femtolumen&lt;T&gt;,</span> <span class="pre">picolumen&lt;T&gt;,</span> <span class="pre">nanolumen&lt;T&gt;,</span> <span class="pre">microlumen&lt;T&gt;,</span> <span class="pre">millilumen&lt;T&gt;,</span> <span class="pre">centilumen&lt;T&gt;,</span> <span class="pre">decilumen&lt;T&gt;,</span> <span class="pre">lumen&lt;T&gt;,</span> <span class="pre">decalumen&lt;T&gt;,</span> <span class="pre">hectolumen&lt;T&gt;,</span> <span class="pre">kilolumen&lt;T&gt;,</span> <span class="pre">megalumen&lt;T&gt;,</span> <span class="pre">gigalumen&lt;T&gt;,</span> <span class="pre">teralumen&lt;T&gt;,</span> <span class="pre">petalumen&lt;T&gt;,</span> <span class="pre">exalumen&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_alm,</span> <span class="pre">_flm,</span> <span class="pre">_plm,</span> <span class="pre">_nlm,</span> <span class="pre">_ulm,</span> <span class="pre">_mlm,</span> <span class="pre">_lm,</span> <span class="pre">_klm,</span> <span class="pre">_Mlm,</span> <span class="pre">_Glm,</span> <span class="pre">_Tlm,</span> <span class="pre">_Plm,</span> <span class="pre">_Elm</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="illuminance">
+<h3>Illuminance<a class="headerlink" href="#illuminance" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id44">
+<h4>SI units<a class="headerlink" href="#id44" title="Permalink to this headline">¶</a></h4>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Classes:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">attolux&lt;T&gt;,</span> <span class="pre">femtolux&lt;T&gt;,</span> <span class="pre">picolux&lt;T&gt;,</span> <span class="pre">nanolux&lt;T&gt;,</span> <span class="pre">microlux&lt;T&gt;,</span> <span class="pre">millilux&lt;T&gt;,</span> <span class="pre">centilux&lt;T&gt;,</span> <span class="pre">decilux&lt;T&gt;,</span> <span class="pre">lux&lt;T&gt;,</span> <span class="pre">decalux&lt;T&gt;,</span> <span class="pre">hectolux&lt;T&gt;,</span> <span class="pre">kilolux&lt;T&gt;,</span> <span class="pre">megalux&lt;T&gt;,</span> <span class="pre">gigalux&lt;T&gt;,</span> <span class="pre">teralux&lt;T&gt;,</span> <span class="pre">petalux&lt;T&gt;,</span> <span class="pre">exalux&lt;T&gt;</span></code>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Literals:</th><td class="field-body"><code class="code docutils literal notranslate"><span class="pre">_alx,</span> <span class="pre">_flx,</span> <span class="pre">_plx,</span> <span class="pre">_nlx,</span> <span class="pre">_ulx,</span> <span class="pre">_mlx,</span> <span class="pre">_lx,</span> <span class="pre">_klx,</span> <span class="pre">_Mlx,</span> <span class="pre">_Glx,</span> <span class="pre">_Tlx,</span> <span class="pre">_Plx,</span> <span class="pre">_Elx</span></code>.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2018-2019, T. Vanderbruggen.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

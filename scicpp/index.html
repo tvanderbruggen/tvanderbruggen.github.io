@@ -11,7 +11,6 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -72,12 +71,8 @@
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">SciCpp’s documentation</a><ul>
 <li><a class="reference internal" href="#modules">Modules:</a></li>
-<li><a class="reference internal" href="#introduction">Introduction</a><ul>
-<li><a class="reference internal" href="#array-generation">Array generation</a></li>
-<li><a class="reference internal" href="#using-arrays">Using arrays</a></li>
-<li><a class="reference internal" href="#shoudl-i-use-a-fixed-size-or-a-dynamic-array">Shoudl I use a fixed size or a dynamic array ?</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#example">Example</a></li>
 </ul>
 </li>
 </ul>
@@ -125,14 +120,15 @@
       
   <div class="section" id="scicpp-s-documentation">
 <h1>SciCpp’s documentation<a class="headerlink" href="#scicpp-s-documentation" title="Permalink to this headline">¶</a></h1>
-<p>SciCpp has for objective to provide an implementation of the <a class="reference external" href="https://scipy.org/">SciPy</a>
-functions for C++ 1D array types: <code class="docutils literal notranslate"><span class="pre">std::array</span></code> and <code class="docutils literal notranslate"><span class="pre">std::vector</span></code>.</p>
+<p>SciCpp is a data and signal processing C++ library.</p>
+<p>SciCpp objective is to follow the <a class="reference external" href="https://scipy.org/">SciPy</a> API while using standard C++
+containers (<code class="docutils literal notranslate"><span class="pre">std::array</span></code> and <code class="docutils literal notranslate"><span class="pre">std::vector</span></code>) whenever possible.</p>
 <p>SciCpp is a lightweight header only library.
 Its only dependence is the <a class="reference external" href="http://eigen.tuxfamily.org/index.php?title=Main_Page">Eigen</a>
 linear algebra library, which is also header only.</p>
 <p>SciCpp uses the C++-17 standard.
 It is tested with the GCC and Clang compilers under Linux.</p>
-<p>SciCpp is released under the MIT licence.</p>
+<p>SciCpp is released under the MIT licence and <a class="reference external" href="https://github.com/tvanderbruggen/SciCpp">sources are available on Github</a>.</p>
 <div class="section" id="modules">
 <h2>Modules:<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
@@ -140,11 +136,15 @@ It is tested with the GCC and Clang compilers under Linux.</p>
 <li class="toctree-l1"><a class="reference internal" href="core.html">core</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="core.html#mathematical-functions">Mathematical functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core.html#arithmetic-operators">Arithmetic operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core.html#comparison-and-logical">Comparison and Logical</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core.html#ranges">Ranges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core.html#create-arrays-from-existing-data">Create arrays from existing data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core.html#sums-products-differences">Sums, products, differences</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core.html#comparisons">Comparisons</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core.html#random">Random</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core.html#statistics">Statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core.html#units">Units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core.html#masking">Masking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core.html#functional-programming">Functional programming</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core.html#printing">Printing</a></li>
 </ul>
@@ -183,55 +183,74 @@ This is especially the case for embedded systems, where the CPU and/or
 memory resources may be too limited for the Python runtime.</p>
 <p>SciCpp ambitions to facilitate the transition from
 SciPy to C++ implementation. Therefore, SciCpp goal is
-to follow SciPy in terms of functions naming and behavior,
+to mimic the SciPy API in terms of functions naming and behavior,
 to avoid surprises in the transition process.</p>
-<div class="section" id="array-generation">
-<h3>Array generation<a class="headerlink" href="#array-generation" title="Permalink to this headline">¶</a></h3>
-<p>Size related parameters are template parameters for <code class="docutils literal notranslate"><span class="pre">std::array</span></code>
-and function parameters for <code class="docutils literal notranslate"><span class="pre">std::vector</span></code>.
-For example:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Generate fixed size arrays (std::array):</span>
-<span class="c1">//     The fixed array size (5) is specified as the template parameter</span>
-<span class="k">auto</span> <span class="n">a</span> <span class="o">=</span> <span class="n">scicpp</span><span class="o">::</span><span class="n">linspace</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span> <span class="mi">5</span><span class="o">&gt;</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">10.</span><span class="p">);</span>
-<span class="k">auto</span> <span class="n">a</span> <span class="o">=</span> <span class="n">scicpp</span><span class="o">::</span><span class="n">rand</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span> <span class="mi">5</span><span class="o">&gt;</span><span class="p">();</span>
-<span class="k">auto</span> <span class="n">a</span> <span class="o">=</span> <span class="n">scicpp</span><span class="o">::</span><span class="n">signal</span><span class="o">::</span><span class="n">hann</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span> <span class="mi">5</span><span class="o">&gt;</span><span class="p">();</span>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>This example load and exploits some real world data.
+Data are <a class="reference external" href="https://www.qld.gov.au/environment/coasts-waterways/beach/monitoring">wave parameters (height, period, …) measured by a buoy</a>.</p>
+<p>It presents how SciCpp can be used to load data from a CSV file, to clean up the data, and to extract information.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;scicpp/core.hpp&gt;</span><span class="cp"></span>
 
-<span class="c1">// Generate dynamic size arrays (std::vector):</span>
-<span class="c1">//     The dynamic array size (5) is specified as the function parameter</span>
-<span class="k">auto</span> <span class="n">v</span> <span class="o">=</span> <span class="n">scicpp</span><span class="o">::</span><span class="n">linspace</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">10.</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
-<span class="k">auto</span> <span class="n">v</span> <span class="o">=</span> <span class="n">scicpp</span><span class="o">::</span><span class="n">rand</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
-<span class="k">auto</span> <span class="n">v</span> <span class="o">=</span> <span class="n">scicpp</span><span class="o">::</span><span class="n">signal</span><span class="o">::</span><span class="n">hann</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+<span class="k">namespace</span> <span class="n">sci</span> <span class="o">=</span> <span class="n">scicpp</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">sci</span><span class="o">::</span><span class="n">operators</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">sci</span><span class="o">::</span><span class="n">units</span><span class="o">::</span><span class="n">literals</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// -----------------------------------------------------------------------------</span>
+    <span class="c1">// Load and clean-up data</span>
+    <span class="c1">// -----------------------------------------------------------------------------</span>
+
+    <span class="c1">// The data fields are defined here:</span>
+    <span class="c1">// https://www.qld.gov.au/environment/coasts-waterways/beach/monitoring/waves-glossary#wave-height</span>
+    <span class="c1">//</span>
+    <span class="c1">// From these definitions, we define the data types for each column</span>
+    <span class="k">using</span> <span class="n">Hsig</span> <span class="o">=</span> <span class="n">sci</span><span class="o">::</span><span class="n">units</span><span class="o">::</span><span class="n">meter</span><span class="o">&lt;&gt;</span><span class="p">;</span>  <span class="c1">// Significant wave height</span>
+    <span class="k">using</span> <span class="n">Hmax</span> <span class="o">=</span> <span class="n">sci</span><span class="o">::</span><span class="n">units</span><span class="o">::</span><span class="n">meter</span><span class="o">&lt;&gt;</span><span class="p">;</span>  <span class="c1">// Highest single wave height</span>
+    <span class="k">using</span> <span class="n">Tz</span> <span class="o">=</span> <span class="n">sci</span><span class="o">::</span><span class="n">units</span><span class="o">::</span><span class="n">second</span><span class="o">&lt;&gt;</span><span class="p">;</span>   <span class="c1">// Average of the wave periods</span>
+    <span class="k">using</span> <span class="n">Tp</span> <span class="o">=</span> <span class="n">sci</span><span class="o">::</span><span class="n">units</span><span class="o">::</span><span class="n">second</span><span class="o">&lt;&gt;</span><span class="p">;</span>   <span class="c1">// Period of most energetic waves</span>
+    <span class="k">using</span> <span class="n">SST</span> <span class="o">=</span> <span class="n">sci</span><span class="o">::</span><span class="n">units</span><span class="o">::</span><span class="n">celsius</span><span class="o">&lt;&gt;</span><span class="p">;</span> <span class="c1">// Sea surface temperature</span>
+
+    <span class="c1">// In the dataset invalid values are represented by -99.9,</span>
+    <span class="c1">// but only positive values are valid.</span>
+    <span class="c1">// So we use filters to keep only valid data.</span>
+
+    <span class="k">auto</span> <span class="p">[</span><span class="n">hsig</span><span class="p">,</span> <span class="n">hmax</span><span class="p">,</span> <span class="n">tz</span><span class="p">,</span> <span class="n">tp</span><span class="p">,</span> <span class="n">sst</span><span class="p">]</span> <span class="o">=</span>
+        <span class="n">sci</span><span class="o">::</span><span class="n">TxtLoader</span><span class="o">&lt;</span><span class="n">Hsig</span><span class="p">,</span> <span class="n">Hmax</span><span class="p">,</span> <span class="n">Tz</span><span class="p">,</span> <span class="n">Tp</span><span class="p">,</span> <span class="n">SST</span><span class="o">&gt;</span><span class="p">()</span>
+            <span class="p">.</span><span class="n">delimiter</span><span class="p">(</span><span class="sc">&#39;,&#39;</span><span class="p">)</span>
+            <span class="p">.</span><span class="n">skiprows</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            <span class="p">.</span><span class="n">usecols</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+            <span class="p">.</span><span class="n">filters</span><span class="p">(</span>
+                <span class="p">{{</span><span class="mi">1</span><span class="p">,</span> <span class="p">[](</span><span class="k">auto</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">sci</span><span class="o">::</span><span class="n">io</span><span class="o">::</span><span class="n">cast</span><span class="o">&lt;</span><span class="n">Hsig</span><span class="o">&gt;</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="n">_m</span><span class="p">;</span> <span class="p">}},</span>
+                <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="p">[](</span><span class="k">auto</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">sci</span><span class="o">::</span><span class="n">io</span><span class="o">::</span><span class="n">cast</span><span class="o">&lt;</span><span class="n">Hmax</span><span class="o">&gt;</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="n">_m</span><span class="p">;</span> <span class="p">}},</span>
+                <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="p">[](</span><span class="k">auto</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">sci</span><span class="o">::</span><span class="n">io</span><span class="o">::</span><span class="n">cast</span><span class="o">&lt;</span><span class="n">Tz</span><span class="o">&gt;</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="n">_s</span><span class="p">;</span> <span class="p">}},</span>
+                <span class="p">{</span><span class="mi">4</span><span class="p">,</span> <span class="p">[](</span><span class="k">auto</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">sci</span><span class="o">::</span><span class="n">io</span><span class="o">::</span><span class="n">cast</span><span class="o">&lt;</span><span class="n">Tp</span><span class="o">&gt;</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="n">_s</span><span class="p">;</span> <span class="p">}},</span>
+                <span class="p">{</span><span class="mi">6</span><span class="p">,</span> <span class="p">[](</span><span class="k">auto</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">sci</span><span class="o">::</span><span class="n">io</span><span class="o">::</span><span class="n">cast</span><span class="o">&lt;</span><span class="n">SST</span><span class="o">&gt;</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="n">_degC</span><span class="p">;</span> <span class="p">}}})</span>
+            <span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="s">&quot;examples/townsville_2019-01-01t00_00-2019-06-30t23_30.csv&quot;</span><span class="p">);</span>
+
+    <span class="c1">// -----------------------------------------------------------------------------</span>
+    <span class="c1">// Explore data</span>
+    <span class="c1">// -----------------------------------------------------------------------------</span>
+
+    <span class="c1">// Some simple stats:</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Highest wave is %.2f m</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">sci</span><span class="o">::</span><span class="n">stats</span><span class="o">::</span><span class="n">amax</span><span class="p">(</span><span class="n">hmax</span><span class="p">).</span><span class="n">value</span><span class="p">());</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Longest period is %.2f s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">sci</span><span class="o">::</span><span class="n">stats</span><span class="o">::</span><span class="n">amax</span><span class="p">(</span><span class="n">tz</span><span class="p">).</span><span class="n">value</span><span class="p">());</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Average sea surface temperature is %.2f deg. C</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+           <span class="n">sci</span><span class="o">::</span><span class="n">stats</span><span class="o">::</span><span class="n">mean</span><span class="p">(</span><span class="n">sst</span><span class="p">).</span><span class="n">value</span><span class="p">());</span>
+
+    <span class="c1">// Wave power (per meter of wavefront)</span>
+    <span class="c1">// https://en.wikipedia.org/wiki/Wave_power</span>
+    <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">rho</span> <span class="o">=</span> <span class="mi">1000</span><span class="n">_kg</span> <span class="o">/</span> <span class="mi">1</span><span class="n">_m3</span><span class="p">;</span> <span class="c1">// Water density</span>
+    <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span><span class="n">_m_per_s2</span><span class="p">;</span>    <span class="c1">// Acceleration by gravity</span>
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">P</span> <span class="o">=</span> <span class="p">(</span><span class="n">rho</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="n">g</span> <span class="o">/</span> <span class="p">(</span><span class="mi">64</span> <span class="o">*</span> <span class="n">sci</span><span class="o">::</span><span class="n">pi</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">))</span> <span class="o">*</span> <span class="n">hsig</span> <span class="o">*</span> <span class="n">hsig</span> <span class="o">*</span> <span class="n">tz</span><span class="p">;</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Average wave power %.2f W/m</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">sci</span><span class="o">::</span><span class="n">stats</span><span class="o">::</span><span class="n">mean</span><span class="p">(</span><span class="n">P</span><span class="p">).</span><span class="n">value</span><span class="p">());</span>
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">E</span> <span class="o">=</span> <span class="p">(</span><span class="n">rho</span> <span class="o">*</span> <span class="n">g</span> <span class="o">/</span> <span class="mf">16.</span><span class="p">)</span> <span class="o">*</span> <span class="n">hsig</span> <span class="o">*</span> <span class="n">hsig</span><span class="p">;</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Average wave energy density %.2f J/m^2</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+           <span class="n">sci</span><span class="o">::</span><span class="n">stats</span><span class="o">::</span><span class="n">mean</span><span class="p">(</span><span class="n">E</span><span class="p">).</span><span class="n">value</span><span class="p">());</span>
+<span class="p">}</span>
 </pre></div>
-</div>
-</div>
-<div class="section" id="using-arrays">
-<h3>Using arrays<a class="headerlink" href="#using-arrays" title="Permalink to this headline">¶</a></h3>
-<p>Most functions accept both fixed sized (<code class="docutils literal notranslate"><span class="pre">std::array</span></code>)
-and dynamic size (<code class="docutils literal notranslate"><span class="pre">std::vector</span></code>) arrays:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span> <span class="n">a</span> <span class="o">=</span> <span class="n">scicpp</span><span class="o">::</span><span class="n">rand</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span> <span class="mi">5</span><span class="o">&gt;</span><span class="p">();</span> <span class="c1">// std::array</span>
-<span class="k">auto</span> <span class="n">v</span> <span class="o">=</span> <span class="n">scicpp</span><span class="o">::</span><span class="n">rand</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>   <span class="c1">// std::vector</span>
-
-<span class="c1">// No size related parameter: same call</span>
-<span class="kt">double</span> <span class="n">m</span> <span class="o">=</span> <span class="n">scicpp</span><span class="o">::</span><span class="n">mean</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
-<span class="kt">double</span> <span class="n">m</span> <span class="o">=</span> <span class="n">scicpp</span><span class="o">::</span><span class="n">mean</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
-
-<span class="k">auto</span> <span class="n">c</span> <span class="o">=</span> <span class="n">scicpp</span><span class="o">::</span><span class="n">cumsum</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
-<span class="k">auto</span> <span class="n">c</span> <span class="o">=</span> <span class="n">scicpp</span><span class="o">::</span><span class="n">cumsum</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
-
-<span class="c1">// A size related parameter:</span>
-<span class="c1">//     Here, the returned array size depends on the number of differentiations</span>
-<span class="k">auto</span> <span class="n">d</span> <span class="o">=</span> <span class="n">scicpp</span><span class="o">::</span><span class="n">diff</span><span class="o">&lt;</span><span class="mi">2</span><span class="o">&gt;</span><span class="p">(</span><span class="n">a</span><span class="p">);</span> <span class="c1">// Fixed template parameter</span>
-<span class="k">auto</span> <span class="n">d</span> <span class="o">=</span> <span class="n">scicpp</span><span class="o">::</span><span class="n">diff</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// Dynamic function parameter</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="shoudl-i-use-a-fixed-size-or-a-dynamic-array">
-<h3>Shoudl I use a fixed size or a dynamic array ?<a class="headerlink" href="#shoudl-i-use-a-fixed-size-or-a-dynamic-array" title="Permalink to this headline">¶</a></h3>
-<p>Well, basicaly if you know the size at compile time use a <code class="docutils literal notranslate"><span class="pre">std::array</span></code> else use a <code class="docutils literal notranslate"><span class="pre">std::vector</span></code>.</p>
-<p>Sometimes the size is known at compile but it is large (the exact size depends on your system and on
-your workload but let’s say a few 1000s), then you might want to prefer to use a <code class="docutils literal notranslate"><span class="pre">`std::vector`</span></code>.</p>
-<p>Finally, <code class="docutils literal notranslate"><span class="pre">`std::vector`</span></code> is a resizable array, so it is well suited for algorithms requiring dynamical
-resizing of the data container (ex. <span class="xref std std-ref">filter</span>).</p>
 </div>
 </div>
 </div>
@@ -248,7 +267,7 @@ resizing of the data container (ex. <span class="xref std std-ref">filter</span>
       
     </p>
     <p>
-        &copy; Copyright 2018, T. Vanderbruggen.<br/>
+        &copy; Copyright 2018-2019, T. Vanderbruggen.<br/>
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.<br/>
     </p>
   </div>

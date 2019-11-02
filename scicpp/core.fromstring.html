@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>scicpp::fromstring &#8212; SciCpp 0 documentation</title>
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          SciCpp</a>
+        <span class="navbar-text navbar-version pull-left"><b>0</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Modules <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="core.html">core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linalg.html">linalg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polynomial.html">polynomial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="signal.html">signal</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">scicpp::fromstring</a><ul>
+<li><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="_sources/core.fromstring.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="scicpp-fromstring">
+<span id="core-fromstring"></span><h1>scicpp::fromstring<a class="headerlink" href="#scicpp-fromstring" title="Permalink to this headline">¶</a></h1>
+<p>Defined in header &lt;scicpp/core.hpp&gt;</p>
+<p>Load a vector from a string.</p>
+<hr class="docutils" />
+<dl class="function">
+<dt id="_CPPv3I0E10fromstringPKccRK14ConvertersDict">
+<span id="_CPPv2I0E10fromstringPKccRK14ConvertersDict"></span>template&lt;typename <code class="descname">DataType</code> = double&gt;<br /><a class="reference internal" href="core.stats.std.html#_CPPv3I0_NSt6size_tEEStRKNSt5arrayI1T1NEE" title="std">std</a>::vector&lt;<a class="reference internal" href="#_CPPv3I0E10fromstringPKccRK14ConvertersDict" title="fromstring::DataType">DataType</a>&gt; <code class="descname">fromstring</code><span class="sig-paren">(</span><em class="property">const</em> char *<em>str</em>, char <em>sep</em>, <em class="property">const</em> ConvertersDict &amp;<em>converters</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3I0E10fromstringPKccRK14ConvertersDict" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv3I0E10fromstringRKNSt6stringEcRK14ConvertersDict">
+<span id="_CPPv2I0E10fromstringRKNSt6stringEcRK14ConvertersDict"></span>template&lt;typename <code class="descname">DataType</code> = double&gt;<br /><a class="reference internal" href="core.stats.std.html#_CPPv3I0_NSt6size_tEEStRKNSt5arrayI1T1NEE" title="std">std</a>::vector&lt;<a class="reference internal" href="#_CPPv3I0E10fromstringPKccRK14ConvertersDict" title="fromstring::DataType">DataType</a>&gt; <code class="descname">fromstring</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="core.stats.std.html#_CPPv3I0_NSt6size_tEEStRKNSt5arrayI1T1NEE" title="std">std</a>::string &amp;<em>str</em>, char <em>sep</em>, <em class="property">const</em> ConvertersDict &amp;<em>converters</em> = {}<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3I0E10fromstringRKNSt6stringEcRK14ConvertersDict" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<p>The template argument <code class="code docutils literal notranslate"><span class="pre">DataType</span></code> is the type of the loaded data (by default <code class="code docutils literal notranslate"><span class="pre">double</span></code>).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+<tr class="field-even field"><th class="field-name">str:</th><td class="field-body">The string containing the data.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">sep:</th><td class="field-body">The character separating the data.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">converters:</th><td class="field-body">(Optional) A dictionary mapping column number to a function that will parse the column string into the desired value.</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;cstdlib&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;scicpp/core.hpp&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">v1</span> <span class="o">=</span> <span class="n">scicpp</span><span class="o">::</span><span class="n">fromstring</span><span class="p">(</span><span class="s">&quot;42, 89, 66&quot;</span><span class="p">,</span> <span class="sc">&#39;,&#39;</span><span class="p">);</span>
+    <span class="n">scicpp</span><span class="o">::</span><span class="n">print</span><span class="p">(</span><span class="n">v1</span><span class="p">);</span> <span class="c1">// [42.0, 89.0, 66.0]</span>
+
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">v2</span> <span class="o">=</span> <span class="n">scicpp</span><span class="o">::</span><span class="n">fromstring</span><span class="p">(</span><span class="s">&quot;42 89 66&quot;</span><span class="p">,</span> <span class="sc">&#39; &#39;</span><span class="p">);</span>
+    <span class="n">scicpp</span><span class="o">::</span><span class="n">print</span><span class="p">(</span><span class="n">v2</span><span class="p">);</span> <span class="c1">// [42.0, 89.0, 66.0]</span>
+
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">v3</span> <span class="o">=</span> <span class="n">scicpp</span><span class="o">::</span><span class="n">fromstring</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span>
+        <span class="s">&quot;42 89 66&quot;</span><span class="p">,</span>
+        <span class="sc">&#39; &#39;</span><span class="p">,</span>
+        <span class="p">{{</span><span class="mi">0</span><span class="p">,</span> <span class="p">[](</span><span class="k">auto</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="o">-</span><span class="n">std</span><span class="o">::</span><span class="n">atoi</span><span class="p">(</span><span class="n">x</span><span class="p">);</span> <span class="p">}},</span>
+         <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="p">[](</span><span class="k">auto</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">10</span> <span class="o">-</span> <span class="n">std</span><span class="o">::</span><span class="n">atoi</span><span class="p">(</span><span class="n">x</span><span class="p">);</span> <span class="p">}}});</span>
+    <span class="n">scicpp</span><span class="o">::</span><span class="n">print</span><span class="p">(</span><span class="n">v3</span><span class="p">);</span> <span class="c1">// [-42, -79, 66]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>See also</dt>
+<dd><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.fromstring.html#numpy.fromstring">Scipy documentation</a></dd>
+</dl>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2018-2019, T. Vanderbruggen.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

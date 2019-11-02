@@ -4,7 +4,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>scicpp::linalg::to_eigen_matrix &#8212; SciCpp 0 documentation</title>
+    <title>scicpp::array_equal &#8212; SciCpp 0 documentation</title>
     <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -68,7 +68,7 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">scicpp::linalg::to_eigen_matrix</a></li>
+<li><a class="reference internal" href="#">scicpp::array_equal</a></li>
 </ul>
 </ul>
 </li>
@@ -84,7 +84,7 @@
             
               <li class="hidden-sm">
 <div id="sourcelink">
-  <a href="_sources/linalg.to_eigen_matrix.rst.txt"
+  <a href="_sources/core.array_equal.rst.txt"
      rel="nofollow">Source</a>
 </div></li>
             
@@ -108,26 +108,16 @@
   <div class="row">
     <div class="col-md-12 content">
       
-  <div class="section" id="scicpp-linalg-to-eigen-matrix">
-<span id="linalg-to-eigen-matrix"></span><h1>scicpp::linalg::to_eigen_matrix<a class="headerlink" href="#scicpp-linalg-to-eigen-matrix" title="Permalink to this headline">¶</a></h1>
-<p>Defined in header &lt;scicpp/linalg.hpp&gt;</p>
-<p>Convert a standard container to an Eigen::Matrix.</p>
+  <div class="section" id="scicpp-array-equal">
+<span id="core-array-equal"></span><h1>scicpp::array_equal<a class="headerlink" href="#scicpp-array-equal" title="Permalink to this headline">¶</a></h1>
+<p>Defined in header &lt;scicpp/core.hpp&gt;</p>
+<p>True if two arrays have the same size and elements (strict equality).</p>
 <hr class="docutils" />
 <dl class="function">
-<dt id="_CPPv3I0E15to_eigen_matrixRKNSt6vectorI1TEEi">
-<span id="_CPPv2I0E15to_eigen_matrixRKNSt6vectorI1TEEi"></span>template&lt;typename <code class="descname">T</code>&gt;<br />Eigen::Matrix&lt;<a class="reference internal" href="#_CPPv3I0E15to_eigen_matrixRKNSt6vectorI1TEEi" title="to_eigen_matrix::T">T</a>, Eigen::Dynamic, 1&gt; <code class="descname">to_eigen_matrix</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="core.stats.std.html#_CPPv3I0_NSt6size_tEEStRKNSt5arrayI1T1NEE" title="std">std</a>::vector&lt;<a class="reference internal" href="#_CPPv3I0E15to_eigen_matrixRKNSt6vectorI1TEEi" title="to_eigen_matrix::T">T</a>&gt; &amp;<em>v</em>, int <em>size</em> = -1<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3I0E15to_eigen_matrixRKNSt6vectorI1TEEi" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3I0E11array_equalRK5ArrayRK5Array">
+<span id="_CPPv2I0E11array_equalRK5ArrayRK5Array"></span>template&lt;class <code class="descname">Array</code>&gt;<br />bool <code class="descname">array_equal</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv3I0E11array_equalRK5ArrayRK5Array" title="array_equal::Array">Array</a> &amp;<em>f1</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv3I0E11array_equalRK5ArrayRK5Array" title="array_equal::Array">Array</a> &amp;<em>f2</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3I0E11array_equalRK5ArrayRK5Array" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
-<p>Convert a std::vector to an Eigen::Matrix of dynamic size.</p>
-<p>If a size parameter is specified then the output vector is cropped.</p>
-<hr class="docutils" />
-<dl class="function">
-<dt id="_CPPv3I_i0_NSt6size_tEE15to_eigen_matrixRKNSt5arrayI1T1NEE">
-<span id="_CPPv2I_i0_NSt6size_tEE15to_eigen_matrixRKNSt5arrayI1T1NEE"></span>template&lt;int <code class="descname">size</code> = -1, typename <code class="descname">T</code>, <a class="reference internal" href="core.stats.std.html#_CPPv3I0_NSt6size_tEEStRKNSt5arrayI1T1NEE" title="std">std</a>::size_t <code class="descname">N</code>&gt;<br />Eigen::Matrix&lt;<a class="reference internal" href="#_CPPv3I_i0_NSt6size_tEE15to_eigen_matrixRKNSt5arrayI1T1NEE" title="to_eigen_matrix::T">T</a>, M, 1&gt; <code class="descname">to_eigen_matrix</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="core.stats.std.html#_CPPv3I0_NSt6size_tEEStRKNSt5arrayI1T1NEE" title="std">std</a>::array&lt;<a class="reference internal" href="#_CPPv3I_i0_NSt6size_tEE15to_eigen_matrixRKNSt5arrayI1T1NEE" title="to_eigen_matrix::T">T</a>, <a class="reference internal" href="#_CPPv3I_i0_NSt6size_tEE15to_eigen_matrixRKNSt5arrayI1T1NEE" title="to_eigen_matrix::N">N</a>&gt; &amp;<em>a</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3I_i0_NSt6size_tEE15to_eigen_matrixRKNSt5arrayI1T1NEE" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<p>Convert a std::array to an Eigen::Matrix of fixed size.</p>
-<p>The output size is M = N if the size template parameter is not specified, else M = size.</p>
 </div>
 
 

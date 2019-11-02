@@ -11,7 +11,6 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -83,11 +82,15 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#arithmetic-operators">Arithmetic operators</a></li>
+<li><a class="reference internal" href="#comparison-and-logical">Comparison and Logical</a></li>
 <li><a class="reference internal" href="#ranges">Ranges</a></li>
+<li><a class="reference internal" href="#create-arrays-from-existing-data">Create arrays from existing data</a></li>
 <li><a class="reference internal" href="#sums-products-differences">Sums, products, differences</a></li>
 <li><a class="reference internal" href="#comparisons">Comparisons</a></li>
 <li><a class="reference internal" href="#random">Random</a></li>
 <li><a class="reference internal" href="#statistics">Statistics</a></li>
+<li><a class="reference internal" href="#units">Units</a></li>
+<li><a class="reference internal" href="#masking">Masking</a></li>
 <li><a class="reference internal" href="#functional-programming">Functional programming</a></li>
 <li><a class="reference internal" href="#printing">Printing</a></li>
 </ul>
@@ -142,6 +145,7 @@
   <div class="section" id="core">
 <h1>core<a class="headerlink" href="#core" title="Permalink to this headline">¶</a></h1>
 <p>Core functions defined in header &lt;scicpp/core.hpp&gt;</p>
+<p><a class="reference internal" href="core.fixed_vs_variable_size_array.html#core-fixed-vs-variable-size-array"><span class="std std-ref">Quick overview comparing function calls for fixed and variable size arrays</span></a>.</p>
 <div class="section" id="mathematical-functions">
 <h2>Mathematical functions<a class="headerlink" href="#mathematical-functions" title="Permalink to this headline">¶</a></h2>
 <p>Provides vectorized versions of standard mathematical functions.</p>
@@ -185,6 +189,13 @@ but are vectorized versions of the <a class="reference external" href="https://e
 <p>The statement <code class="code docutils literal notranslate"><span class="pre">using</span> <span class="pre">namespace</span> <span class="pre">scicpp::operators</span></code> must be included in the scope where
 operators are used.</p>
 </div>
+<div class="section" id="comparison-and-logical">
+<h2>Comparison and Logical<a class="headerlink" href="#comparison-and-logical" title="Permalink to this headline">¶</a></h2>
+<p>Operators for element-wise comparison between an array and a scalar <code class="code docutils literal notranslate"><span class="pre">==</span></code>, <code class="code docutils literal notranslate"><span class="pre">!=</span></code>, <code class="code docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="code docutils literal notranslate"><span class="pre">&gt;=</span></code>, <code class="code docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="code docutils literal notranslate"><span class="pre">&lt;=</span></code>.</p>
+<p>For element-wise comparison between arrays, operators are not available because the C++ standard defines them for lexicographical comparison.
+The comparison functions (same as Numpy) can be used instead: <code class="code docutils literal notranslate"><span class="pre">equal</span></code>, <code class="code docutils literal notranslate"><span class="pre">not_equal</span></code>, <code class="code docutils literal notranslate"><span class="pre">less</span></code>, <code class="code docutils literal notranslate"><span class="pre">less_equal</span></code>, <code class="code docutils literal notranslate"><span class="pre">greater</span></code> and <code class="code docutils literal notranslate"><span class="pre">greater_equal</span></code>.</p>
+<p>Operators <code class="code docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> and <code class="code docutils literal notranslate"><span class="pre">||</span></code> are defined for element-wise logical operations.</p>
+</div>
 <div class="section" id="ranges">
 <h2>Ranges<a class="headerlink" href="#ranges" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
@@ -194,6 +205,15 @@ operators are used.</p>
 <dd>Return numbers spaced evenly on a log scale.</dd>
 <dt><a class="reference internal" href="core.arange.html#core-arange"><span class="std std-ref">arange</span></a></dt>
 <dd>Return evenly spaced values within a given interval.</dd>
+</dl>
+</div>
+<div class="section" id="create-arrays-from-existing-data">
+<h2>Create arrays from existing data<a class="headerlink" href="#create-arrays-from-existing-data" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt><a class="reference internal" href="core.fromstring.html#core-fromstring"><span class="std std-ref">fromstring</span></a></dt>
+<dd>Load a vector from a string.</dd>
+<dt><a class="reference internal" href="core.TxtLoader.html#core-txtloader"><span class="std std-ref">TxtLoader</span></a></dt>
+<dd>Load data from a character separated values text file.</dd>
 </dl>
 </div>
 <div class="section" id="sums-products-differences">
@@ -230,6 +250,8 @@ operators are used.</p>
 <dl class="docutils">
 <dt><a class="reference internal" href="core.almost_equal.html#core-almost-equal"><span class="std std-ref">almost_equal</span></a></dt>
 <dd>Compare floating points or arrays of floating points.</dd>
+<dt><a class="reference internal" href="core.array_equal.html#core-array-equal"><span class="std std-ref">array_equal</span></a></dt>
+<dd>True if two arrays have the same size and elements (strict equality).</dd>
 </dl>
 </div>
 <div class="section" id="random">
@@ -264,6 +286,26 @@ operators are used.</p>
 <dd>Compute the standard deviation.</dd>
 <dt><span class="xref std std-ref">stats::nanstd</span></dt>
 <dd>Compute the standard deviation, ignoring NaNs.</dd>
+</dl>
+</div>
+<div class="section" id="units">
+<h2>Units<a class="headerlink" href="#units" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt><a class="reference internal" href="core.units.quantity.html#core-units-quantity"><span class="std std-ref">units::quantity</span></a></dt>
+<dd>An arithmetic-like type representing a quantity.</dd>
+<dt><a class="reference internal" href="core.units.defined.quantities.html#core-units-defined-quantities"><span class="std std-ref">Quantities</span></a></dt>
+<dd>Defined quantities.</dd>
+<dt><a class="reference internal" href="core.units.defined.units.html#core-units-defined-units"><span class="std std-ref">Units</span></a></dt>
+<dd>Defined units.</dd>
+</dl>
+</div>
+<div class="section" id="masking">
+<h2>Masking<a class="headerlink" href="#masking" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt><a class="reference internal" href="core.mask.html#core-mask"><span class="std std-ref">mask</span></a></dt>
+<dd>Return a vector with masked values.</dd>
+<dt><a class="reference internal" href="core.mask_array.html#core-mask-array"><span class="std std-ref">mask_array</span></a></dt>
+<dd>Mask a vector in-place.</dd>
 </dl>
 </div>
 <div class="section" id="functional-programming">
@@ -306,7 +348,7 @@ operators are used.</p>
       
     </p>
     <p>
-        &copy; Copyright 2018, T. Vanderbruggen.<br/>
+        &copy; Copyright 2018-2019, T. Vanderbruggen.<br/>
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.<br/>
     </p>
   </div>
