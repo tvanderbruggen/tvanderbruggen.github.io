@@ -4,13 +4,14 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>scicpp::stats::std &#8212; SciCpp 0 documentation</title>
+    <title>scicpp::stats::std, nanstd, tstd &#8212; SciCpp 0 documentation</title>
     <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -35,7 +36,7 @@
         </button>
         <a class="navbar-brand" href="index.html">
           SciCpp</a>
-        <span class="navbar-text navbar-version pull-left"><b>0</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.3</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -59,34 +60,10 @@
 </ul>
 </li>
               
-                <li class="dropdown">
-  <a role="button"
-     id="dLabelLocalToc"
-     data-toggle="dropdown"
-     data-target="#"
-     href="#">Page <b class="caret"></b></a>
-  <ul class="dropdown-menu localtoc"
-      role="menu"
-      aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">scicpp::stats::std</a></li>
-</ul>
-</ul>
-</li>
-              
-            
-            
-              
-                
-              
             
             
             
             
-              <li class="hidden-sm">
-<div id="sourcelink">
-  <a href="_sources/core.stats.std.rst.txt"
-     rel="nofollow">Source</a>
-</div></li>
             
           </ul>
 
@@ -108,22 +85,40 @@
   <div class="row">
     <div class="col-md-12 content">
       
-  <div class="section" id="scicpp-stats-std">
-<span id="core-stats-std"></span><h1>scicpp::stats::std<a class="headerlink" href="#scicpp-stats-std" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="scicpp-stats-std-nanstd-tstd">
+<span id="core-stats-std"></span><h1>scicpp::stats::std, nanstd, tstd<a class="headerlink" href="#scicpp-stats-std-nanstd-tstd" title="Permalink to this headline">¶</a></h1>
 <p>Defined in header &lt;scicpp/core.hpp&gt;</p>
-<p>Compute the standard deviation.</p>
+<p>Compute the standard deviation. ddof is the <a class="reference external" href="https://en.wikipedia.org/wiki/Degrees_of_freedom_(statistics)">delta degrees of freedom</a></p>
 <hr class="docutils" />
 <dl class="function">
-<dt id="_CPPv3I0_NSt6size_tEEStRKNSt5arrayI1T1NEE">
-<span id="_CPPv2I0_NSt6size_tEEStRKNSt5arrayI1T1NEE"></span>template&lt;typename <code class="descname">T</code>, <a class="reference internal" href="#_CPPv3I0_NSt6size_tEEStRKNSt5arrayI1T1NEE" title="std">std</a>::size_t <code class="descname">N</code>&gt;<br /><em class="property">constexpr</em> <a class="reference internal" href="#_CPPv3I0_NSt6size_tEEStRKNSt5arrayI1T1NEE" title="std::T">T</a> <code class="descname">std</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv3I0_NSt6size_tEEStRKNSt5arrayI1T1NEE" title="std">std</a>::array&lt;<a class="reference internal" href="#_CPPv3I0_NSt6size_tEEStRKNSt5arrayI1T1NEE" title="std::T">T</a>, <a class="reference internal" href="#_CPPv3I0_NSt6size_tEEStRKNSt5arrayI1T1NEE" title="std::N">N</a>&gt; &amp;<em>f</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3I0_NSt6size_tEEStRKNSt5arrayI1T1NEE" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3I_i00EStRK5Array9Predicate">
+<span id="_CPPv2I_i00EStRK5Array9Predicate"></span>template&lt;int <code class="descname">ddof</code> = 0, class <code class="descname">Array</code>, class <code class="descname">Predicate</code>&gt;<br />auto <code class="descname">std</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv3I_i00EStRK5Array9Predicate" title="std::Array">Array</a> &amp;<em>f</em>, <a class="reference internal" href="#_CPPv3I_i00EStRK5Array9Predicate" title="std::Predicate">Predicate</a> <em>filter</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3I_i00EStRK5Array9Predicate" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
+<p>Compute the standard deviation of an array using only the values satisfying the filter predicate.</p>
 <hr class="docutils" />
 <dl class="function">
-<dt id="_CPPv3I0EStRKNSt6vectorI1TEE">
-<span id="_CPPv2I0EStRKNSt6vectorI1TEE"></span>template&lt;typename <code class="descname">T</code>&gt;<br /><a class="reference internal" href="#_CPPv3I0EStRKNSt6vectorI1TEE" title="std::T">T</a> <code class="descname">std</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv3I0EStRKNSt6vectorI1TEE" title="std">std</a>::vector&lt;<a class="reference internal" href="#_CPPv3I0EStRKNSt6vectorI1TEE" title="std::T">T</a>&gt; &amp;<em>f</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3I0EStRKNSt6vectorI1TEE" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3I_i0EStRK5Array">
+<span id="_CPPv2I_i0EStRK5Array"></span>template&lt;int <code class="descname">ddof</code> = 0, class <code class="descname">Array</code>&gt;<br />auto <code class="descname">std</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv3I_i0EStRK5Array" title="std::Array">Array</a> &amp;<em>f</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3I_i0EStRK5Array" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
+<p>Compute the standard deviation of an array.</p>
+<hr class="docutils" />
+<dl class="function">
+<dt id="_CPPv3I_i0E6nanstdRK5Array">
+<span id="_CPPv2I_i0E6nanstdRK5Array"></span>template&lt;int <code class="descname">ddof</code> = 0, class <code class="descname">Array</code>&gt;<br />auto <code class="descname">nanstd</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv3I_i0E6nanstdRK5Array" title="nanstd::Array">Array</a> &amp;<em>f</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3I_i0E6nanstdRK5Array" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<p>Compute the standard deviation of an array, ignoring NaNs.</p>
+<hr class="docutils" />
+<dl class="function">
+<dt id="_CPPv3I_i0E4tstdRK5ArrayRKNSt5arrayI1TXL2EEEERKNSt5arrayIbXL2EEEE">
+<span id="_CPPv2I_i0E4tstdRK5ArrayRKNSt5arrayI1TX2EEERKNSt5arrayIbX2EEE"></span>template&lt;int <code class="descname">ddof</code> = 1, class <code class="descname">Array</code>&gt;<br />auto <code class="descname">tstd</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv3I_i0E4tstdRK5ArrayRKNSt5arrayI1TXL2EEEERKNSt5arrayIbXL2EEEE" title="tstd::Array">Array</a> &amp;<em>f</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv3I_i00EStRK5Array9Predicate" title="std">std</a>::array&lt;T, 2&gt; &amp;<em>limits</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv3I_i00EStRK5Array9Predicate" title="std">std</a>::array&lt;bool, 2&gt; &amp;<em>inclusive</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3I_i0E4tstdRK5ArrayRKNSt5arrayI1TXL2EEEERKNSt5arrayIbXL2EEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<p>Compute the standard deviation of an array, ignoring values outside the given <cite>limits</cite>.
+Use the optional parameter <cite>inclusive</cite> to specify whether the limits are included (by default they are included).
+Note that by default here <cite>ddof = 1</cite>.</p>
 <dl class="docutils">
 <dt>See also</dt>
 <dd><a class="reference external" href="https://docs.scipy.org/doc/numpy-1.15.1/reference/generated/numpy.std.html#numpy.std">Scipy documentation</a></dd>
@@ -142,7 +137,7 @@
       
     </p>
     <p>
-        &copy; Copyright 2018-2019, T. Vanderbruggen.<br/>
+        &copy; Copyright 2018-2021, T. Vanderbruggen.<br/>
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.<br/>
     </p>
   </div>

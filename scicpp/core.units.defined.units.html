@@ -11,6 +11,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -35,7 +36,7 @@
         </button>
         <a class="navbar-brand" href="index.html">
           SciCpp</a>
-        <span class="navbar-text navbar-version pull-left"><b>0</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.3</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -59,185 +60,10 @@
 </ul>
 </li>
               
-                <li class="dropdown">
-  <a role="button"
-     id="dLabelLocalToc"
-     data-toggle="dropdown"
-     data-target="#"
-     href="#">Page <b class="caret"></b></a>
-  <ul class="dropdown-menu localtoc"
-      role="menu"
-      aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">Defined units</a><ul>
-<li><a class="reference internal" href="#base-units">Base units</a><ul>
-<li><a class="reference internal" href="#length">Length</a><ul>
-<li><a class="reference internal" href="#si-units">SI units</a></li>
-<li><a class="reference internal" href="#non-si-units">Non-SI units</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#time">Time</a><ul>
-<li><a class="reference internal" href="#id1">SI units</a></li>
-<li><a class="reference internal" href="#id2">Non-SI units</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#mass">Mass</a><ul>
-<li><a class="reference internal" href="#id3">SI units</a></li>
-<li><a class="reference internal" href="#id4">Non-SI units</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#electric-current">Electric current</a><ul>
-<li><a class="reference internal" href="#id5">SI units</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#temperature">Temperature</a><ul>
-<li><a class="reference internal" href="#id6">SI units</a></li>
-<li><a class="reference internal" href="#id7">Non-SI units</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#amount-of-substance">Amount of substance</a><ul>
-<li><a class="reference internal" href="#id8">SI units</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#luminous-intensity">Luminous intensity</a><ul>
-<li><a class="reference internal" href="#id9">SI units</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#planar-angle">Planar angle</a><ul>
-<li><a class="reference internal" href="#id10">SI units</a></li>
-<li><a class="reference internal" href="#id11">Non-SI units</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#solid-angle">Solid angle</a><ul>
-<li><a class="reference internal" href="#id12">SI units</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#data-information-quantity">Data/Information quantity</a><ul>
-<li><a class="reference internal" href="#id13">SI units</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#derived-units">Derived units</a><ul>
-<li><a class="reference internal" href="#speed">Speed</a><ul>
-<li><a class="reference internal" href="#id14">SI units</a></li>
-<li><a class="reference internal" href="#id15">Non-SI units</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#acceleration">Acceleration</a><ul>
-<li><a class="reference internal" href="#id16">SI units</a></li>
-<li><a class="reference internal" href="#id17">Non-SI units</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#area">Area</a><ul>
-<li><a class="reference internal" href="#id18">SI units</a></li>
-<li><a class="reference internal" href="#id19">Non-SI units</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#volume">Volume</a><ul>
-<li><a class="reference internal" href="#id20">SI units</a></li>
-<li><a class="reference internal" href="#id21">Non-SI units</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#force">Force</a><ul>
-<li><a class="reference internal" href="#id22">SI units</a></li>
-<li><a class="reference internal" href="#id23">Non-SI units</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#power">Power</a><ul>
-<li><a class="reference internal" href="#id24">SI units</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#energy-work-heat">Energy, Work, Heat</a><ul>
-<li><a class="reference internal" href="#id25">SI units</a></li>
-<li><a class="reference internal" href="#id26">Non-SI units</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#pressure">Pressure</a><ul>
-<li><a class="reference internal" href="#id27">SI units</a></li>
-<li><a class="reference internal" href="#id28">Non-SI units</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#frequency">Frequency</a><ul>
-<li><a class="reference internal" href="#id29">SI units</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#data-rate">Data rate</a></li>
-<li><a class="reference internal" href="#electric-potential">Electric potential</a><ul>
-<li><a class="reference internal" href="#id30">SI units</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#electric-charge">Electric charge</a><ul>
-<li><a class="reference internal" href="#id31">SI units</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#electrical-resistance">Electrical resistance</a><ul>
-<li><a class="reference internal" href="#id32">SI units</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#electrical-conductivity">Electrical conductivity</a><ul>
-<li><a class="reference internal" href="#id33">SI units</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#capacitance">Capacitance</a><ul>
-<li><a class="reference internal" href="#id34">SI units</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#inductance">Inductance</a><ul>
-<li><a class="reference internal" href="#id35">SI units</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#magnetic-flux-density">Magnetic flux density</a><ul>
-<li><a class="reference internal" href="#id36">SI units</a></li>
-<li><a class="reference internal" href="#id37">Non-SI units</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#magnetic-flux">Magnetic flux</a><ul>
-<li><a class="reference internal" href="#id38">SI units</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#current-noise-density">Current noise density</a><ul>
-<li><a class="reference internal" href="#id39">SI units</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#voltage-noise-density">Voltage noise density</a><ul>
-<li><a class="reference internal" href="#id40">SI units</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#catalytic-activity">Catalytic activity</a><ul>
-<li><a class="reference internal" href="#id41">SI units</a></li>
-<li><a class="reference internal" href="#id42">Non-SI units</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#luminous-flux">Luminous flux</a><ul>
-<li><a class="reference internal" href="#id43">SI units</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#illuminance">Illuminance</a><ul>
-<li><a class="reference internal" href="#id44">SI units</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</ul>
-</li>
-              
-            
-            
-              
-                
-              
             
             
             
             
-              <li class="hidden-sm">
-<div id="sourcelink">
-  <a href="_sources/core.units.defined.units.rst.txt"
-     rel="nofollow">Source</a>
-</div></li>
             
           </ul>
 
@@ -1082,7 +908,7 @@ unit literals are used.</p>
       
     </p>
     <p>
-        &copy; Copyright 2018-2019, T. Vanderbruggen.<br/>
+        &copy; Copyright 2018-2021, T. Vanderbruggen.<br/>
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.<br/>
     </p>
   </div>

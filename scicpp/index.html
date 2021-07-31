@@ -11,6 +11,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -36,7 +37,7 @@
         </button>
         <a class="navbar-brand" href="#">
           SciCpp</a>
-        <span class="navbar-text navbar-version pull-left"><b>0</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.3</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -60,43 +61,10 @@
 </ul>
 </li>
               
-                <li class="dropdown">
-  <a role="button"
-     id="dLabelLocalToc"
-     data-toggle="dropdown"
-     data-target="#"
-     href="#">Page <b class="caret"></b></a>
-  <ul class="dropdown-menu localtoc"
-      role="menu"
-      aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">SciCpp’s documentation</a><ul>
-<li><a class="reference internal" href="#modules">Modules:</a></li>
-<li><a class="reference internal" href="#introduction">Introduction</a></li>
-<li><a class="reference internal" href="#example">Example</a></li>
-</ul>
-</li>
-</ul>
-</ul>
-</li>
-              
-            
-            
-              
-                
-  <li>
-    <a href="core.html" title="Next Chapter: core"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">core &raquo;</span>
-    </a>
-  </li>
-              
             
             
             
             
-              <li class="hidden-sm">
-<div id="sourcelink">
-  <a href="_sources/index.rst.txt"
-     rel="nofollow">Source</a>
-</div></li>
             
           </ul>
 
@@ -118,7 +86,9 @@
   <div class="row">
     <div class="col-md-12 content">
       
-  <div class="section" id="scicpp-s-documentation">
+  <embed>
+    <a href="https://github.com/tvanderbruggen/SciCpp"><img width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_white_ffffff.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1" align="right"></a>
+</embed><div class="section" id="scicpp-s-documentation">
 <h1>SciCpp’s documentation<a class="headerlink" href="#scicpp-s-documentation" title="Permalink to this headline">¶</a></h1>
 <p>SciCpp is a data and signal processing C++ library.</p>
 <p>SciCpp objective is to follow the <a class="reference external" href="https://scipy.org/">SciPy</a> API while using standard C++
@@ -136,13 +106,16 @@ It is tested with the GCC and Clang compilers under Linux.</p>
 <li class="toctree-l1"><a class="reference internal" href="core.html">core</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="core.html#mathematical-functions">Mathematical functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core.html#arithmetic-operators">Arithmetic operators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="core.html#comparison-and-logical">Comparison and Logical</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core.html#ones-and-zeros">Ones and zeros</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core.html#ranges">Ranges</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core.html#create-arrays-from-existing-data">Create arrays from existing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core.html#save-arrays-to-file">Save arrays to file</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core.html#sums-products-differences">Sums, products, differences</a></li>
-<li class="toctree-l2"><a class="reference internal" href="core.html#comparisons">Comparisons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core.html#searching">Searching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core.html#comparisons-and-logical">Comparisons and Logical</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core.html#random">Random</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core.html#statistics">Statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core.html#interpolate">Interpolate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core.html#units">Units</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core.html#masking">Masking</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core.html#functional-programming">Functional programming</a></li>
@@ -168,6 +141,7 @@ It is tested with the GCC and Clang compilers under Linux.</p>
 <li class="toctree-l2"><a class="reference internal" href="signal.html#fast-fourier-transforms-ffts">Fast Fourier Transforms (FFTs)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="signal.html#fft-helper-functions">FFT Helper Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="signal.html#window-functions">Window Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="signal.html#spectral-analysis">Spectral analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="signal.html#waveforms">Waveforms</a></li>
 </ul>
 </li>
@@ -198,6 +172,12 @@ Data are <a class="reference external" href="https://www.qld.gov.au/environment/
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">sci</span><span class="o">::</span><span class="n">operators</span><span class="p">;</span>
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">sci</span><span class="o">::</span><span class="n">units</span><span class="o">::</span><span class="n">literals</span><span class="p">;</span>
 
+<span class="c1">// In the dataset invalid values are represented by -99.9,</span>
+<span class="c1">// but only positive values are valid.</span>
+<span class="c1">// We define a filter to keep only valid data.</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="k">const</span> <span class="k">auto</span> <span class="n">is_valid_value</span> <span class="o">=</span> <span class="p">[](</span><span class="k">auto</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">sci</span><span class="o">::</span><span class="n">io</span><span class="o">::</span><span class="n">cast</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">T</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span> <span class="p">};</span>
+
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
     <span class="c1">// -----------------------------------------------------------------------------</span>
     <span class="c1">// Load and clean-up data</span>
@@ -213,21 +193,16 @@ Data are <a class="reference external" href="https://www.qld.gov.au/environment/
     <span class="k">using</span> <span class="n">Tp</span> <span class="o">=</span> <span class="n">sci</span><span class="o">::</span><span class="n">units</span><span class="o">::</span><span class="n">second</span><span class="o">&lt;&gt;</span><span class="p">;</span>   <span class="c1">// Period of most energetic waves</span>
     <span class="k">using</span> <span class="n">SST</span> <span class="o">=</span> <span class="n">sci</span><span class="o">::</span><span class="n">units</span><span class="o">::</span><span class="n">celsius</span><span class="o">&lt;&gt;</span><span class="p">;</span> <span class="c1">// Sea surface temperature</span>
 
-    <span class="c1">// In the dataset invalid values are represented by -99.9,</span>
-    <span class="c1">// but only positive values are valid.</span>
-    <span class="c1">// So we use filters to keep only valid data.</span>
-
     <span class="k">auto</span> <span class="p">[</span><span class="n">hsig</span><span class="p">,</span> <span class="n">hmax</span><span class="p">,</span> <span class="n">tz</span><span class="p">,</span> <span class="n">tp</span><span class="p">,</span> <span class="n">sst</span><span class="p">]</span> <span class="o">=</span>
         <span class="n">sci</span><span class="o">::</span><span class="n">TxtLoader</span><span class="o">&lt;</span><span class="n">Hsig</span><span class="p">,</span> <span class="n">Hmax</span><span class="p">,</span> <span class="n">Tz</span><span class="p">,</span> <span class="n">Tp</span><span class="p">,</span> <span class="n">SST</span><span class="o">&gt;</span><span class="p">()</span>
             <span class="p">.</span><span class="n">delimiter</span><span class="p">(</span><span class="sc">&#39;,&#39;</span><span class="p">)</span>
             <span class="p">.</span><span class="n">skiprows</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
             <span class="p">.</span><span class="n">usecols</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
-            <span class="p">.</span><span class="n">filters</span><span class="p">(</span>
-                <span class="p">{{</span><span class="mi">1</span><span class="p">,</span> <span class="p">[](</span><span class="k">auto</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">sci</span><span class="o">::</span><span class="n">io</span><span class="o">::</span><span class="n">cast</span><span class="o">&lt;</span><span class="n">Hsig</span><span class="o">&gt;</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="n">_m</span><span class="p">;</span> <span class="p">}},</span>
-                <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="p">[](</span><span class="k">auto</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">sci</span><span class="o">::</span><span class="n">io</span><span class="o">::</span><span class="n">cast</span><span class="o">&lt;</span><span class="n">Hmax</span><span class="o">&gt;</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="n">_m</span><span class="p">;</span> <span class="p">}},</span>
-                <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="p">[](</span><span class="k">auto</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">sci</span><span class="o">::</span><span class="n">io</span><span class="o">::</span><span class="n">cast</span><span class="o">&lt;</span><span class="n">Tz</span><span class="o">&gt;</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="n">_s</span><span class="p">;</span> <span class="p">}},</span>
-                <span class="p">{</span><span class="mi">4</span><span class="p">,</span> <span class="p">[](</span><span class="k">auto</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">sci</span><span class="o">::</span><span class="n">io</span><span class="o">::</span><span class="n">cast</span><span class="o">&lt;</span><span class="n">Tp</span><span class="o">&gt;</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="n">_s</span><span class="p">;</span> <span class="p">}},</span>
-                <span class="p">{</span><span class="mi">6</span><span class="p">,</span> <span class="p">[](</span><span class="k">auto</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">sci</span><span class="o">::</span><span class="n">io</span><span class="o">::</span><span class="n">cast</span><span class="o">&lt;</span><span class="n">SST</span><span class="o">&gt;</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="n">_degC</span><span class="p">;</span> <span class="p">}}})</span>
+            <span class="p">.</span><span class="n">filters</span><span class="p">({{</span><span class="mi">1</span><span class="p">,</span> <span class="n">is_valid_value</span><span class="o">&lt;</span><span class="n">Hsig</span><span class="o">&gt;</span><span class="p">},</span>
+                  <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="n">is_valid_value</span><span class="o">&lt;</span><span class="n">Hmax</span><span class="o">&gt;</span><span class="p">},</span>
+                  <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="n">is_valid_value</span><span class="o">&lt;</span><span class="n">Tz</span><span class="o">&gt;</span><span class="p">},</span>
+                  <span class="p">{</span><span class="mi">4</span><span class="p">,</span> <span class="n">is_valid_value</span><span class="o">&lt;</span><span class="n">Tp</span><span class="o">&gt;</span><span class="p">},</span>
+                  <span class="p">{</span><span class="mi">6</span><span class="p">,</span> <span class="n">is_valid_value</span><span class="o">&lt;</span><span class="n">SST</span><span class="o">&gt;</span><span class="p">}})</span>
             <span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="s">&quot;examples/townsville_2019-01-01t00_00-2019-06-30t23_30.csv&quot;</span><span class="p">);</span>
 
     <span class="c1">// -----------------------------------------------------------------------------</span>
@@ -267,7 +242,7 @@ Data are <a class="reference external" href="https://www.qld.gov.au/environment/
       
     </p>
     <p>
-        &copy; Copyright 2018-2019, T. Vanderbruggen.<br/>
+        &copy; Copyright 2018-2021, T. Vanderbruggen.<br/>
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.<br/>
     </p>
   </div>

@@ -11,6 +11,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -36,7 +37,7 @@
         </button>
         <a class="navbar-brand" href="index.html">
           SciCpp</a>
-        <span class="navbar-text navbar-version pull-left"><b>0</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.3</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -60,45 +61,10 @@
 </ul>
 </li>
               
-                <li class="dropdown">
-  <a role="button"
-     id="dLabelLocalToc"
-     data-toggle="dropdown"
-     data-target="#"
-     href="#">Page <b class="caret"></b></a>
-  <ul class="dropdown-menu localtoc"
-      role="menu"
-      aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">signal</a><ul>
-<li><a class="reference internal" href="#convolution">Convolution</a></li>
-<li><a class="reference internal" href="#fast-fourier-transforms-ffts">Fast Fourier Transforms (FFTs)</a></li>
-<li><a class="reference internal" href="#fft-helper-functions">FFT Helper Functions</a></li>
-<li><a class="reference internal" href="#window-functions">Window Functions</a></li>
-<li><a class="reference internal" href="#waveforms">Waveforms</a></li>
-</ul>
-</li>
-</ul>
-</ul>
-</li>
-              
-            
-            
-              
-                
-  <li>
-    <a href="polynomial.html" title="Previous Chapter: polynomial"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; polynomial</span>
-    </a>
-  </li>
-              
             
             
             
             
-              <li class="hidden-sm">
-<div id="sourcelink">
-  <a href="_sources/signal.rst.txt"
-     rel="nofollow">Source</a>
-</div></li>
             
           </ul>
 
@@ -152,6 +118,8 @@
 <dl class="docutils">
 <dt><a class="reference internal" href="signal.fftfreq.html#signal-fftfreq"><span class="std std-ref">fftfreq</span></a></dt>
 <dd>Return the Discrete Fourier Transform sample frequencies.</dd>
+<dt><span class="xref std std-ref">rfftfreq</span></dt>
+<dd>Return the Discrete Fourier Transform sample frequencies.</dd>
 <dt><a class="reference internal" href="signal.fftshift.html#signal-fftshift"><span class="std std-ref">fftshift</span></a></dt>
 <dd>Shift the zero-frequency component to the center of the spectrum.</dd>
 <dt><a class="reference internal" href="signal.ifftshift.html#signal-ifftshift"><span class="std std-ref">ifftshift</span></a></dt>
@@ -173,6 +141,8 @@
 <dd>Return a Bartlett window.</dd>
 <dt><a class="reference internal" href="signal.windows.cosine.html#signal-windows-cosine"><span class="std std-ref">windows::cosine</span></a></dt>
 <dd>Return a window with a cosine shape.</dd>
+<dt><span class="xref std std-ref">windows::bohman</span></dt>
+<dd>Return a Bohman window.</dd>
 <dt><a class="reference internal" href="signal.windows.general_cosine.html#signal-windows-general-cosine"><span class="std std-ref">windows::general_cosine</span></a></dt>
 <dd>Generic weighted sum of cosine terms window.</dd>
 <dt><a class="reference internal" href="signal.windows.general_hamming.html#signal-windows-general-hamming"><span class="std std-ref">windows::general_hamming</span></a></dt>
@@ -191,6 +161,29 @@
 <dd>Return a flat top window.</dd>
 <dt><a class="reference internal" href="signal.windows.gaussian.html#signal-windows-gaussian"><span class="std std-ref">windows::gaussian</span></a></dt>
 <dd>Return a Gaussian window.</dd>
+<dt><span class="xref std std-ref">windows::general_gaussian</span></dt>
+<dd>Return a generalized Gaussian window.</dd>
+<dt><span class="xref std std-ref">windows::kaiser</span></dt>
+<dd>Return a Kaiser window.</dd>
+<dt><span class="xref std std-ref">windows::enbw</span></dt>
+<dd>Return the equivalent noise bandwidth of a window.</dd>
+</dl>
+</div>
+<div class="section" id="spectral-analysis">
+<h2>Spectral analysis<a class="headerlink" href="#spectral-analysis" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt><a class="reference internal" href="signal.Spectrum.html#signal-spectrum"><span class="std std-ref">Spectrum</span></a></dt>
+<dd>A class to configure spectral analysis parameters.</dd>
+<dt><a class="reference internal" href="signal.Spectrum.html#signal-spectrum-periodogram"><span class="std std-ref">Spectrum::periodogram</span></a></dt>
+<dd>Estimate power spectral density using a periodogram.</dd>
+<dt><a class="reference internal" href="signal.Spectrum.html#signal-spectrum-welch"><span class="std std-ref">Spectrum::welch</span></a></dt>
+<dd>Estimate power spectral density using Welch’s method.</dd>
+<dt><a class="reference internal" href="signal.Spectrum.html#signal-spectrum-csd"><span class="std std-ref">Spectrum::csd</span></a></dt>
+<dd>Estimate the cross power spectral density using Welch’s method.</dd>
+<dt><a class="reference internal" href="signal.Spectrum.html#signal-spectrum-coherence"><span class="std std-ref">Spectrum::coherence</span></a></dt>
+<dd>Estimate the magnitude squared coherence estimate of discrete-time signals using Welch’s method.</dd>
+<dt><a class="reference internal" href="signal.Spectrum.html#signal-spectrum-tfestimate"><span class="std std-ref">Spectrum::tfestimate</span></a></dt>
+<dd>Estimate the transfer function using Welch’s method.</dd>
 </dl>
 </div>
 <div class="section" id="waveforms">
@@ -218,7 +211,7 @@
       
     </p>
     <p>
-        &copy; Copyright 2018-2019, T. Vanderbruggen.<br/>
+        &copy; Copyright 2018-2021, T. Vanderbruggen.<br/>
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.<br/>
     </p>
   </div>

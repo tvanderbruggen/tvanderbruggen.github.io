@@ -11,6 +11,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -37,7 +38,7 @@
         </button>
         <a class="navbar-brand" href="index.html">
           SciCpp</a>
-        <span class="navbar-text navbar-version pull-left"><b>0</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.3</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -61,66 +62,10 @@
 </ul>
 </li>
               
-                <li class="dropdown">
-  <a role="button"
-     id="dLabelLocalToc"
-     data-toggle="dropdown"
-     data-target="#"
-     href="#">Page <b class="caret"></b></a>
-  <ul class="dropdown-menu localtoc"
-      role="menu"
-      aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">core</a><ul>
-<li><a class="reference internal" href="#mathematical-functions">Mathematical functions</a><ul>
-<li><a class="reference internal" href="#trigonometric-functions">Trigonometric functions</a></li>
-<li><a class="reference internal" href="#hyperbolic-functions">Hyperbolic functions</a></li>
-<li><a class="reference internal" href="#exponents-and-logarithms">Exponents and logarithms</a></li>
-<li><a class="reference internal" href="#rounding">Rounding</a></li>
-<li><a class="reference internal" href="#complex-numbers">Complex numbers</a></li>
-<li><a class="reference internal" href="#rational-routines">Rational routines</a></li>
-<li><a class="reference internal" href="#miscellaneous">Miscellaneous</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#arithmetic-operators">Arithmetic operators</a></li>
-<li><a class="reference internal" href="#comparison-and-logical">Comparison and Logical</a></li>
-<li><a class="reference internal" href="#ranges">Ranges</a></li>
-<li><a class="reference internal" href="#create-arrays-from-existing-data">Create arrays from existing data</a></li>
-<li><a class="reference internal" href="#sums-products-differences">Sums, products, differences</a></li>
-<li><a class="reference internal" href="#comparisons">Comparisons</a></li>
-<li><a class="reference internal" href="#random">Random</a></li>
-<li><a class="reference internal" href="#statistics">Statistics</a></li>
-<li><a class="reference internal" href="#units">Units</a></li>
-<li><a class="reference internal" href="#masking">Masking</a></li>
-<li><a class="reference internal" href="#functional-programming">Functional programming</a></li>
-<li><a class="reference internal" href="#printing">Printing</a></li>
-</ul>
-</li>
-</ul>
-</ul>
-</li>
-              
-            
-            
-              
-                
-  <li>
-    <a href="index.html" title="Previous Chapter: SciCpp’s documentation"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; SciCpp’s docu...</span>
-    </a>
-  </li>
-  <li>
-    <a href="linalg.html" title="Next Chapter: linalg"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">linalg &raquo;</span>
-    </a>
-  </li>
-              
             
             
             
             
-              <li class="hidden-sm">
-<div id="sourcelink">
-  <a href="_sources/core.rst.txt"
-     rel="nofollow">Source</a>
-</div></li>
             
           </ul>
 
@@ -162,7 +107,7 @@ which sometimes differs from the C++ definitions (ex. <em>arcsin</em> vs <em>asi
 </div>
 <div class="section" id="exponents-and-logarithms">
 <h3>Exponents and logarithms<a class="headerlink" href="#exponents-and-logarithms" title="Permalink to this headline">¶</a></h3>
-<p><code class="code docutils literal notranslate"><span class="pre">exp</span></code>, <code class="code docutils literal notranslate"><span class="pre">expm1</span></code>, <code class="code docutils literal notranslate"><span class="pre">exp2</span></code>, <code class="code docutils literal notranslate"><span class="pre">log</span></code>, <code class="code docutils literal notranslate"><span class="pre">log2</span></code>, <code class="code docutils literal notranslate"><span class="pre">log1p</span></code>.</p>
+<p><code class="code docutils literal notranslate"><span class="pre">exp</span></code>, <code class="code docutils literal notranslate"><span class="pre">expm1</span></code>, <code class="code docutils literal notranslate"><span class="pre">exp2</span></code>, <code class="code docutils literal notranslate"><span class="pre">log</span></code>, <code class="code docutils literal notranslate"><span class="pre">log2</span></code>, <code class="code docutils literal notranslate"><span class="pre">log10</span></code>, <code class="code docutils literal notranslate"><span class="pre">log1p</span></code>.</p>
 </div>
 <div class="section" id="rounding">
 <h3>Rounding<a class="headerlink" href="#rounding" title="Permalink to this headline">¶</a></h3>
@@ -180,7 +125,7 @@ but are vectorized versions of the <a class="reference external" href="https://e
 </div>
 <div class="section" id="miscellaneous">
 <h3>Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permalink to this headline">¶</a></h3>
-<p><code class="code docutils literal notranslate"><span class="pre">absolute</span></code>, <code class="code docutils literal notranslate"><span class="pre">sqrt</span></code>, <code class="code docutils literal notranslate"><span class="pre">cbrt</span></code>.</p>
+<p><code class="code docutils literal notranslate"><span class="pre">absolute</span></code>, <code class="code docutils literal notranslate"><span class="pre">sqrt</span></code>, <code class="code docutils literal notranslate"><span class="pre">cbrt</span></code>, <code class="code docutils literal notranslate"><span class="pre">pow</span></code>.</p>
 </div>
 </div>
 <div class="section" id="arithmetic-operators">
@@ -189,12 +134,18 @@ but are vectorized versions of the <a class="reference external" href="https://e
 <p>The statement <code class="code docutils literal notranslate"><span class="pre">using</span> <span class="pre">namespace</span> <span class="pre">scicpp::operators</span></code> must be included in the scope where
 operators are used.</p>
 </div>
-<div class="section" id="comparison-and-logical">
-<h2>Comparison and Logical<a class="headerlink" href="#comparison-and-logical" title="Permalink to this headline">¶</a></h2>
-<p>Operators for element-wise comparison between an array and a scalar <code class="code docutils literal notranslate"><span class="pre">==</span></code>, <code class="code docutils literal notranslate"><span class="pre">!=</span></code>, <code class="code docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="code docutils literal notranslate"><span class="pre">&gt;=</span></code>, <code class="code docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="code docutils literal notranslate"><span class="pre">&lt;=</span></code>.</p>
-<p>For element-wise comparison between arrays, operators are not available because the C++ standard defines them for lexicographical comparison.
-The comparison functions (same as Numpy) can be used instead: <code class="code docutils literal notranslate"><span class="pre">equal</span></code>, <code class="code docutils literal notranslate"><span class="pre">not_equal</span></code>, <code class="code docutils literal notranslate"><span class="pre">less</span></code>, <code class="code docutils literal notranslate"><span class="pre">less_equal</span></code>, <code class="code docutils literal notranslate"><span class="pre">greater</span></code> and <code class="code docutils literal notranslate"><span class="pre">greater_equal</span></code>.</p>
-<p>Operators <code class="code docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> and <code class="code docutils literal notranslate"><span class="pre">||</span></code> are defined for element-wise logical operations.</p>
+<div class="section" id="ones-and-zeros">
+<h2>Ones and zeros<a class="headerlink" href="#ones-and-zeros" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt><span class="xref std std-ref">empty</span></dt>
+<dd>Return an empty <code class="code docutils literal notranslate"><span class="pre">std::vector</span></code> of a given type.</dd>
+<dt><span class="xref std std-ref">zeros</span></dt>
+<dd>Return a new array of given shape and type, filled with zeros.</dd>
+<dt><span class="xref std std-ref">ones</span></dt>
+<dd>Return a new array of given shape and type, filled with ones.</dd>
+<dt><span class="xref std std-ref">full</span></dt>
+<dd>Return a new array of given shape and type, filled with fill_value.</dd>
+</dl>
 </div>
 <div class="section" id="ranges">
 <h2>Ranges<a class="headerlink" href="#ranges" title="Permalink to this headline">¶</a></h2>
@@ -214,6 +165,13 @@ The comparison functions (same as Numpy) can be used instead: <code class="code 
 <dd>Load a vector from a string.</dd>
 <dt><a class="reference internal" href="core.TxtLoader.html#core-txtloader"><span class="std std-ref">TxtLoader</span></a></dt>
 <dd>Load data from a character separated values text file.</dd>
+</dl>
+</div>
+<div class="section" id="save-arrays-to-file">
+<h2>Save arrays to file<a class="headerlink" href="#save-arrays-to-file" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt><span class="xref std std-ref">TxtSaver</span></dt>
+<dd>Save an array to a text file.</dd>
 </dl>
 </div>
 <div class="section" id="sums-products-differences">
@@ -245,13 +203,28 @@ The comparison functions (same as Numpy) can be used instead: <code class="code 
 <dd>Return the dot product of two vectors.</dd>
 </dl>
 </div>
-<div class="section" id="comparisons">
-<h2>Comparisons<a class="headerlink" href="#comparisons" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="searching">
+<h2>Searching<a class="headerlink" href="#searching" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt><span class="xref std std-ref">argmax, nanargmax</span></dt>
+<dd>Returns the indices of the maximum value of an array.</dd>
+<dt><span class="xref std std-ref">argmin, nanargmin</span></dt>
+<dd>Returns the indices of the minimum value of an array.</dd>
+<dt><span class="xref std std-ref">argwhere</span></dt>
+<dd>Returns the indices of array elements matching a given condition.</dd>
+<dt><span class="xref std std-ref">nonzero</span></dt>
+<dd>Return the indices of the elements that are non-zero.</dd>
+</dl>
+</div>
+<div class="section" id="comparisons-and-logical">
+<h2>Comparisons and Logical<a class="headerlink" href="#comparisons-and-logical" title="Permalink to this headline">¶</a></h2>
+<p>Operators for element-wise comparison between an array and a scalar <code class="code docutils literal notranslate"><span class="pre">==</span></code>, <code class="code docutils literal notranslate"><span class="pre">!=</span></code>, <code class="code docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="code docutils literal notranslate"><span class="pre">&gt;=</span></code>, <code class="code docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="code docutils literal notranslate"><span class="pre">&lt;=</span></code>.</p>
+<p>For element-wise comparison between arrays, operators are not available because the C++ standard defines them for lexicographical comparison.
+The comparison functions (same as Numpy) can be used instead: <code class="code docutils literal notranslate"><span class="pre">equal</span></code>, <code class="code docutils literal notranslate"><span class="pre">not_equal</span></code>, <code class="code docutils literal notranslate"><span class="pre">less</span></code>, <code class="code docutils literal notranslate"><span class="pre">less_equal</span></code>, <code class="code docutils literal notranslate"><span class="pre">greater</span></code> and <code class="code docutils literal notranslate"><span class="pre">greater_equal</span></code>.</p>
+<p>Operators <code class="code docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> and <code class="code docutils literal notranslate"><span class="pre">||</span></code> are defined for element-wise logical operations.</p>
 <dl class="docutils">
 <dt><a class="reference internal" href="core.almost_equal.html#core-almost-equal"><span class="std std-ref">almost_equal</span></a></dt>
 <dd>Compare floating points or arrays of floating points.</dd>
-<dt><a class="reference internal" href="core.array_equal.html#core-array-equal"><span class="std std-ref">array_equal</span></a></dt>
-<dd>True if two arrays have the same size and elements (strict equality).</dd>
 </dl>
 </div>
 <div class="section" id="random">
@@ -274,18 +247,35 @@ The comparison functions (same as Numpy) can be used instead: <code class="code 
 <dd>Return the peak-to-peak span of an array.</dd>
 <dt><a class="reference internal" href="core.stats.average.html#core-stats-average"><span class="std std-ref">stats::average</span></a></dt>
 <dd>Compute the weighted average.</dd>
-<dt><a class="reference internal" href="core.stats.mean.html#core-stats-mean"><span class="std std-ref">stats::mean</span></a></dt>
+<dt><a class="reference internal" href="core.stats.median.html#core-stats-median"><span class="std std-ref">stats::median, nanmedian</span></a></dt>
+<dd>Compute the median.</dd>
+<dt><a class="reference internal" href="core.stats.mean.html#core-stats-mean"><span class="std std-ref">stats::mean, nanmean, tmean</span></a></dt>
 <dd>Compute the arithmetic mean.</dd>
-<dt><span class="xref std std-ref">stats::nanmean</span></dt>
-<dd>Compute the arithmetic mean, ignoring NaNs.</dd>
-<dt><a class="reference internal" href="core.stats.var.html#core-stats-var"><span class="std std-ref">stats::var</span></a></dt>
+<dt><span class="xref std std-ref">stats::gmean, nangmean</span></dt>
+<dd>Compute the geometric mean.</dd>
+<dt><a class="reference internal" href="core.stats.var.html#core-stats-var"><span class="std std-ref">stats::var, nanvar, tvar</span></a></dt>
 <dd>Compute the variance.</dd>
-<dt><span class="xref std std-ref">stats::nanvar</span></dt>
-<dd>Compute the variance, ignoring NaNs.</dd>
-<dt><a class="reference internal" href="core.stats.std.html#core-stats-std"><span class="std std-ref">stats::std</span></a></dt>
+<dt><a class="reference internal" href="core.stats.std.html#core-stats-std"><span class="std std-ref">stats::std, nanstd, tstd</span></a></dt>
 <dd>Compute the standard deviation.</dd>
-<dt><span class="xref std std-ref">stats::nanstd</span></dt>
-<dd>Compute the standard deviation, ignoring NaNs.</dd>
+<dt><span class="xref std std-ref">stats::sem, nansem, tsem</span></dt>
+<dd>Compute the standard error of measurement.</dd>
+<dt><span class="xref std std-ref">stats::moment, nanmoment</span></dt>
+<dd>Calculate the nth moment about the mean for a sample.</dd>
+<dt><span class="xref std std-ref">stats::kurtosis, nankurtosis</span></dt>
+<dd>Compute the kurtosis (Fisher or Pearson) of a dataset.</dd>
+<dt><span class="xref std std-ref">stats::skew, nanskew</span></dt>
+<dd>Compute the sample skewness of a data set.</dd>
+<dt><span class="xref std std-ref">stats::covariance, nancovariance</span></dt>
+<dd>Compute the covariance between two data sets.</dd>
+<dt><span class="xref std std-ref">stats::cov, nancov</span></dt>
+<dd>Compute the covariance matrix between two data sets.</dd>
+</dl>
+</div>
+<div class="section" id="interpolate">
+<h2>Interpolate<a class="headerlink" href="#interpolate" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt><span class="xref std std-ref">interpolate::interp1d</span></dt>
+<dd>Interpolate a 1D array.</dd>
 </dl>
 </div>
 <div class="section" id="units">
@@ -330,8 +320,8 @@ The comparison functions (same as Numpy) can be used instead: <code class="code 
 <dl class="docutils">
 <dt><a class="reference internal" href="core.print.html#core-print"><span class="std std-ref">print</span></a></dt>
 <dd>Print an array onto the screen.</dd>
-<dt><a class="reference internal" href="core.fprint.html#core-fprint"><span class="std std-ref">fprint</span></a></dt>
-<dd>Print an array to a file stream.</dd>
+<dt><span class="xref std std-ref">array2string</span></dt>
+<dd>Format a array to a string.</dd>
 </dl>
 </div>
 </div>
@@ -348,7 +338,7 @@ The comparison functions (same as Numpy) can be used instead: <code class="code 
       
     </p>
     <p>
-        &copy; Copyright 2018-2019, T. Vanderbruggen.<br/>
+        &copy; Copyright 2018-2021, T. Vanderbruggen.<br/>
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.<br/>
     </p>
   </div>

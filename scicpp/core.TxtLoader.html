@@ -11,6 +11,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
@@ -35,7 +36,7 @@
         </button>
         <a class="navbar-brand" href="index.html">
           SciCpp</a>
-        <span class="navbar-text navbar-version pull-left"><b>0</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.3</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -59,43 +60,10 @@
 </ul>
 </li>
               
-                <li class="dropdown">
-  <a role="button"
-     id="dLabelLocalToc"
-     data-toggle="dropdown"
-     data-target="#"
-     href="#">Page <b class="caret"></b></a>
-  <ul class="dropdown-menu localtoc"
-      role="menu"
-      aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">scicpp::TxtLoader</a><ul>
-<li><a class="reference internal" href="#loader-configuration">Loader configuration</a></li>
-<li><a class="reference internal" href="#file-data-loading">File data loading</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#examples">Examples</a><ul>
-<li><a class="reference internal" href="#load-data-into-an-eigen-matrix">Load data into an Eigen matrix</a></li>
-<li><a class="reference internal" href="#load-data-columns-into-vectors">Load data columns into vectors</a></li>
-</ul>
-</li>
-</ul>
-</ul>
-</li>
-              
-            
-            
-              
-                
-              
             
             
             
             
-              <li class="hidden-sm">
-<div id="sourcelink">
-  <a href="_sources/core.TxtLoader.rst.txt"
-     rel="nofollow">Source</a>
-</div></li>
             
           </ul>
 
@@ -159,12 +127,12 @@ In that case the number of data types must be equal to the number of used column
 <hr class="docutils" />
 <dl class="function">
 <dt id="_CPPv37usecolsRKNSt6vectorIiEE">
-<span id="_CPPv27usecolsRKNSt6vectorIiEE"></span><span id="usecols__std::vector:i:CR"></span><code class="descname">usecols</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="core.stats.std.html#_CPPv3I0_NSt6size_tEEStRKNSt5arrayI1T1NEE" title="std">std</a>::vector&lt;int&gt; &amp;<em>usecols</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv37usecolsRKNSt6vectorIiEE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv27usecolsRKNSt6vectorIiEE"></span><span id="usecols__std::vector:i:CR"></span><code class="descname">usecols</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="core.stats.std.html#_CPPv3I_i00EStRK5Array9Predicate" title="std">std</a>::vector&lt;int&gt; &amp;<em>usecols</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv37usecolsRKNSt6vectorIiEE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv37usecolsRRNSt6vectorIiEE">
-<span id="_CPPv27usecolsRRNSt6vectorIiEE"></span><span id="usecols__std::vector:i:RR"></span><code class="descname">usecols</code><span class="sig-paren">(</span><a class="reference internal" href="core.stats.std.html#_CPPv3I0_NSt6size_tEEStRKNSt5arrayI1T1NEE" title="std">std</a>::vector&lt;int&gt; &amp;&amp;<em>usecols</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv37usecolsRRNSt6vectorIiEE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv27usecolsRRNSt6vectorIiEE"></span><span id="usecols__std::vector:i:RR"></span><code class="descname">usecols</code><span class="sig-paren">(</span><a class="reference internal" href="core.stats.std.html#_CPPv3I_i00EStRK5Array9Predicate" title="std">std</a>::vector&lt;int&gt; &amp;&amp;<em>usecols</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv37usecolsRRNSt6vectorIiEE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
@@ -206,17 +174,17 @@ By default no filter is used.</p>
 <h2>File data loading<a class="headerlink" href="#file-data-loading" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="_CPPv34loadRKNSt10filesystem4pathE">
-<span id="_CPPv24loadRKNSt10filesystem4pathE"></span><span id="load__std::filesystem::pathCR"></span>Eigen::Matrix&lt;DataType, Eigen::Dynamic, Eigen::Dynamic&gt; <code class="descname">load</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="core.stats.std.html#_CPPv3I0_NSt6size_tEEStRKNSt5arrayI1T1NEE" title="std">std</a>::filesystem::path &amp;<em>fname</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv34loadRKNSt10filesystem4pathE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv24loadRKNSt10filesystem4pathE"></span><span id="load__std::filesystem::pathCR"></span>Eigen::Matrix&lt;DataType, Eigen::Dynamic, Eigen::Dynamic&gt; <code class="descname">load</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="core.stats.std.html#_CPPv3I_i00EStRK5Array9Predicate" title="std">std</a>::filesystem::path &amp;<em>fname</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv34loadRKNSt10filesystem4pathE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3I_bE4loadRKNSt10filesystem4pathE">
-<span id="_CPPv2I_bE4loadRKNSt10filesystem4pathE"></span>template&lt;bool <code class="descname">pack</code> = false&gt;<br /><a class="reference internal" href="core.stats.std.html#_CPPv3I0_NSt6size_tEEStRKNSt5arrayI1T1NEE" title="std">std</a>::tuple&lt;<a class="reference internal" href="core.stats.std.html#_CPPv3I0_NSt6size_tEEStRKNSt5arrayI1T1NEE" title="std">std</a>::vector&lt;DataTypes&gt;...&gt; <code class="descname">load</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="core.stats.std.html#_CPPv3I0_NSt6size_tEEStRKNSt5arrayI1T1NEE" title="std">std</a>::filesystem::path &amp;<em>fname</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3I_bE4loadRKNSt10filesystem4pathE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2I_bE4loadRKNSt10filesystem4pathE"></span>template&lt;bool <code class="descname">pack</code> = false&gt;<br /><a class="reference internal" href="core.stats.std.html#_CPPv3I_i00EStRK5Array9Predicate" title="std">std</a>::tuple&lt;<a class="reference internal" href="core.stats.std.html#_CPPv3I_i00EStRK5Array9Predicate" title="std">std</a>::vector&lt;DataTypes&gt;...&gt; <code class="descname">load</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="core.stats.std.html#_CPPv3I_i00EStRK5Array9Predicate" title="std">std</a>::filesystem::path &amp;<em>fname</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3I_bE4loadRKNSt10filesystem4pathE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="function">
 <dt id="_CPPv3I_bE4loadRKNSt10filesystem4pathE">
-template&lt;bool <code class="descname">pack</code> = true&gt;<br /><a class="reference internal" href="core.stats.std.html#_CPPv3I0_NSt6size_tEEStRKNSt5arrayI1T1NEE" title="std">std</a>::vector&lt;<a class="reference internal" href="core.stats.std.html#_CPPv3I0_NSt6size_tEEStRKNSt5arrayI1T1NEE" title="std">std</a>::tuple&lt;DataTypes...&gt;&gt; <code class="descname">load</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="core.stats.std.html#_CPPv3I0_NSt6size_tEEStRKNSt5arrayI1T1NEE" title="std">std</a>::filesystem::path &amp;<em>fname</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3I_bE4loadRKNSt10filesystem4pathE" title="Permalink to this definition">¶</a><br /></dt>
+template&lt;bool <code class="descname">pack</code> = true&gt;<br /><a class="reference internal" href="core.stats.std.html#_CPPv3I_i00EStRK5Array9Predicate" title="std">std</a>::vector&lt;<a class="reference internal" href="core.stats.std.html#_CPPv3I_i00EStRK5Array9Predicate" title="std">std</a>::tuple&lt;DataTypes...&gt;&gt; <code class="descname">load</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="core.stats.std.html#_CPPv3I_i00EStRK5Array9Predicate" title="std">std</a>::filesystem::path &amp;<em>fname</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3I_bE4loadRKNSt10filesystem4pathE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <p>Load a character separated file with path <code class="code docutils literal notranslate"><span class="pre">fname</span></code>.
@@ -370,7 +338,7 @@ statistical analysis.</p>
       
     </p>
     <p>
-        &copy; Copyright 2018-2019, T. Vanderbruggen.<br/>
+        &copy; Copyright 2018-2021, T. Vanderbruggen.<br/>
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.<br/>
     </p>
   </div>
