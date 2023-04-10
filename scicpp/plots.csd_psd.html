@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>scicpp::plots::csd, scicpp::plots::psd &#8212; SciCpp 0 documentation</title>
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          SciCpp</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.4</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Modules <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="core.html">core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linalg.html">linalg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polynomial.html">polynomial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="signal.html">signal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plots.html">plots</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="scicpp-plots-csd-scicpp-plots-psd">
+<span id="plots-csd-psd"></span><h1>scicpp::plots::csd, scicpp::plots::psd<a class="headerlink" href="#scicpp-plots-csd-scicpp-plots-psd" title="Permalink to this headline">¶</a></h1>
+<p>Defined in header &lt;scicpp/plots.hpp&gt;</p>
+<p>Plot the spectral density.</p>
+<p>Return a <code class="xref cpp cpp-expr docutils literal notranslate"><span class="pre">sciplot</span><span class="pre">::</span><span class="pre">Plot2D</span></code> object.</p>
+<hr class="docutils" />
+<dl class="function">
+<dt id="_CPPv3I_N6signal15SpectrumScalingE000E3csdN6signal8SpectrumI1TEERK6Array1RK6Array2">
+<span id="_CPPv2I_N6signal15SpectrumScalingE000E3csdN6signal8SpectrumI1TEERK6Array1RK6Array2"></span>template&lt;signal::SpectrumScaling <code class="descname">scaling</code> = signal::DENSITY, typename <code class="descname">Array1</code>, typename <code class="descname">Array2</code>, typename <code class="descname">T</code> = double&gt;<br />auto <code class="descname">csd</code><span class="sig-paren">(</span>signal::Spectrum&lt;<a class="reference internal" href="#_CPPv3I_N6signal15SpectrumScalingE000E3csdN6signal8SpectrumI1TEERK6Array1RK6Array2" title="csd::T">T</a>&gt; <em>spec</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv3I_N6signal15SpectrumScalingE000E3csdN6signal8SpectrumI1TEERK6Array1RK6Array2" title="csd::Array1">Array1</a> &amp;<em>x</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv3I_N6signal15SpectrumScalingE000E3csdN6signal8SpectrumI1TEERK6Array1RK6Array2" title="csd::Array2">Array2</a> &amp;<em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3I_N6signal15SpectrumScalingE000E3csdN6signal8SpectrumI1TEERK6Array1RK6Array2" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<p>Plot the cross-spectral density between arrays <code class="xref cpp cpp-expr docutils literal notranslate"><span class="pre">x</span></code> and <code class="xref cpp cpp-expr docutils literal notranslate"><span class="pre">y</span></code>
+using a given <a class="reference internal" href="signal.Spectrum.html#signal-spectrum"><span class="std std-ref">Spectrum</span></a> analyzer <code class="xref cpp cpp-expr docutils literal notranslate"><span class="pre">spec</span></code>.</p>
+<hr class="docutils" />
+<dl class="function">
+<dt id="_CPPv3I_N6signal15SpectrumScalingE00E3psdN6signal8SpectrumI1TEERK5Array">
+<span id="_CPPv2I_N6signal15SpectrumScalingE00E3psdN6signal8SpectrumI1TEERK5Array"></span>template&lt;signal::SpectrumScaling <code class="descname">scaling</code> = signal::DENSITY, typename <code class="descname">Array</code>, typename <code class="descname">T</code> = double&gt;<br />auto <code class="descname">psd</code><span class="sig-paren">(</span>signal::Spectrum&lt;<a class="reference internal" href="#_CPPv3I_N6signal15SpectrumScalingE00E3psdN6signal8SpectrumI1TEERK5Array" title="psd::T">T</a>&gt; <em>spec</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv3I_N6signal15SpectrumScalingE00E3psdN6signal8SpectrumI1TEERK5Array" title="psd::Array">Array</a> &amp;<em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3I_N6signal15SpectrumScalingE00E3psdN6signal8SpectrumI1TEERK5Array" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<p>Plot the power spectral density of array <code class="xref cpp cpp-expr docutils literal notranslate"><span class="pre">x</span></code>
+using a given <a class="reference internal" href="signal.Spectrum.html#signal-spectrum"><span class="std std-ref">Spectrum</span></a> analyzer <code class="xref cpp cpp-expr docutils literal notranslate"><span class="pre">spec</span></code>.</p>
+<hr class="docutils" />
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;scicpp/core.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;scicpp/plots.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;scicpp/signal.hpp&gt;</span><span class="cp"></span>
+
+<span class="k">namespace</span> <span class="n">sci</span> <span class="o">=</span> <span class="n">scicpp</span><span class="p">;</span>
+<span class="k">namespace</span> <span class="n">plt</span> <span class="o">=</span> <span class="n">sci</span><span class="o">::</span><span class="n">plots</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">using</span> <span class="k">namespace</span> <span class="n">sci</span><span class="o">::</span><span class="n">operators</span><span class="p">;</span>
+    <span class="k">using</span> <span class="k">namespace</span> <span class="n">sci</span><span class="o">::</span><span class="n">units</span><span class="o">::</span><span class="n">literals</span><span class="p">;</span>
+
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">N</span> <span class="o">=</span> <span class="mf">1E3</span><span class="p">;</span>
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">fs</span> <span class="o">=</span> <span class="mf">1E2</span><span class="p">;</span>
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">omega0</span> <span class="o">=</span> <span class="mi">2</span><span class="n">_rad</span> <span class="o">*</span> <span class="n">sci</span><span class="o">::</span><span class="n">pi</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="o">*</span> <span class="mf">10.0</span><span class="p">;</span>
+
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">t</span> <span class="o">=</span> <span class="n">sci</span><span class="o">::</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span> <span class="o">/</span> <span class="n">fs</span><span class="p">;</span>
+
+    <span class="c1">// Colored noise</span>
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">nse1</span> <span class="o">=</span> <span class="n">sci</span><span class="o">::</span><span class="n">random</span><span class="o">::</span><span class="n">randn</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span> <span class="mi">2813981405</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">nse2</span> <span class="o">=</span> <span class="n">sci</span><span class="o">::</span><span class="n">random</span><span class="o">::</span><span class="n">randn</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span> <span class="mi">4130028572</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">r</span> <span class="o">=</span> <span class="n">sci</span><span class="o">::</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">sci</span><span class="o">::</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">N</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">fs</span> <span class="o">/</span> <span class="mf">0.05</span><span class="p">);</span>
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">cnse1</span> <span class="o">=</span> <span class="n">sci</span><span class="o">::</span><span class="n">signal</span><span class="o">::</span><span class="n">fftconvolve</span><span class="p">(</span><span class="n">nse1</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span> <span class="o">/</span> <span class="n">fs</span><span class="p">;</span>
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">cnse2</span> <span class="o">=</span> <span class="n">sci</span><span class="o">::</span><span class="n">signal</span><span class="o">::</span><span class="n">fftconvolve</span><span class="p">(</span><span class="n">nse2</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span> <span class="o">/</span> <span class="n">fs</span><span class="p">;</span>
+
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">x</span> <span class="o">=</span> <span class="mf">0.01</span> <span class="o">*</span> <span class="n">sci</span><span class="o">::</span><span class="n">sin</span><span class="p">(</span><span class="n">omega0</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">cnse1</span><span class="p">;</span>
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">y</span> <span class="o">=</span> <span class="mf">0.01</span> <span class="o">*</span> <span class="n">sci</span><span class="o">::</span><span class="n">sin</span><span class="p">(</span><span class="n">omega0</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">cnse2</span><span class="p">;</span>
+
+    <span class="k">auto</span> <span class="n">spec</span> <span class="o">=</span> <span class="n">sci</span><span class="o">::</span><span class="n">signal</span><span class="o">::</span><span class="n">Spectrum</span><span class="p">{}.</span><span class="n">fs</span><span class="p">(</span><span class="n">fs</span><span class="p">).</span><span class="n">window</span><span class="p">(</span>
+        <span class="n">sci</span><span class="o">::</span><span class="n">signal</span><span class="o">::</span><span class="n">windows</span><span class="o">::</span><span class="n">Hamming</span><span class="p">,</span> <span class="n">t</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+
+    <span class="c1">// Plot csd</span>
+    <span class="k">auto</span> <span class="n">plot1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">::</span><span class="n">csd</span><span class="p">(</span><span class="n">spec</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>
+    <span class="n">plot1</span><span class="p">.</span><span class="n">size</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">500</span><span class="p">);</span>
+    <span class="n">plot1</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&quot;FREQUENCY (Hz)&quot;</span><span class="p">);</span>
+    <span class="n">plot1</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&quot;CSD (dB / Hz)&quot;</span><span class="p">);</span>
+    <span class="n">plot1</span><span class="p">.</span><span class="n">show</span><span class="p">();</span>
+
+    <span class="c1">// Plot psd</span>
+    <span class="k">auto</span> <span class="n">plot2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">::</span><span class="n">psd</span><span class="p">(</span><span class="n">spec</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>
+    <span class="n">plot2</span><span class="p">.</span><span class="n">size</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">500</span><span class="p">);</span>
+    <span class="n">plot2</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">&quot;FREQUENCY (Hz)&quot;</span><span class="p">);</span>
+    <span class="n">plot2</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">&quot;PSD (dB / Hz)&quot;</span><span class="p">);</span>
+    <span class="n">plot2</span><span class="p">.</span><span class="n">show</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/csd.png"><img alt="_images/csd.png" src="_images/csd.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="_images/psd.png"><img alt="_images/psd.png" src="_images/psd.png" style="width: 600px;" /></a>
+<dl class="docutils">
+<dt>See also</dt>
+<dd><p class="first"><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.csd.html">Matplotlib documentation</a></p>
+<p class="last"><a class="reference external" href="https://matplotlib.org/stable/gallery/lines_bars_and_markers/csd_demo.html">Matplotlib demo</a></p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2018-2023, T. Vanderbruggen.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

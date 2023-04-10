@@ -37,7 +37,7 @@
         </button>
         <a class="navbar-brand" href="index.html">
           SciCpp</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.3</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.4</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -57,6 +57,7 @@
 <li class="toctree-l1"><a class="reference internal" href="linalg.html">linalg</a></li>
 <li class="toctree-l1"><a class="reference internal" href="polynomial.html">polynomial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="signal.html">signal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plots.html">plots</a></li>
 </ul>
 </ul>
 </li>
@@ -148,13 +149,15 @@
 </li>
       <li><a href="signal.windows.bartlett.html#_CPPv3I0E8bartlettNSt6size_tE">bartlett (C++ function)</a>, <a href="signal.windows.bartlett.html#_CPPv3I0_NSt6size_tEE8bartlettv">[1]</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="signal.windows.blackman.html#_CPPv3I0E8blackmanNSt6size_tE">blackman (C++ function)</a>, <a href="signal.windows.blackman.html#_CPPv3I0_NSt6size_tEE8blackmanv">[1]</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="signal.windows.blackmanharris.html#_CPPv3I0E14blackmanharrisNSt6size_tE">blackmanharris (C++ function)</a>, <a href="signal.windows.blackmanharris.html#_CPPv3I0_NSt6size_tEE14blackmanharrisv">[1]</a>
 </li>
       <li><a href="signal.windows.boxcar.html#_CPPv3I0E6boxcarNSt6size_tE">boxcar (C++ function)</a>, <a href="signal.windows.boxcar.html#_CPPv3I0_NSt6size_tEE6boxcarv">[1]</a>
+</li>
+      <li><a href="plots.boxplot.html#_CPPv3I0E7boxplotRK5Array">boxplot (C++ function)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -168,23 +171,25 @@
 </li>
       <li><a href="core.units.defined.quantities.html#_CPPv3I00E18chemical_potential">chemical_potential (C++ class)</a>
 </li>
+      <li><a href="plots.cohere.html#_CPPv3I_N6signal15SpectrumScalingE000E6cohereN6signal8SpectrumI1TEERK6Array1RK6Array2">cohere (C++ function)</a>
+</li>
       <li><a href="signal.Spectrum.html#_CPPv3I00E9coherenceRK6Array1RK6Array2">coherence (C++ function)</a>
 </li>
       <li><a href="core.TxtLoader.html#_CPPv38commentsc">comments (C++ function)</a>
 </li>
       <li><a href="core.units.quantity.html#_CPPv3I000000E17common_quantity_t">common_quantity_t (C++ class)</a>
 </li>
-      <li><a href="core.TxtLoader.html#_CPPv310converters14ConvertersDict">converters (C++ function)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="core.TxtLoader.html#_CPPv310converters14ConvertersDict">converters (C++ function)</a>
+</li>
       <li><a href="signal.convolve.html#_CPPv3I0E8convolveRKNSt6vectorI1TEERKNSt6vectorI1TEE">convolve (C++ function)</a>, <a href="signal.convolve.html#_CPPv3I0_NSt6size_tE_NSt6size_tEE8convolveRKNSt5arrayI1T1NEERKNSt5arrayI1T1MEE">[1]</a>
 </li>
       <li><a href="signal.correlate.html#_CPPv3I0E9correlateRKNSt6vectorI1TEERKNSt6vectorI1TEE">correlate (C++ function)</a>, <a href="signal.correlate.html#_CPPv3I0_NSt6size_tE_NSt6size_tEE9correlateRKNSt5arrayI1T1NEERKNSt5arrayI1T1MEE">[1]</a>
 </li>
       <li><a href="signal.windows.cosine.html#_CPPv3I0E6cosineNSt6size_tE">cosine (C++ function)</a>
 </li>
-      <li><a href="signal.Spectrum.html#_CPPv3I_15SpectrumScaling00E3csdRK6Array1RK6Array2">csd (C++ function)</a>
+      <li><a href="plots.csd_psd.html#_CPPv3I_N6signal15SpectrumScalingE000E3csdN6signal8SpectrumI1TEERK6Array1RK6Array2">csd (C++ function)</a>, <a href="signal.Spectrum.html#_CPPv3I_15SpectrumScaling00E3csdRK6Array1RK6Array2">[1]</a>
 </li>
       <li><a href="core.cumprod.html#_CPPv3I0E7cumprodRKNSt6vectorI1TEE">cumprod (C++ function)</a>, <a href="core.cumprod.html#_CPPv3I0_NSt6size_tEE7cumprodRKNSt5arrayI1T1NEE">[1]</a>
 </li>
@@ -296,13 +301,19 @@
 </li>
       <li><a href="core.units.defined.quantities.html#_CPPv3I00E4heat">heat (C++ class)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="core.units.defined.quantities.html#_CPPv3I00E13heat_capacity">heat_capacity (C++ class)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="core.units.defined.quantities.html#_CPPv3I00E9heat_flux">heat_flux (C++ class)</a>
 </li>
       <li><a href="core.units.defined.quantities.html#_CPPv3I00E18heat_transfer_rate">heat_transfer_rate (C++ class)</a>
+</li>
+      <li><a href="plots.hist.html#_CPPv3I_N5stats14BinEdgesMethodE_b0E4histRK5Array">hist (C++ function)</a>, <a href="plots.hist.html#_CPPv3I_b0E4histRK5ArrayNSt6size_tE">[1]</a>, <a href="plots.hist.html#_CPPv3I_b_b0E4histRK5ArrayRKNSt6vectorI1TEE">[2]</a>
+</li>
+      <li><a href="core_stats_histogram.html#_CPPv3I_14BinEdgesMethod_b0E9histogramRK5Array">histogram (C++ function)</a>, <a href="core_stats_histogram.html#_CPPv3I_b0E9histogramRK5ArrayNSt6size_tE">[1]</a>, <a href="core_stats_histogram.html#_CPPv3I_b_b0E9histogram7InputIt7InputItRKNSt6vectorI1TEE">[2]</a>, <a href="core_stats_histogram.html#_CPPv3I_b_b0E9histogramRK5ArrayRKNSt6vectorI1TEE">[3]</a>
+</li>
+      <li><a href="core_stats_histogram_bin_edges.html#_CPPv3I0E19histogram_bin_edgesRK5ArrayNSt6size_tE">histogram_bin_edges (C++ function)</a>, <a href="core_stats_histogram_bin_edges.html#_CPPv3I_14BinEdgesMethod0E19histogram_bin_edgesRK5Array">[1]</a>
 </li>
   </ul></td>
 </tr></table>
@@ -404,7 +415,11 @@
 </li>
       <li><a href="core.stats.median.html#_CPPv3I0E9nanmedianRR5Array">nanmedian (C++ function)</a>
 </li>
+      <li><a href="core.stats.percentile.html#_CPPv3I_14QuantileInterp00E13nanpercentileRK5Array1T">nanpercentile (C++ function)</a>
+</li>
       <li><a href="core.nanprod.html#_CPPv3I0E7nanprodRKNSt6vectorI1TEE">nanprod (C++ function)</a>, <a href="core.nanprod.html#_CPPv3I0_NSt6size_tEE7nanprodRKNSt5arrayI1T1NEE">[1]</a>
+</li>
+      <li><a href="core.stats.quantile.html#_CPPv3I_14QuantileInterp00E11nanquantileRK5Array1T">nanquantile (C++ function)</a>
 </li>
       <li><a href="core.stats.std.html#_CPPv3I_i0E6nanstdRK5Array">nanstd (C++ function)</a>
 </li>
@@ -416,6 +431,8 @@
 </li>
       <li><a href="signal.next_fast_len.html#_CPPv3I0E13next_fast_len8Integral">next_fast_len (C++ function)</a>
 </li>
+      <li><a href="core.random.normal.html#_CPPv3I0E6normal1T1TNSt6size_tE">normal (C++ function)</a>, <a href="core.random.normal.html#_CPPv3I0_NSt6size_tEE6normal1T1T">[1]</a>
+</li>
       <li><a href="signal.Spectrum.html#_CPPv38noverlap13signed_size_t">noverlap (C++ function)</a>
 </li>
       <li><a href="signal.windows.nutall.html#_CPPv3I0E7nuttallNSt6size_tE">nuttall (C++ function)</a>, <a href="signal.windows.nutall.html#_CPPv3I0_NSt6size_tEE7nuttallv">[1]</a>
@@ -426,6 +443,8 @@
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="core.stats.percentile.html#_CPPv3I_14QuantileInterp000E10percentile7InputIt7InputIt1T9Predicate">percentile (C++ function)</a>, <a href="core.stats.percentile.html#_CPPv3I_14QuantileInterp000E10percentileRK5Array1T9Predicate">[1]</a>, <a href="core.stats.percentile.html#_CPPv3I_14QuantileInterp00E10percentileRR5Array1T">[2]</a>
+</li>
       <li><a href="signal.Spectrum.html#_CPPv3I_15SpectrumScaling0E11periodogramRK5Array">periodogram (C++ function)</a>
 </li>
       <li><a href="core.units.defined.quantities.html#_CPPv3I00E12planar_angle">planar_angle (C++ class)</a>
@@ -474,6 +493,8 @@
 </li>
       <li><a href="core.prod.html#_CPPv3I00E4prod7InputIt7InputIt9Predicate">prod (C++ function)</a>, <a href="core.prod.html#_CPPv3I00E4prodRK5Array9Predicate">[1]</a>, <a href="core.prod.html#_CPPv3I0E4prod7InputIt7InputIt">[2]</a>, <a href="core.prod.html#_CPPv3I0E4prodRK5Array">[3]</a>
 </li>
+      <li><a href="plots.csd_psd.html#_CPPv3I_N6signal15SpectrumScalingE00E3psdN6signal8SpectrumI1TEERK5Array">psd (C++ function)</a>
+</li>
       <li><a href="core.stats.ptp.html#_CPPv3I0E3ptpRKNSt6vectorI1TEE">ptp (C++ function)</a>, <a href="core.stats.ptp.html#_CPPv3I0_NSt6size_tEE3ptpRKNSt5arrayI1T1NEE">[1]</a>
 </li>
   </ul></td>
@@ -482,14 +503,16 @@
 <h2 id="Q">Q</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="core.stats.quantile.html#_CPPv3I_14QuantileInterp000E8quantile7InputIt7InputIt1T9Predicate">quantile (C++ function)</a>, <a href="core.stats.quantile.html#_CPPv3I_14QuantileInterp000E8quantileRK5Array1T9Predicate">[1]</a>, <a href="core.stats.quantile.html#_CPPv3I_14QuantileInterp00E8quantileRR5Array1T">[2]</a>
+</li>
       <li><a href="core.units.quantity.html#_CPPv3I0000E8quantity">quantity (C++ class)</a>
 </li>
       <li><a href="core.units.quantity.html#_CPPv3I00000E13quantity_castRK8quantityI1T3Dim5Scale6OffsetE">quantity_cast (C++ function)</a>
 </li>
-      <li><a href="core.units.quantity.html#_CPPv3I00E15quantity_divide">quantity_divide (C++ class)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="core.units.quantity.html#_CPPv3I00E15quantity_divide">quantity_divide (C++ class)</a>
+</li>
       <li><a href="core.units.quantity.html#_CPPv3I0E15quantity_invert">quantity_invert (C++ class)</a>
 </li>
       <li><a href="core.units.quantity.html#_CPPv3I00E17quantity_multiply">quantity_multiply (C++ class)</a>
@@ -646,7 +669,7 @@
       
     </p>
     <p>
-        &copy; Copyright 2018-2021, T. Vanderbruggen.<br/>
+        &copy; Copyright 2018-2023, T. Vanderbruggen.<br/>
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.<br/>
     </p>
   </div>

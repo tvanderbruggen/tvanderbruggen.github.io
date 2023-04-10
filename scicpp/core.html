@@ -38,7 +38,7 @@
         </button>
         <a class="navbar-brand" href="index.html">
           SciCpp</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.3</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.4</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -58,6 +58,7 @@
 <li class="toctree-l1"><a class="reference internal" href="linalg.html">linalg</a></li>
 <li class="toctree-l1"><a class="reference internal" href="polynomial.html">polynomial</a></li>
 <li class="toctree-l1"><a class="reference internal" href="signal.html">signal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plots.html">plots</a></li>
 </ul>
 </ul>
 </li>
@@ -234,6 +235,8 @@ The comparison functions (same as Numpy) can be used instead: <code class="code 
 <dd>Return uniformly distributed random samples.</dd>
 <dt><a class="reference internal" href="core.random.randn.html#core-random-randn"><span class="std std-ref">random::randn</span></a></dt>
 <dd>Return normaly distributed random samples.</dd>
+<dt><a class="reference internal" href="core.random.normal.html#core-random-normal"><span class="std std-ref">random::normal</span></a></dt>
+<dd>Draw random samples from a normal (Gaussian) distribution.</dd>
 </dl>
 </div>
 <div class="section" id="statistics">
@@ -247,6 +250,12 @@ The comparison functions (same as Numpy) can be used instead: <code class="code 
 <dd>Return the peak-to-peak span of an array.</dd>
 <dt><a class="reference internal" href="core.stats.average.html#core-stats-average"><span class="std std-ref">stats::average</span></a></dt>
 <dd>Compute the weighted average.</dd>
+<dt><a class="reference internal" href="core.stats.quantile.html#core-stats-quantile"><span class="std std-ref">stats::quantile, nanquantile</span></a></dt>
+<dd>Compute the q-th quantile.</dd>
+<dt><a class="reference internal" href="core.stats.percentile.html#core-stats-percentile"><span class="std std-ref">stats::percentile, nanpercentile</span></a></dt>
+<dd>Compute the p-th percentile.</dd>
+<dt><span class="xref std std-ref">stats::iqr, naniqr</span></dt>
+<dd>Compute the interquartile range.</dd>
 <dt><a class="reference internal" href="core.stats.median.html#core-stats-median"><span class="std std-ref">stats::median, nanmedian</span></a></dt>
 <dd>Compute the median.</dd>
 <dt><a class="reference internal" href="core.stats.mean.html#core-stats-mean"><span class="std std-ref">stats::mean, nanmean, tmean</span></a></dt>
@@ -269,11 +278,17 @@ The comparison functions (same as Numpy) can be used instead: <code class="code 
 <dd>Compute the covariance between two data sets.</dd>
 <dt><span class="xref std std-ref">stats::cov, nancov</span></dt>
 <dd>Compute the covariance matrix between two data sets.</dd>
+<dt><a class="reference internal" href="core_stats_histogram_bin_edges.html#core-stats-histogram-bin-edges"><span class="std std-ref">stats::histogram_bin_edges</span></a></dt>
+<dd>Compute the the edges of the bins for an histogram.</dd>
+<dt><a class="reference internal" href="core_stats_histogram.html#core-stats-histogram"><span class="std std-ref">stats::histogram</span></a></dt>
+<dd>Compute the histogram of a dataset.</dd>
 </dl>
 </div>
 <div class="section" id="interpolate">
 <h2>Interpolate<a class="headerlink" href="#interpolate" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
+<dt><span class="xref std std-ref">lerp</span></dt>
+<dd>Linear interpolation between two points.</dd>
 <dt><span class="xref std std-ref">interpolate::interp1d</span></dt>
 <dd>Interpolate a 1D array.</dd>
 </dl>
@@ -338,7 +353,7 @@ The comparison functions (same as Numpy) can be used instead: <code class="code 
       
     </p>
     <p>
-        &copy; Copyright 2018-2021, T. Vanderbruggen.<br/>
+        &copy; Copyright 2018-2023, T. Vanderbruggen.<br/>
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.<br/>
     </p>
   </div>

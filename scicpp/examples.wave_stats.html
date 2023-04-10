@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Wave statistics &#8212; SciCpp 0 documentation</title>
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          SciCpp</a>
+        <span class="navbar-text navbar-version pull-left"><b>0.4</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Modules <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="core.html">core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linalg.html">linalg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="polynomial.html">polynomial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="signal.html">signal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plots.html">plots</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="wave-statistics">
+<span id="examples-wave-stats"></span><h1>Wave statistics<a class="headerlink" href="#wave-statistics" title="Permalink to this headline">¶</a></h1>
+<p>This example load and exploits some real world data.
+Data are <a class="reference external" href="https://www.qld.gov.au/environment/coasts-waterways/beach/monitoring">wave parameters (height, period, …) measured by a buoy</a>.</p>
+<p>It presents how SciCpp can be used to load data from a CSV file, to clean up the data, and to extract information.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;scicpp/core.hpp&gt;</span><span class="cp"></span>
+
+<span class="k">namespace</span> <span class="n">sci</span> <span class="o">=</span> <span class="n">scicpp</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">sci</span><span class="o">::</span><span class="n">operators</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">sci</span><span class="o">::</span><span class="n">units</span><span class="o">::</span><span class="n">literals</span><span class="p">;</span>
+
+<span class="c1">// In the dataset invalid values are represented by -99.9,</span>
+<span class="c1">// but only positive values are valid.</span>
+<span class="c1">// We define a filter to keep only valid data.</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="k">const</span> <span class="k">auto</span> <span class="n">is_valid_value</span> <span class="o">=</span> <span class="p">[](</span><span class="k">auto</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">sci</span><span class="o">::</span><span class="n">io</span><span class="o">::</span><span class="n">cast</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">T</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span> <span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// -----------------------------------------------------------------------------</span>
+    <span class="c1">// Load and clean-up data</span>
+    <span class="c1">// -----------------------------------------------------------------------------</span>
+
+    <span class="c1">// The data fields are defined here:</span>
+    <span class="c1">// https://www.qld.gov.au/environment/coasts-waterways/beach/monitoring/waves-glossary#wave-height</span>
+    <span class="c1">//</span>
+    <span class="c1">// From these definitions, we define the data types for each column</span>
+    <span class="k">using</span> <span class="n">Hsig</span> <span class="o">=</span> <span class="n">sci</span><span class="o">::</span><span class="n">units</span><span class="o">::</span><span class="n">meter</span><span class="o">&lt;&gt;</span><span class="p">;</span>  <span class="c1">// Significant wave height</span>
+    <span class="k">using</span> <span class="n">Hmax</span> <span class="o">=</span> <span class="n">sci</span><span class="o">::</span><span class="n">units</span><span class="o">::</span><span class="n">meter</span><span class="o">&lt;&gt;</span><span class="p">;</span>  <span class="c1">// Highest single wave height</span>
+    <span class="k">using</span> <span class="n">Tz</span> <span class="o">=</span> <span class="n">sci</span><span class="o">::</span><span class="n">units</span><span class="o">::</span><span class="n">second</span><span class="o">&lt;&gt;</span><span class="p">;</span>   <span class="c1">// Average of the wave periods</span>
+    <span class="k">using</span> <span class="n">Tp</span> <span class="o">=</span> <span class="n">sci</span><span class="o">::</span><span class="n">units</span><span class="o">::</span><span class="n">second</span><span class="o">&lt;&gt;</span><span class="p">;</span>   <span class="c1">// Period of most energetic waves</span>
+    <span class="k">using</span> <span class="n">SST</span> <span class="o">=</span> <span class="n">sci</span><span class="o">::</span><span class="n">units</span><span class="o">::</span><span class="n">celsius</span><span class="o">&lt;&gt;</span><span class="p">;</span> <span class="c1">// Sea surface temperature</span>
+
+    <span class="k">auto</span> <span class="p">[</span><span class="n">hsig</span><span class="p">,</span> <span class="n">hmax</span><span class="p">,</span> <span class="n">tz</span><span class="p">,</span> <span class="n">tp</span><span class="p">,</span> <span class="n">sst</span><span class="p">]</span> <span class="o">=</span>
+        <span class="n">sci</span><span class="o">::</span><span class="n">TxtLoader</span><span class="o">&lt;</span><span class="n">Hsig</span><span class="p">,</span> <span class="n">Hmax</span><span class="p">,</span> <span class="n">Tz</span><span class="p">,</span> <span class="n">Tp</span><span class="p">,</span> <span class="n">SST</span><span class="o">&gt;</span><span class="p">()</span>
+            <span class="p">.</span><span class="n">delimiter</span><span class="p">(</span><span class="sc">&#39;,&#39;</span><span class="p">)</span>
+            <span class="p">.</span><span class="n">skiprows</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            <span class="p">.</span><span class="n">usecols</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+            <span class="p">.</span><span class="n">filters</span><span class="p">({{</span><span class="mi">1</span><span class="p">,</span> <span class="n">is_valid_value</span><span class="o">&lt;</span><span class="n">Hsig</span><span class="o">&gt;</span><span class="p">},</span>
+                  <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="n">is_valid_value</span><span class="o">&lt;</span><span class="n">Hmax</span><span class="o">&gt;</span><span class="p">},</span>
+                  <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="n">is_valid_value</span><span class="o">&lt;</span><span class="n">Tz</span><span class="o">&gt;</span><span class="p">},</span>
+                  <span class="p">{</span><span class="mi">4</span><span class="p">,</span> <span class="n">is_valid_value</span><span class="o">&lt;</span><span class="n">Tp</span><span class="o">&gt;</span><span class="p">},</span>
+                  <span class="p">{</span><span class="mi">6</span><span class="p">,</span> <span class="n">is_valid_value</span><span class="o">&lt;</span><span class="n">SST</span><span class="o">&gt;</span><span class="p">}})</span>
+            <span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="s">&quot;examples/townsville_2019-01-01t00_00-2019-06-30t23_30.csv&quot;</span><span class="p">);</span>
+
+    <span class="c1">// -----------------------------------------------------------------------------</span>
+    <span class="c1">// Explore data</span>
+    <span class="c1">// -----------------------------------------------------------------------------</span>
+
+    <span class="c1">// Some simple stats:</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Highest wave is %.2f m</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">sci</span><span class="o">::</span><span class="n">stats</span><span class="o">::</span><span class="n">amax</span><span class="p">(</span><span class="n">hmax</span><span class="p">).</span><span class="n">value</span><span class="p">());</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Longest period is %.2f s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">sci</span><span class="o">::</span><span class="n">stats</span><span class="o">::</span><span class="n">amax</span><span class="p">(</span><span class="n">tz</span><span class="p">).</span><span class="n">value</span><span class="p">());</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Average sea surface temperature is %.2f deg. C</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+           <span class="n">sci</span><span class="o">::</span><span class="n">stats</span><span class="o">::</span><span class="n">mean</span><span class="p">(</span><span class="n">sst</span><span class="p">).</span><span class="n">value</span><span class="p">());</span>
+
+    <span class="c1">// Wave power (per meter of wavefront)</span>
+    <span class="c1">// https://en.wikipedia.org/wiki/Wave_power</span>
+    <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">rho</span> <span class="o">=</span> <span class="mi">1000</span><span class="n">_kg</span> <span class="o">/</span> <span class="mi">1</span><span class="n">_m3</span><span class="p">;</span> <span class="c1">// Water density</span>
+    <span class="k">constexpr</span> <span class="k">auto</span> <span class="n">g</span> <span class="o">=</span> <span class="mf">9.81</span><span class="n">_m_per_s2</span><span class="p">;</span>    <span class="c1">// Acceleration by gravity</span>
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">P</span> <span class="o">=</span> <span class="p">(</span><span class="n">rho</span> <span class="o">*</span> <span class="n">g</span> <span class="o">*</span> <span class="n">g</span> <span class="o">/</span> <span class="p">(</span><span class="mi">64</span> <span class="o">*</span> <span class="n">sci</span><span class="o">::</span><span class="n">pi</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="p">))</span> <span class="o">*</span> <span class="n">hsig</span> <span class="o">*</span> <span class="n">hsig</span> <span class="o">*</span> <span class="n">tz</span><span class="p">;</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Average wave power %.2f W/m</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">sci</span><span class="o">::</span><span class="n">stats</span><span class="o">::</span><span class="n">mean</span><span class="p">(</span><span class="n">P</span><span class="p">).</span><span class="n">value</span><span class="p">());</span>
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">E</span> <span class="o">=</span> <span class="p">(</span><span class="n">rho</span> <span class="o">*</span> <span class="n">g</span> <span class="o">/</span> <span class="mf">16.</span><span class="p">)</span> <span class="o">*</span> <span class="n">hsig</span> <span class="o">*</span> <span class="n">hsig</span><span class="p">;</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Average wave energy density %.2f J/m^2</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+           <span class="n">sci</span><span class="o">::</span><span class="n">stats</span><span class="o">::</span><span class="n">mean</span><span class="p">(</span><span class="n">E</span><span class="p">).</span><span class="n">value</span><span class="p">());</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2018-2023, T. Vanderbruggen.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
