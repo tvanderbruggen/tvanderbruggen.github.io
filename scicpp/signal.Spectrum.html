@@ -36,7 +36,7 @@
         </button>
         <a class="navbar-brand" href="index.html">
           SciCpp</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.4</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.5</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -102,7 +102,7 @@
 <li>Window (<code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="#_CPPv36windowRKNSt6vectorI1TEE" title="window"><span class="pre">window</span></a></code>)</li>
 </ul>
 <p>Once the class is configure, various spectrum estimators can be called:
-<code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="#_CPPv3I_15SpectrumScaling0E11periodogramRK5Array" title="periodogram"><span class="pre">periodogram</span></a></code>, <code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="#_CPPv3I_15SpectrumScaling0E5welchRK5Array" title="welch"><span class="pre">welch</span></a></code>, <code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="plots.csd_psd.html#_CPPv3I_N6signal15SpectrumScalingE000E3csdN6signal8SpectrumI1TEERK6Array1RK6Array2" title="csd"><span class="pre">csd</span></a></code>, <code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="#_CPPv3I00E9coherenceRK6Array1RK6Array2" title="coherence"><span class="pre">coherence</span></a></code>, <code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="#_CPPv3I00E10tfestimateRK6Array1RK6Array2" title="tfestimate"><span class="pre">tfestimate</span></a></code>.</p>
+<code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="#_CPPv3I_15SpectrumScaling0E11periodogramRK5Array" title="periodogram"><span class="pre">periodogram</span></a></code>, <code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="#_CPPv3I_15SpectrumScaling0E5welchRK5Array" title="welch"><span class="pre">welch</span></a></code>, <code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="plots.csd_psd.html#_CPPv3I_N6signal15SpectrumScalingE_17SpectrumPlotScale000E3csdN6signal8SpectrumI1TEERK6Array1RK6Array2" title="csd"><span class="pre">csd</span></a></code>, <code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="#_CPPv3I00E9coherenceRK6Array1RK6Array2" title="coherence"><span class="pre">coherence</span></a></code>, <code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="#_CPPv3I00E10tfestimateRK6Array1RK6Array2" title="tfestimate"><span class="pre">tfestimate</span></a></code>.</p>
 <div class="section" id="configuration">
 <h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
@@ -136,6 +136,14 @@ By default half of the window length.</p>
 <dd></dd></dl>
 
 <p>Set the window. Hann window of length 256 by default.</p>
+<hr class="docutils" />
+<dl class="function">
+<dt id="_CPPv38nthreadsNSt6size_tE">
+<span id="_CPPv28nthreadsNSt6size_tE"></span><span id="nthreads__std::s"></span><code class="descname">nthreads</code><span class="sig-paren">(</span><a class="reference internal" href="core.stats.std.html#_CPPv3I_i00EStRK5Array9Predicate" title="std">std</a>::size_t <em>nthreads</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv38nthreadsNSt6size_tE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<p>Number of threads to be used for parallel computing of FFTs
+when using Welch’s method.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="estimators">
@@ -240,7 +248,7 @@ By default half of the window length.</p>
       
     </p>
     <p>
-        &copy; Copyright 2018-2023, T. Vanderbruggen.<br/>
+        &copy; Copyright 2018-2024, T. Vanderbruggen.<br/>
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.<br/>
     </p>
   </div>

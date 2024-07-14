@@ -37,7 +37,7 @@
         </button>
         <a class="navbar-brand" href="#">
           SciCpp</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.4</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.5</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -108,6 +108,7 @@ It is tested with the GCC and Clang compilers under Linux.</p>
 <li class="toctree-l2"><a class="reference internal" href="core.html#mathematical-functions">Mathematical functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core.html#arithmetic-operators">Arithmetic operators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core.html#ones-and-zeros">Ones and zeros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="core.html#array-manipulations">Array manipulations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core.html#ranges">Ranges</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core.html#create-arrays-from-existing-data">Create arrays from existing data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core.html#save-arrays-to-file">Save arrays to file</a></li>
@@ -147,6 +148,7 @@ It is tested with the GCC and Clang compilers under Linux.</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="plots.html">plots</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="plots.html#basic">Basic</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plots.html#statistics">Statistics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plots.html#spectrum">Spectrum</a></li>
 </ul>
@@ -169,18 +171,23 @@ to avoid surprises in the transition process.</p>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="examples.wave_stats.html#examples-wave-stats"><span class="std std-ref">Wave statistics</span></a></p>
+<p><a class="reference internal" href="examples.eeg.html#examples-eeg"><span class="std std-ref">EEG signal</span></a></p>
 </div>
 <div class="section" id="plots">
 <h2>Plots<a class="headerlink" href="#plots" title="Permalink to this headline">¶</a></h2>
 <p>Even though Scicpp is not a plotting library,
 some plotting functions are implemented based on the <a class="reference external" href="https://sciplot.github.io/">Sciplot library</a>.</p>
 <p>Those are not only useful for development and debugging but are also great examples of Scicpp library capabilities.</p>
+<p><a class="reference internal" href="examples.eeg.html#examples-eeg"><span class="std std-ref">EEG signal</span></a></p>
+<a class="reference internal image-reference" href="_images/eeg_signal.png"><img alt="_images/eeg_signal.png" src="_images/eeg_signal.png" style="width: 800px;" /></a>
 <p><a class="reference internal" href="plots.hist.html#plots-hist"><span class="std std-ref">Histogram</span></a></p>
 <a class="reference internal image-reference" href="_images/basic_hist.png"><img alt="_images/basic_hist.png" src="_images/basic_hist.png" style="width: 600px;" /></a>
 <p><a class="reference internal" href="plots.boxplot.html#plots-boxplot"><span class="std std-ref">Boxplot</span></a></p>
 <a class="reference internal image-reference" href="_images/boxplot.png"><img alt="_images/boxplot.png" src="_images/boxplot.png" style="width: 600px;" /></a>
 <p><a class="reference internal" href="plots.csd_psd.html#plots-csd-psd"><span class="std std-ref">Power spectrum</span></a></p>
 <a class="reference internal image-reference" href="_images/psd.png"><img alt="_images/psd.png" src="_images/psd.png" style="width: 600px;" /></a>
+<p><a class="reference internal" href="plots.winvis.html#plots-winvis"><span class="std std-ref">Window functions</span></a></p>
+<a class="reference internal image-reference" href="_images/windows_fft.png"><img alt="_images/windows_fft.png" src="_images/windows_fft.png" style="width: 800px;" /></a>
 </div>
 </div>
 
@@ -196,7 +203,7 @@ some plotting functions are implemented based on the <a class="reference externa
       
     </p>
     <p>
-        &copy; Copyright 2018-2023, T. Vanderbruggen.<br/>
+        &copy; Copyright 2018-2024, T. Vanderbruggen.<br/>
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.<br/>
     </p>
   </div>

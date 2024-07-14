@@ -36,7 +36,7 @@
         </button>
         <a class="navbar-brand" href="index.html">
           SciCpp</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.4</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.5</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -92,17 +92,25 @@
 <p>Plot the spectral density.</p>
 <p>Return a <code class="xref cpp cpp-expr docutils literal notranslate"><span class="pre">sciplot</span><span class="pre">::</span><span class="pre">Plot2D</span></code> object.</p>
 <hr class="docutils" />
+<p>Plot scale options:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">enum</span> <span class="nl">SpectrumPlotScale</span> <span class="p">:</span> <span class="kt">int</span> <span class="p">{</span>
+    <span class="n">LINEAR</span><span class="p">,</span>  <span class="c1">// Linear scale</span>
+    <span class="n">DECIBEL</span>  <span class="c1">// Logarithm scale (dB)</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<hr class="docutils" />
 <dl class="function">
-<dt id="_CPPv3I_N6signal15SpectrumScalingE000E3csdN6signal8SpectrumI1TEERK6Array1RK6Array2">
-<span id="_CPPv2I_N6signal15SpectrumScalingE000E3csdN6signal8SpectrumI1TEERK6Array1RK6Array2"></span>template&lt;signal::SpectrumScaling <code class="descname">scaling</code> = signal::DENSITY, typename <code class="descname">Array1</code>, typename <code class="descname">Array2</code>, typename <code class="descname">T</code> = double&gt;<br />auto <code class="descname">csd</code><span class="sig-paren">(</span>signal::Spectrum&lt;<a class="reference internal" href="#_CPPv3I_N6signal15SpectrumScalingE000E3csdN6signal8SpectrumI1TEERK6Array1RK6Array2" title="csd::T">T</a>&gt; <em>spec</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv3I_N6signal15SpectrumScalingE000E3csdN6signal8SpectrumI1TEERK6Array1RK6Array2" title="csd::Array1">Array1</a> &amp;<em>x</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv3I_N6signal15SpectrumScalingE000E3csdN6signal8SpectrumI1TEERK6Array1RK6Array2" title="csd::Array2">Array2</a> &amp;<em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3I_N6signal15SpectrumScalingE000E3csdN6signal8SpectrumI1TEERK6Array1RK6Array2" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3I_N6signal15SpectrumScalingE_17SpectrumPlotScale000E3csdN6signal8SpectrumI1TEERK6Array1RK6Array2">
+<span id="_CPPv2I_N6signal15SpectrumScalingE_17SpectrumPlotScale000E3csdN6signal8SpectrumI1TEERK6Array1RK6Array2"></span>template&lt;signal::SpectrumScaling <code class="descname">scaling</code> = signal::DENSITY, SpectrumPlotScale <code class="descname">plot_scale</code> = DECIBEL, typename <code class="descname">Array1</code>, typename <code class="descname">Array2</code>, typename <code class="descname">T</code> = double&gt;<br />auto <code class="descname">csd</code><span class="sig-paren">(</span>signal::Spectrum&lt;<a class="reference internal" href="#_CPPv3I_N6signal15SpectrumScalingE_17SpectrumPlotScale000E3csdN6signal8SpectrumI1TEERK6Array1RK6Array2" title="csd::T">T</a>&gt; <em>spec</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv3I_N6signal15SpectrumScalingE_17SpectrumPlotScale000E3csdN6signal8SpectrumI1TEERK6Array1RK6Array2" title="csd::Array1">Array1</a> &amp;<em>x</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv3I_N6signal15SpectrumScalingE_17SpectrumPlotScale000E3csdN6signal8SpectrumI1TEERK6Array1RK6Array2" title="csd::Array2">Array2</a> &amp;<em>y</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3I_N6signal15SpectrumScalingE_17SpectrumPlotScale000E3csdN6signal8SpectrumI1TEERK6Array1RK6Array2" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <p>Plot the cross-spectral density between arrays <code class="xref cpp cpp-expr docutils literal notranslate"><span class="pre">x</span></code> and <code class="xref cpp cpp-expr docutils literal notranslate"><span class="pre">y</span></code>
 using a given <a class="reference internal" href="signal.Spectrum.html#signal-spectrum"><span class="std std-ref">Spectrum</span></a> analyzer <code class="xref cpp cpp-expr docutils literal notranslate"><span class="pre">spec</span></code>.</p>
 <hr class="docutils" />
 <dl class="function">
-<dt id="_CPPv3I_N6signal15SpectrumScalingE00E3psdN6signal8SpectrumI1TEERK5Array">
-<span id="_CPPv2I_N6signal15SpectrumScalingE00E3psdN6signal8SpectrumI1TEERK5Array"></span>template&lt;signal::SpectrumScaling <code class="descname">scaling</code> = signal::DENSITY, typename <code class="descname">Array</code>, typename <code class="descname">T</code> = double&gt;<br />auto <code class="descname">psd</code><span class="sig-paren">(</span>signal::Spectrum&lt;<a class="reference internal" href="#_CPPv3I_N6signal15SpectrumScalingE00E3psdN6signal8SpectrumI1TEERK5Array" title="psd::T">T</a>&gt; <em>spec</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv3I_N6signal15SpectrumScalingE00E3psdN6signal8SpectrumI1TEERK5Array" title="psd::Array">Array</a> &amp;<em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3I_N6signal15SpectrumScalingE00E3psdN6signal8SpectrumI1TEERK5Array" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv3I_N6signal15SpectrumScalingE_17SpectrumPlotScale00E3psdN6signal8SpectrumI1TEERK5Array">
+<span id="_CPPv2I_N6signal15SpectrumScalingE_17SpectrumPlotScale00E3psdN6signal8SpectrumI1TEERK5Array"></span>template&lt;signal::SpectrumScaling <code class="descname">scaling</code> = signal::DENSITY, SpectrumPlotScale <code class="descname">plot_scale</code> = DECIBEL, typename <code class="descname">Array</code>, typename <code class="descname">T</code> = double&gt;<br />auto <code class="descname">psd</code><span class="sig-paren">(</span>signal::Spectrum&lt;<a class="reference internal" href="#_CPPv3I_N6signal15SpectrumScalingE_17SpectrumPlotScale00E3psdN6signal8SpectrumI1TEERK5Array" title="psd::T">T</a>&gt; <em>spec</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv3I_N6signal15SpectrumScalingE_17SpectrumPlotScale00E3psdN6signal8SpectrumI1TEERK5Array" title="psd::Array">Array</a> &amp;<em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv3I_N6signal15SpectrumScalingE_17SpectrumPlotScale00E3psdN6signal8SpectrumI1TEERK5Array" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <p>Plot the power spectral density of array <code class="xref cpp cpp-expr docutils literal notranslate"><span class="pre">x</span></code>
@@ -179,7 +187,7 @@ using a given <a class="reference internal" href="signal.Spectrum.html#signal-sp
       
     </p>
     <p>
-        &copy; Copyright 2018-2023, T. Vanderbruggen.<br/>
+        &copy; Copyright 2018-2024, T. Vanderbruggen.<br/>
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.<br/>
     </p>
   </div>

@@ -37,7 +37,7 @@
         </button>
         <a class="navbar-brand" href="index.html">
           SciCpp</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.4</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.5</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -90,10 +90,18 @@
   <div class="section" id="plots">
 <h1>plots<a class="headerlink" href="#plots" title="Permalink to this headline">¶</a></h1>
 <p>Plotting functions defined in header &lt;scicpp/plots.hpp&gt;.</p>
-<p>Base on the <a class="reference external" href="https://sciplot.github.io/">Sciplot library</a>, which is a header only library.
+<p>Based on the <a class="reference external" href="https://sciplot.github.io/">Sciplot library</a>, which is a header only library.
 Gnuplot is required to run the executable.
 This is only required to use the plots module, not other scicpp modules.</p>
-<p>Extends Sciplot with some specialized plots available in Matplotlib (hist, psd, cohere, csd)</p>
+<p>Allow plot of data with physical units.
+Extends Sciplot with some specialized plots available in Matplotlib (hist, psd, cohere, csd).</p>
+<div class="section" id="basic">
+<h2>Basic<a class="headerlink" href="#basic" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt><a class="reference internal" href="plots.plot.html#plots-plot"><span class="std std-ref">plot</span></a></dt>
+<dd>Basic plot.</dd>
+</dl>
+</div>
 <div class="section" id="statistics">
 <h2>Statistics<a class="headerlink" href="#statistics" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
@@ -110,6 +118,8 @@ This is only required to use the plots module, not other scicpp modules.</p>
 <dd>Plot the spectral density.</dd>
 <dt><a class="reference internal" href="plots.cohere.html#plots-cohere"><span class="std std-ref">cohere</span></a></dt>
 <dd>Plot the coherence between two signals.</dd>
+<dt><a class="reference internal" href="plots.winvis.html#plots-winvis"><span class="std std-ref">winvis</span></a></dt>
+<dd>Window function plotting utility.</dd>
 </dl>
 </div>
 </div>
@@ -126,7 +136,7 @@ This is only required to use the plots module, not other scicpp modules.</p>
       
     </p>
     <p>
-        &copy; Copyright 2018-2023, T. Vanderbruggen.<br/>
+        &copy; Copyright 2018-2024, T. Vanderbruggen.<br/>
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.<br/>
     </p>
   </div>

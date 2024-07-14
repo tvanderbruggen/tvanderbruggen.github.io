@@ -38,7 +38,7 @@
         </button>
         <a class="navbar-brand" href="index.html">
           SciCpp</a>
-        <span class="navbar-text navbar-version pull-left"><b>0.4</b></span>
+        <span class="navbar-text navbar-version pull-left"><b>0.5</b></span>
       </div>
 
         <div class="collapse navbar-collapse nav-collapse">
@@ -100,7 +100,7 @@
 which sometimes differs from the C++ definitions (ex. <em>arcsin</em> vs <em>asin</em>).</p>
 <div class="section" id="trigonometric-functions">
 <h3>Trigonometric functions<a class="headerlink" href="#trigonometric-functions" title="Permalink to this headline">¶</a></h3>
-<p><code class="code docutils literal notranslate"><span class="pre">sin</span></code>, <code class="code docutils literal notranslate"><span class="pre">cos</span></code>, <code class="code docutils literal notranslate"><span class="pre">tan</span></code>, <code class="code docutils literal notranslate"><span class="pre">arcsin</span></code>, <code class="code docutils literal notranslate"><span class="pre">arccos</span></code>, <code class="code docutils literal notranslate"><span class="pre">arctan</span></code>, <code class="code docutils literal notranslate"><span class="pre">arctan2</span></code>, <code class="code docutils literal notranslate"><span class="pre">hypot</span></code>.</p>
+<p><code class="code docutils literal notranslate"><span class="pre">sin</span></code>, <code class="code docutils literal notranslate"><span class="pre">cos</span></code>, <code class="code docutils literal notranslate"><span class="pre">tan</span></code>, <code class="code docutils literal notranslate"><span class="pre">arcsin</span></code>, <code class="code docutils literal notranslate"><span class="pre">arccos</span></code>, <code class="code docutils literal notranslate"><span class="pre">arctan</span></code>, <code class="code docutils literal notranslate"><span class="pre">arctan2</span></code>, <code class="code docutils literal notranslate"><span class="pre">hypot</span></code>, <code class="code docutils literal notranslate"><span class="pre">sinc</span></code>.</p>
 </div>
 <div class="section" id="hyperbolic-functions">
 <h3>Hyperbolic functions<a class="headerlink" href="#hyperbolic-functions" title="Permalink to this headline">¶</a></h3>
@@ -146,6 +146,16 @@ operators are used.</p>
 <dd>Return a new array of given shape and type, filled with ones.</dd>
 <dt><span class="xref std std-ref">full</span></dt>
 <dd>Return a new array of given shape and type, filled with fill_value.</dd>
+</dl>
+</div>
+<div class="section" id="array-manipulations">
+<h2>Array manipulations<a class="headerlink" href="#array-manipulations" title="Permalink to this headline">¶</a></h2>
+<p>Operator <code class="code docutils literal notranslate"><span class="pre">|</span></code> is used for array concatenation.</p>
+<dl class="docutils">
+<dt><a class="reference internal" href="core.concatenate.html#core-concatenate"><span class="std std-ref">concatenate</span></a></dt>
+<dd>Join a sequence of arrays.</dd>
+<dt><span class="xref std std-ref">flip</span></dt>
+<dd>Reverse the order of elements in an array.</dd>
 </dl>
 </div>
 <div class="section" id="ranges">
@@ -353,7 +363,7 @@ The comparison functions (same as Numpy) can be used instead: <code class="code 
       
     </p>
     <p>
-        &copy; Copyright 2018-2023, T. Vanderbruggen.<br/>
+        &copy; Copyright 2018-2024, T. Vanderbruggen.<br/>
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.<br/>
     </p>
   </div>
